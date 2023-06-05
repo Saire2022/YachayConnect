@@ -1,34 +1,54 @@
-<!-- controllar los  urls -->
 <?php
 
-class Core
+class Core 
 {
-    protected $currentController = 'home';
-    protected $currentMEthod = 'index';
+    protected $currentController = "Home";
+    protected $currentMethod = "index";
     protected $parameters = [];
 
-    public function__construct()
+    public function __construct()
     {
-        $url = $this->getUrl();
-
-        if(file_exists('../app/controller' . ucwords($url[0]) . '.php'))
-        {
-            $this->currentController = ucwords($url[0]);
-
-            unset($url[0]);
+        $url = $this->getURL();
+        
+        if(isset($url[0])) {
+            $controllerName = ucwords($url[0]);
+            $controllerFile = "../app/controller/" . $controllerName . ".php";
             
+            if(file_exists($controllerFile)) {
+                $this->currentController = $controllerName;
+                unset($url[0]);
+            } else {
+                // Mostrar un mensaje de error o redirigir a una página de error
+                echo "Controller not found";
+                return;
+            }
         }
-        require_once '../app/controllers/' . $this->currentController . '.php';
+
+        include_once "../app/controller/" . $this->currentController . ".php";
         $this->currentController = new $this->currentController;
+
+        if(isset($url[1])) {
+            if(method_exists($this->currentController , $url[1])) {
+                $this->currentMethod = $url[1];
+                unset($url[1]);
+            } else {
+                // Mostrar un mensaje de error o redirigir a una página de error
+                echo "Method not found";
+                return;
+            }
+        }
+
+        $this->parameters = $url ? array_values($url) : [];
+        call_user_func_array([$this->currentController , $this->currentMethod] , $this->parameters);
     }
 
-    public function getUrl()
-    {
-        if (isset($_GET['url'])){
-            $url  = rtrim($_GET['url'], '/' );
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = explode('/', $url);
+    public function getURL() {
+        if(isset($_GET["url"])) {
+            $url = trim($_GET["url"] , "/");
+            $url = filter_var($url , FILTER_SANITIZE_URL);
+            $url = explode("/" , $url);
             return $url;
         }
     }
 }
+?>
