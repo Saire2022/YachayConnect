@@ -8,11 +8,28 @@ class Users
     {
         $this->db = new Base;
     }
+    public function getUsuario($usuario)
+    {
+        $this->db->query('SELECT *FROM usuarios WHERE usuario= :user');
+        $this->db->bind(':user',$usuario);
+        return $this->db->register();
+    }
 
-    public function verificarUsuario($datoUsuario)
+    public function verificarContrasena($datosUsuario,$contrasena)
+    {
+        if(password_verify($contrasena,$datosUsuario->contrasena)){
+            return true;
+        } else{
+            return false;
+        }
+         
+    }
+   
+    public function verificarUsuario($datosUsuario)
     {
         $this->db->query('SELECT usuario FROM usuarios WHERE  usuario = :user');
-        $this->db->bind(':user' , $datoUsuario['usuario'] );
+        $this->db->bind(':user' , $datosUsuario['usuario'] );
+        $this->db->register();
         if($this->db->rowCount())
         {
             return false;
@@ -21,14 +38,14 @@ class Users
         }
     }
 
-    public function register($datoUsuario)
+    public function register($datosUsuario)
     {
         //var_dump($datoUsuario);
-       $this->db->query('INSERT INTO usuarios(idPrivilegio, correo, usuario, contrasena) VALUES(:privilegio, :correo, :usuario, :contrasena)');
-        $this->db->bind(':privilegio', $datoUsuario['privilegio']); 
-        $this->db->bind(':correo', $datoUsuario['email']); 
-        $this->db->bind(':usuario', $datoUsuario['usuario']); 
-        $this->db->bind(':contrasena', $datoUsuario['contrasena']); 
+        $this->db->query('INSERT INTO usuarios(idPrivilegio, correo, usuario, contrasena) VALUES(:privilegio, :correo, :usuario, :contrasena)');
+        $this->db->bind(':privilegio', $datosUsuario['privilegio']); 
+        $this->db->bind(':correo', $datosUsuario['email']); 
+        $this->db->bind(':usuario', $datosUsuario['usuario']); 
+        $this->db->bind(':contrasena', $datosUsuario['contrasena']); 
 
         if($this->db->execute()){
             return true;

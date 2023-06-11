@@ -9,7 +9,7 @@ class Base
     protected $dbuser = DB_USER;
     protected $dbpass = DB_PASSWORD;
 
-    private $cnx;
+    private $cnx;     
     private $stmt;
     private $error;
 
@@ -77,7 +77,7 @@ class Base
 
     public function rowcount()
     {
-        $this->execute();
+        /* $this->execute(); */
         return $this->stmt->rowCount();
     }
 }
