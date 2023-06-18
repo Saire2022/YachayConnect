@@ -14,6 +14,12 @@ class usuario
         $this->db->bind(':user',$usuario);
         return $this->db->register();
     }
+     public function getPerfil($idusuario)
+     {
+        $this->db->query('SELECT *FROM perfil WHERE idUsuario= :id');
+        $this->db->bind(':id',$idusuario);
+        return $this->db->register();
+     }
 
     public function verificarContrasena($datosUsuario,$contrasena)
     {
@@ -55,5 +61,24 @@ class usuario
 
     }   
 
+    public function insertarPerfil($datos)
+    {
+        $this->db->query('INSERT INTO perfil(Carrer,Salary,Major,idUsuario,PaisActual,nombreCompleto,fotoPerfil	
+        ) VALUES(:carrer, :salary, :major, :id, :paisactual, :nombre, :rutaFoto)');
+        $this->db->bind(':carrer', $datos['carrer']); 
+        $this->db->bind(':salary', $datos['salary']); 
+        $this->db->bind(':major', $datos['major']); 
+        $this->db->bind(':id', $datos['idusuario']); 
+        $this->db->bind(':paisactual', $datos['paisactual']); 
+        $this->db->bind(':nombre', $datos['nombre']); 
+        $this->db->bind(':rutaFoto', $datos['ruta']);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }
 

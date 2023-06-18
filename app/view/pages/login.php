@@ -1,8 +1,6 @@
 
 <?php
-//include_once "config/config.php"; 
 include_once URL_APP . '/view/custom/header.php';
-//include_once URL_APP . '/view/custom/navbar.php';
 ?>
 
 <div class="container-center center">

@@ -11,7 +11,21 @@ class Home extends Controller
     {
         if (isset($_SESSION['logueado']))
         {
-            $this->view('pages/home');
+            $datosUsuario= $this->usuario->getUsuario($_SESSION['usuario']);
+            $datosPefil= $this->usuario->getPerfil($_SESSION['logueado']);
+            if ($datosPefil){
+                $datosRed=[
+                    'usuario'=> $datosUsuario,
+                    'perfil'=> $datosPefil
+                ];
+                $this->view('pages/home', $datosRed);
+            }
+            else {
+                $this->view('pages/perfil/completarPerfil',$_SESSION['logueado']);
+            }
+            
+
+            
         }else {
             redirection('/home/login');
         }
@@ -76,6 +90,31 @@ class Home extends Controller
                 $this->view('pages/register');
             }
             
+        }
+    }
+
+
+    public function insertarRegistrosPerfil()
+    {
+        $carpeta="C:/xampp/htdocs/YachayConnect/public/img/imagenesPefil/";
+        opendir($carpeta);
+        $rutaImagen= 'img/imagenesPefil/' .  $_FILES['imagen']['name'];
+        $ruta=$carpeta . $_FILES['imagen']['name'];
+        copy($_FILES['imagen']['tmp_name'], $ruta);
+        $datos= [
+            'idusuario' => trim($_POST['id_user']),
+            'nombre' => trim($_POST['nombre']),
+            'ruta' => $rutaImagen,
+            'carrer'=> trim($_POST['carrer']),
+            'salary'=>trim($_POST['salario']),
+            'major'=>trim($_POST['major']),
+            'paisactual'=>trim($_POST['paisactual'])
+        ];
+        if ($this->usuario->insertarPerfil($datos))
+        {
+            redirection('/home');
+        }else{
+            echo 'El perfil no se ha guardado';
         }
     }
     public function logout()
