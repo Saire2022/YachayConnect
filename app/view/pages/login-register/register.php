@@ -36,5 +36,5 @@
 </div>
 
 <?php
-//include_once "../view/custom/footer.php";
+include_once "../view/custom/footer.php";
 ?>
