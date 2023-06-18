@@ -1,10 +1,12 @@
 <?php
 
 include_once URL_APP . '/view/custom/header.php';
+include_once URL_APP . '/view/custom/navbar.php';
 
 ?>
-
-<a href="<?php echo URL_PROJECT?>/home/logout">Salir</a>
+<div class="container">
+    
+</div>
 
 <?php
 include_once URL_APP . '/view/custom/footer.php';
