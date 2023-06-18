@@ -18,13 +18,13 @@
             </form>
             <?php if(isset($_SESSION['usarioError'])):?>
                 <div class="alert alert-danger alert-dismissible fade show mt-2 mb-2" role="alert">
-<!--                 <strong>Holy guacamole!</strong> You should check in on some of those fields below.-->  
-                <?php echo $_SESSION['usarioError']; ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <?php echo $_SESSION['usarioError']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                        <span arial-hidden="true">&times;</span>
+                    </button>
                 </div>
-            <?php
-            unset($_SESSION['usarioError']); endif
-            ?>
+            <?php unset($_SESSION['usarioError']); 
+            endif ?>
             <div class="contenido-link mt-2">
                 <span class="mr-2">Ya tienes una cuenta?</span><a href="<?php echo URL_PROJECT?>/home/login">Iniciar sesión</a>
             </div>

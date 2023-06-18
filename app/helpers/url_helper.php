@@ -1,5 +1,5 @@
 <?php
 
-public function redirection($url){
+function redirection($url){
     header('Location: '. URL_PROJECT .$url);
 }

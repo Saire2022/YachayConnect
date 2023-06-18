@@ -4,13 +4,17 @@ class Home extends Controller
 {
     public function __construct()
     {
-        $this->usuario = $this->model("Users");
+        $this->usuario = $this->model("usuario");
     }
-
+    
     public function index()
     {
-        //$users = $this->usuario->connect();
-        //$this->view("pages/register");
+        if (isset($_SESSION['logueado']))
+        {
+            $this->view('pages/home');
+        }else {
+            redirection('/home/login');
+        }
     }
 
     public function login()
@@ -25,14 +29,21 @@ class Home extends Controller
             $datosUsuario=$this->usuario->getUsuario($datosLogin['usuario']);
 
             if ($this->usuario->verificarContrasena($datosUsuario,$datosLogin['contrasena'])){
-                echo "contrasena correcta";
+                $_SESSION['logueado'] = $datosUsuario->idPrivilegio;
+                $_SESSION['usuario'] = $datosUsuario->usuario;
+                redirection('/home');
             }else{
                 $_SESSION['errorLogin'] = 'El usuario o la contraseña esta incorrectos';
-                $this->view('pages/login');
+                redirection('/home');
                 //redirection('/home/login');
             }
         } else {
-            $this->view('pages/login');
+            if (isset($_SESSION['logueado'])){
+                redirection('/home');
+            }else{
+                $this->view('pages/login');
+            }
+            
         }
     }
 
@@ -50,8 +61,8 @@ class Home extends Controller
                 if ($this->usuario->register($datosRegistro)) {
                     // Registro exitoso
                     $_SESSION['LoginComplete'] = 'Tu registro ha sido completado con exito, ahora puedes ingresar';
-                    $this->view('pages/login');
-                    //redirection('/home/login');
+                    redirection('/home');
+                    //redirection('/login');
                 } else {
                 }
             }else{
@@ -59,8 +70,21 @@ class Home extends Controller
                 $this->view('pages/register');
              }
         } else {
-            $this->view('pages/register');
+            if (isset($_SESSION['logueado'])){
+                redirection('/home');
+            }else{
+                $this->view('pages/register');
+            }
+            
         }
     }
+    public function logout()
+    {
+        session_start();
+        $_SESSION = [];
+        session_destroy();
+        redirection('/home');
+    }
+    
 }
 
