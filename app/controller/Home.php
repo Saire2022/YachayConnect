@@ -14,14 +14,15 @@ class Home extends Controller
             $datosUsuario= $this->usuario->getUsuario($_SESSION['usuario']);
             $datosPefil= $this->usuario->getPerfil($_SESSION['logueado']);
             if ($datosPefil){
-                $datosRed=[
-                    'usuario'=> $datosUsuario,
-                    'perfil'=> $datosPefil
+                $datosRed = [
+                    'usuario' => $datosUsuario,
+                    'perfil' => $datosPefil
                 ];
                 $this->view('pages/home', $datosRed);
             }
+            #Si no completo su perfil
             else {
-                $this->view('pages/perfil/completarPerfil',$_SESSION['logueado']);
+                $this->view('pages/completarPerfil',$_SESSION['logueado']);
             }
             
 
@@ -43,7 +44,7 @@ class Home extends Controller
             $datosUsuario=$this->usuario->getUsuario($datosLogin['usuario']);
 
             if ($this->usuario->verificarContrasena($datosUsuario,$datosLogin['contrasena'])){
-                $_SESSION['logueado'] = $datosUsuario->idPrivilegio;
+                $_SESSION['logueado'] = $datosUsuario->idusuario;
                 $_SESSION['usuario'] = $datosUsuario->usuario;
                 redirection('/home');
             }else{

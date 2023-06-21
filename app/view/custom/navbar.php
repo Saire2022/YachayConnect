@@ -31,8 +31,9 @@
                 </div>
                 <div class="dropdown">
                     <span class="btn-radio dropdown-toggle" id="actionPerfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                        <!-- <img src="https://e.radio-lazona.io/large/2017/12/07/523752_533515.png" alt="perfil" class="img-perfil" />
-                         --><?php echo ucwords($_SESSION['usuario']); ?>
+                    <img src="http://localhost/YachayConnect/public/img/imagenesPefil/Foto_Santiago.JPG" alt="perfil" width="30px" height="30px" /> 
+                    <?php echo ucwords($_SESSION['usuario']); ?>
+                    
                     </span>
                     <div class="dropdown-menu" aria-labelledby="actionPerfil">
                         <!-- <a class="dropdown-item text-dark" href="#">Action</a>

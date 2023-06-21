@@ -63,7 +63,7 @@ class usuario
 
     public function insertarPerfil($datos)
     {
-        $this->db->query('INSERT INTO perfil(Carrer,Salary,Major,idUsuario,PaisActual,nombreCompleto,fotoPerfil	
+        $this->db->query('INSERT INTO perfil (Carrer,Salary,Major,idUsuario,PaisActual,nombreCompleto,fotoPerfil	
         ) VALUES(:carrer, :salary, :major, :id, :paisactual, :nombre, :rutaFoto)');
         $this->db->bind(':carrer', $datos['carrer']); 
         $this->db->bind(':salary', $datos['salary']); 
