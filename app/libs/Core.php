@@ -2,7 +2,7 @@
 
 class Core 
 {
-    protected $currentController = "Home";
+    protected $currentController = "home";
     protected $currentMethod = "index";
     protected $parameters = [];
 
@@ -24,7 +24,7 @@ class Core
             }
         }
 
-        include_once "../app/controller/" . $this->currentController . ".php";
+        require_once "../app/controller/" . $this->currentController . ".php";
         $this->currentController = new $this->currentController;
 
         if(isset($url[1])) {
@@ -44,7 +44,7 @@ class Core
 
     public function getURL() {
         if(isset($_GET["url"])) {
-            $url = trim($_GET["url"] , "/");
+            $url = rtrim($_GET["url"] , "/");
             $url = filter_var($url , FILTER_SANITIZE_URL);
             $url = explode("/" , $url);
             return $url;
