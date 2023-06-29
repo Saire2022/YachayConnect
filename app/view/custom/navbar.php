@@ -31,7 +31,9 @@
                 </div>
                 <div class="dropdown">
                     <span class="btn-radio dropdown-toggle" id="actionPerfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                    <img src="http://localhost/YachayConnect/public/img/imagenesPefil/Foto_Santiago.JPG" alt="perfil" width="30px" height="30px" /> 
+                    <img src="<?php echo URL_PROJECT . '/' . $datosRed['ruta']->rutaImagen ?>" alt="perfil" width="30px" height="30px" /> 
+
+                     
                     <?php echo ucwords($_SESSION['usuario']); ?>
                     
                     </span>
