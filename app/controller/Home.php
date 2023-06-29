@@ -18,14 +18,13 @@ class Home extends Controller
                     'usuario' => $datosUsuario,
                     'perfil' => $datosPefil
                 ];
+                /* var_dump($datosRed['perfil']); */
                 $this->view('pages/home', $datosRed);
             }
             #Si no completo su perfil
             else {
                 $this->view('pages/completarPerfil',$_SESSION['logueado']);
             }
-            
-
             
         }else {
             redirection('/home/login');

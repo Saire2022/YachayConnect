@@ -2,7 +2,7 @@
 
 class Controller
 {
-    public function view($view, $params = []) {
+    public function view($view, $datos = []) {
         if (file_exists(URL_APP . "/view/" . $view . ".php")) {
             require_once URL_APP . "/view/" . $view . ".php";
         } else {
