@@ -31,13 +31,9 @@
                 </div>
                 <div class="dropdown">
                     <span class="btn-radio dropdown-toggle" id="actionPerfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-<<<<<<< HEAD
-                    <img src="<?php echo URL_PROJECT . '/' . $datosRed['ruta']->rutaImagen ?>" alt="perfil" width="30px" height="30px" /> 
 
                      
-=======
                     <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="perfil" width="30px" height="30px" /> 
->>>>>>> 5c443effa3a5c0476c5d56e7c397578ea7335ca6
                     <?php echo ucwords($_SESSION['usuario']); ?>
                     
                     </span>

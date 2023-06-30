@@ -1,9 +1,6 @@
 <?php
 include_once URL_APP . '/view/custom/header.php';
 include_once URL_APP . '/view/custom/navbar.php';
-<<<<<<< HEAD
-var_dump($datosRed);
-
 /* if (isset($datosRed)) {
     $usuario = $datosRed['usuario'];
     $perfil = $datosRed['perfil'];
@@ -13,9 +10,7 @@ var_dump($datosRed);
 } else {
     echo "No hay datos de usuario";
 } */
-=======
-var_dump($datos['perfil']);
->>>>>>> 5c443effa3a5c0476c5d56e7c397578ea7335ca6
+//var_dump($datos['perfil']);
 
 ?>
 
