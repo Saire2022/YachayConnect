@@ -10,10 +10,9 @@ include_once URL_APP . '/view/custom/header.php';
                 <!-- First column -->
                
                 <div class="col-md-6 mr-auto text-center">
-                    <div class="container-content2">
-                        <h3 class="YTConnect">Welcome to <br> YT-Connect!</h3>
+                        <img src="../img/Welcome-to-YT-Connect!.svg" alt="Welcome">
+                        <p style="color: #fff; font-size: 100px;">
                         <h2 class="Text">YTConnect es una página web tipo red social que te ayuda a conocer más de nuestros <span class="graduados">graduados</span></h2>
-                    </div>
                 </div>
 
                 <!-- Second Column -->
