@@ -17,7 +17,7 @@ var_dump($datos['usuario']);
                     <div class="background-usuario-main"></div>
                     <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="" width="30px" height="30px">
                     <div class="foto-separation"></div>
-                    <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>"><div class="text-center nombre-perfil"><?php echo $datos['perfil']->nombreCompleto ?></div></a>
+                    <a href="<?php echo URL_PROJECT?>/perfil"><div class="text-center nombre-perfil"><?php echo $datos['perfil']->nombreCompleto ?></div></a>
                     <div class="tabla-estadisticas"></div>
                         <a href="#">Publicaciones <br>0</a>
                         <a href="#">Me gustas <br>0</a>
