@@ -40,10 +40,10 @@ header {
     margin-right: 15px;
 }
 
-.links a {
-    color: #ffffff;
+/* .links a {
+    color: #0e2548;
     text-decoration: none;
-}
+} */
 
 .btn-radio {
     background-color: var(--main-color);
@@ -52,3 +52,15 @@ header {
     justify-content: center;
     align-items: center;   
 }
+
+.profile-image {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.profile-name {
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+  }

@@ -1,14 +1,17 @@
 <?php
-
 include_once URL_APP . '/view/custom/header.php';
 include_once URL_APP . '/view/custom/navbar.php';
+
 var_dump($datos['usuario']);
 
+
 ?>
+
 <div class="container">
     <div class="row">
         <!-- Columna perfil -->
         <div class="col-md-3">
+
             <div class="container-style-main">
                 <div class="perfil-usuario-main">
                     <div class="background-usuario-main"></div>
@@ -50,6 +53,15 @@ var_dump($datos['usuario']);
             <div class="container-style-main">
 
             </div>
+
+            <!-- Contenido del primer bloque -->
+        </div>
+        <div class="col-md-6">
+            <!-- Contenido del segundo bloque -->
+        </div>
+        <div class="col-md-3">
+            <!-- Contenido del tercer bloque -->
+
     </div>
 </div>
 

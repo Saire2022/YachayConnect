@@ -1,90 +1,172 @@
 :root {
-    --primary-color: #7063FF;
-    --font-size: 16px;
+  --primary-color: #7063FF;
+  --font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-center {
+  height: 100vh;
+  width: 100%;
+}
+
+.container-content {
+  height: 600px;
+  width: 1000px;
+  display: flex;
+  align-items: center;
+}
+.container-content2 {
+  height: 600px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.container-action {
+  width: 50%;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-action h4 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.container-action form {
+  margin-bottom: 1.5rem;
+}
+
+.container-action input {
+  width: 100%;
+  border-radius: 20px;
+  border: 0;
+  background-color: #f2f2f2;
+  height: 45px;
+  margin-bottom: 10px;
+  padding: 1rem;
+  outline: none;
+}
+
+.btn-purple {
+  outline: none;
+  background-color: var(--primary-color);
+  border: 0;
+  padding: 0.55rem;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-purple:hover {
+  background-color: rgb(134, 124, 246);
+}
+
+.contenido-link {
+  text-align: center;
+  color: #666666;
+}
+
+.contenido-link a {
+  color: var(--primary-color);
+}
+
+.content-image img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* Aquí puedes ajustar la altura verticalmente */
+  margin-top: 50px; /* Por ejemplo, 50px para una distancia de 50 píxeles desde la parte superior */
+  margin-bottom: 50px; /* Por ejemplo, 50px para una distancia de 50 píxeles desde la parte inferior */
+}
+
+
+
+
+/* Login */
+
+body.background {
+  width: 1440px;
+  height: 1024px;
+  flex-shrink: 0;
+  background: linear-gradient(0deg, rgba(198, 210, 220, 0) 0%, rgba(198, 210, 220, 0.40) 100%), url(../img/LoginBackground.svg), lightgray 75% / cover no-repeat;
+}
+.contentLogin {
+  width: 110px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: rgba(217, 217, 217, 0.50);
+}
+.logoUni {
+  width: 100px;
+  height: 126px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoUni img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.YTConnect{
+  display: flex;
+  width: 504px;
+  height: 180px;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: #000;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 70px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 100vh;
+  .Text{
+  display: flex;
+  width: 587px;
+  height: 215px;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: #1C355A;
+  font-size: 40px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
   }
-  
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .graduados {
+    color: #6244DA;
   }
-  
-  .container-center {
-    height: 100vh;
-    width: 100%;
+/* Register */
+
+body.RegisterBackground{
+    width: 1440px;
+    height: 1024px;
+    flex-shrink: 0;
+    background: linear-gradient(0deg, rgba(198, 210, 220, 0) 0%, rgba(198, 210, 220, 0.40) 100%), url(../img/RegisterBackground.svg), lightgray 75% / cover no-repeat;
   }
-  
-  .container-content {
-    height: 600px;
-    width: 1000px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .container-action {
-    width: 50%;
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .container-action h4 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-  }
-  
-  .container-action form {
-    margin-bottom: 1.5rem;
-  }
-  
-  .container-action input {
-    width: 100%;
-    border-radius: 20px;
-    border: 0;
-    background-color: #f2f2f2;
-    height: 45px;
-    margin-bottom: 10px;
-    padding: 1rem;
-    outline: none;
-  }
-  
-  .btn-purple {
-    outline: none;
-    background-color: var(--primary-color);
-    border: 0;
-    padding: 0.55rem;
-    border-radius: 20px;
-    color: #ffffff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-purple:hover {
-    background-color: rgb(134, 124, 246);
-  }
-  
-  .contenido-link {
-    text-align: center;
-    color: #666666;
-  }
-  
-  .contenido-link a {
-    color: var(--primary-color);
-  }
-  
-  .content-image img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  

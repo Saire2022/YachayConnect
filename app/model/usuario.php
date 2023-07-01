@@ -66,7 +66,7 @@ class usuario
         $this->db->query('INSERT INTO perfil (Carrer,Salary,Major,idUsuario,PaisActual,nombreCompleto,fotoPerfil	
         ) VALUES(:carrer, :salary, :major, :id, :paisactual, :nombre, :rutaFoto)');
         $this->db->bind(':carrer', $datos['carrer']); 
-        $this->db->bind(':salary', $datos['salary']); 
+        $this->db->bind(':salario', $datos['salary']); 
         $this->db->bind(':major', $datos['major']); 
         $this->db->bind(':id', $datos['idusuario']); 
         $this->db->bind(':paisactual', $datos['paisactual']); 
