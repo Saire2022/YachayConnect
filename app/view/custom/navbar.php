@@ -36,10 +36,10 @@
                         <img class="profile-image" src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="perfil">
                         <?php echo ucwords($_SESSION['usuario']); ?>
                     </span>
-                </div>
-                <div class="dropdown-menu" aria-labelledby="actionPerfil" style="font-family: Arial, sans-serif;">
+                    <div class="dropdown-menu" aria-labelledby="actionPerfil" style="font-family: Arial, sans-serif;">
                     
                     <a class="dropdown-item text-dark" href="<?php echo URL_PROJECT?>/home/logout">Salir</a>
+                </div>
                 </div>
             </div>
         </div>
