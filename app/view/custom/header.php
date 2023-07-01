@@ -12,6 +12,11 @@
     <script src="https://kit.fontawesome.com/f32e52100f.js"></script>
     <!-- Css -->
     <link rel= "stylesheet" href="<?php echo URL_PROJECT?>/css/style.css">
+    <link rel= "stylesheet" href="<?php echo URL_PROJECT?>/css/navbar.css">
+    <link rel= "stylesheet" href="<?php echo URL_PROJECT?>/css/home.css">
+    <link rel= "stylesheet" href="<?php echo URL_PROJECT?>/css/perfil.css">
+    <!-- Icon -->
+    <link rel= "icon" href="<?php echo URL_PROJECT?>/img/icon.ico">
 
     <title> <?php echo PROJECT_NAME ?> </title>
 
