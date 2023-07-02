@@ -1,0 +1,56 @@
+:root {
+  --primary-color: #7063FF;
+  --font-size: 16px;
+}
+.containerP {
+  position: relative;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  margin-top: 8%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.container .card {
+  width: 308px;
+  position: relative;
+  height: 400px;
+  background-color: var(--primary-color);
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0.5px 10px #e6e6e6;
+  transition: 0.3s ease-in-out;
+  margin-top: 5%;
+}
+
+.container .card .imgBx {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  top: -60px;
+  left: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 1.2);
+}
+
+.container .card .imgBx img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.container .card .imgBx a {
+  display: block;
+}
+
+.imgBx:hover img {
+  transform: scale(1.1);
+}

@@ -6,7 +6,7 @@ class Perfil extends Controller
         $this-> perfil= $this->model('perfilUsuario');
         $this-> usuario= $this->model('usuario');
     }
-    public function index()
+    public function index($usuario)
     {
         if (isset($_SESSION['logueado'])){
             $datosPerfil= $this->usuario->getPerfil($_SESSION['logueado']);

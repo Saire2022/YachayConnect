@@ -7,12 +7,13 @@ include_once URL_APP . '/view/custom/header.php';
     <div class="content">
         <div class="container">
             <div class="row d-flex align-items-center">
+
                 <!-- First column -->
                
                 <div class="col-md-6 mr-auto text-center">
-                        <img src="../img/Welcome-to-YT-Connect!.svg" alt="Welcome">
-                        <p style="color: #fff; font-size: 100px;">
-                        <h2 class="Text">YTConnect es una página web tipo red social que te ayuda a conocer más de nuestros <span class="graduados">graduados</span></h2>
+                    <img src="../img/Welcome-to-YT-Connect!.svg" alt="Welcome">
+                    <p style="color: #fff; font-size: 100px;">
+                    <h2 class="Text">YTConnect es una página web tipo red social que te ayuda a conocer más de nuestros <span class="graduados">graduados</span></h2>
                 </div>
 
                 <!-- Second Column -->
