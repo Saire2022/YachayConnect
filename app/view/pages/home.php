@@ -3,26 +3,23 @@ include_once URL_APP . '/view/custom/header.php';
 include_once URL_APP . '/view/custom/navbar.php';
 //var_dump($datos['usuario']);
 ?>
-
 <link rel="stylesheet" type="text/css" href="../public/css/home.css">
     
 <div class="container">
-  <div class="row d-flex align-items-center">
+    <div class="row">
+        <!-- Columna perfil -->
+        <div class="col-md-3">
 
-    <!-- Columna perfil -->
-    <div class="col-md-6 mr-auto">
-        <div class="containerP">
-            <div class="card">
-                <div class="imgBx">
-                    <a href="#">
-                        <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="text-center" height="65px" width="65px" alt="Avatar">
-                    </a>
-                    
-                    <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>">
-                        <h2 class="text-center"><?php echo $datos['perfil']->nombreCompleto ?></h2>
-                    </a>
-                    <a href="#">Publicaciones | 0</a>
-                    <a href="#">Me gustas | 0</a>
+            <div class="container-style-main">
+                <div class="perfil-usuario-main">
+                    <div class="background-usuario-main"></div>
+                    <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="" width="30px" height="30px">
+                    <div class="foto-separation"></div>
+                    <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>"><div class="text-center nombre-perfil"><?php echo $datos['perfil']->nombreCompleto ?></div></a>
+                    <div class="tabla-estadisticas"></div>
+                        <a href="#">Publicaciones <br>0</a>
+                        <a href="#">Me gustas <br>0</a>
+                    </div>
                 </div>
             </div>
         </div>
