@@ -6,25 +6,25 @@ include_once URL_APP . '/view/custom/navbar.php';
 <link rel="stylesheet" type="text/css" href="../public/css/home.css">
     
 <div class="container">
-  <div class="row flex">
-    <!-- Columna perfil -->
-    <div class="col-md-3">
-      <div class="containerP">
-        <div class="card">
-          <div class="imgBx">
-            <a href="#">
-              <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="" width="30px" height="30px">
-            </a>
-            <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>">
-              <h4 class="text-center"><?php echo $datos['perfil']->nombreCompleto ?></h4>
-            </a>
-                <a href="#">Publicaciones <br>0</a>
-                <a href="#">Me gustas <br>0</a>
-          </div>
+    <div class="row">
+        <!-- Columna perfil -->
+        <div class="col-md-3">
+
+            <div class="containerP">
+                <div class="card">
+                    <div class="imgBx"></div>
+                    <a href="#">
+                      <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="" width="30px" height="30px">
+                    </a>
+                    <div class="foto-separation"></div>
+                    <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>"><div class="text-center nombre-perfil"><?php echo $datos['perfil']->nombreCompleto ?></div></a>
+                    <div class="tabla-estadisticas"></div>
+                        <a href="#">Publicaciones <br>0</a>
+                        <a href="#">Me gustas <br>0</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-
 
       <div class="well">
         <a>Temas que te pueden interesar</a>
