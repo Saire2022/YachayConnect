@@ -61,6 +61,9 @@ include_once URL_APP . '/view/custom/navbar.php';
                         </div>
                     </div>
                 </div>
+<div>
+    <h1>hola estas en mi perfil</h1>
+</div>
 
                 <div class="col-md-2">
                     <div class="container-usuario-contact">
