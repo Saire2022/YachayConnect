@@ -23,8 +23,7 @@ include_once URL_APP . '/view/custom/navbar.php';
         </div>
 
         <div class="containerP">
-          <div class="containerT">
-            <a class="custom-link">Temas que te pueden interesar</a>
+            <a>Temas que te pueden interesar</a>
           
             <div class="card">
                 <h4>TY en el mundo</h4>
@@ -35,7 +34,6 @@ include_once URL_APP . '/view/custom/navbar.php';
             <div class="card">
                 <a>Graduados por carrera</a>
             </div>
-          </div>
         </div>
       </div>
         
@@ -49,14 +47,15 @@ include_once URL_APP . '/view/custom/navbar.php';
             <textarea name="" id="" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
             <div class="imgBx">
               <div class="upload-photo">
-                <button class="btn-subir">
+                <button class="btn btn-primary btn-block">
                   <img src="<?php echo URL_PROJECT ?>/img/picture.png" alt="" class="image-public">
                   <div class="input-file">
                     <input type="file" name="imagen" id="imagen">
                   </div>
                     Subir foto
                 </button>
-                <button class="btn-publi">Publicar</button>
+
+                <button class="btn btn-primary btn-block">Publicar</button>
               </div>
             </div>
           </form>

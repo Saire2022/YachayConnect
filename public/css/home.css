@@ -126,6 +126,9 @@ body {
     cursor: pointer;
     float: left;
 }
+.btn-subir:hover {
+  background-color: #ffffff; /* Cambia el color de fondo cuando el cursor esté sobre el botón */
+}
 
 .image-border {
   border-radius: 50%;
