@@ -4,7 +4,6 @@ include_once URL_APP . '/view/custom/navbar.php';
 //var_dump($datos['usuario']);
 ?>
 
-<<<<<<< HEAD
 <body>
   <div class="container-fluid ">
     <div class="row h-100">
@@ -19,24 +18,6 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <a href="<?php echo URL_PROJECT?>/perfil/index/<?php echo $datos['usuario']->usuario?>"><div class="text-center texto"></br><?php echo $datos['perfil']->nombreCompleto ?></div></a>
               </h4>
                 <a href="#" class="text center"><br>Publicaciones <br>0 | Me gustas <br>0</a>
-=======
-            <div class="containerP">
-                <div class="card">
-                    <div class="imgBx"></div>
-                    <a href="#">
-                      <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="" width="30px" height="30px">
-                    </a>
-                    <div class="foto-separation"></div>
-
-
-                    <a href="<?php echo URL_PROJECT?>/perfil/index/<?php echo $datos['usuario']->usuario?>"><div class="text-center nombre-perfil"><?php echo $datos['perfil']->nombreCompleto ?></div></a>
-
-                    <div class="tabla-estadisticas"></div>
-                        <a href="#">Publicaciones <br>0</a>
-                        <a href="#">Me gustas <br>0</a>
-                    </div>
-                </div>
->>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
             </div>
           </div>
         </div>
