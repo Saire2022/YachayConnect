@@ -1,203 +1,224 @@
 .imagen-perfil-cambiar:hover{
-    color: #4f406b
-  }
-  .datos-perfil-usuario{
-    width: 100%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  .btn-change-image{
-    border: 0;
-    border-radius: 10px;
-    background-color: #926dde;
-    color: #ffffff;
-  }
-  .container-header-usuario{
-    width: 100%;
-  }
-  .container-principal-informacion-usuario{
-    margin-top: 35px;
-  }
-  .editar-perfil{
-    position: absolute;
-    right: 40px;
-  }
-  /* Estilos de la imagen de perfil al pasar el cursor */
-  .imagen-perfil-cambiar:hover {
-    color: #4f406b;
-  }
-  
-  /* Estilos del contenedor de los datos de perfil del usuario */
-  .datos-perfil-usuario {
-    width: 100%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  
-  /* Estilos del botón de cambiar imagen de perfil */
-  .btn-change-image {
-    border: 0;
-    border-radius: 10px;
-    background-color: #926dde;
-    color: #ffffff;
-  }
-  
-  /* Estilos del contenedor principal del usuario en el encabezado */
-  .container-header-usuario {
-    width: 100%;
-  }
-  
-  /* Estilos del contenedor principal de la información del usuario */
-  .container-principal-informacion-usuario {
-    margin-top: 35px;
-  }
-  
-  /* Estilos del botón de editar perfil */
-  .editar-perfil {
-    position: absolute;
-    right: 40px;
-  }
-  
-  /* Estilos del contenedor de los mensajes del usuario */
-  .container-usuario-contact {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  /* Estilos del botón de mensaje */
-  .btn-message {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #926dde;
-    color: #ffffff;
-    text-decoration: none;
-  
-  }
-  
-  /* Estilos del ícono del botón de mensaje */
-  .btn-message i {
-      margin-right: 5px;
-  }
-  
-  /* Estilos de la imagen de portada del perfil */
-  .imagen-header-perfil-usuario {
-    width: 100%;
-  }
-  
-  .imagen-portada-perfil {
-    width: 100%;
-  }
-  
-  /* Estilos de la imagen de perfil del usuario */
-  .imagen-perfil-usuario {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  /* Estilos de la descripción del usuario */
-  .descripcion-usuario {
-    margin-top: 10px;
-  }
-  
-  /* Estilos del nombre del usuario */
-  .descripcion-usuario span {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  /* Estilos del contenedor principal de las publicaciones */
-  .container-usuario-publicar {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  /* Estilos de la imagen de perfil en las publicaciones */
-  .image-border {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  /* Estilos del formulario de publicación */
-  .form-publicar {
-    flex: 1;
-    margin: 0;
-  }
-  
-  /* Estilos del campo de texto para las publicaciones */
-  .published {
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    resize: none;
-  }
-  
-  /* Estilos del contenedor de subida de fotos en las publicaciones */
-  .image-upload-file {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  /* Estilos del contenedor de la imagen y botón de subir foto */
-  .upload-photo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  /* Estilos del ícono de subir foto */
-  .image-public {
-    width: 20px;
-    height: 20px;
+  color: #4f406b
+}
+
+.btn-change-image{
+  border: 0;
+  border-radius: 10px;
+  background-color: #926dde;
+  color: #ffffff;
+}
+.container-header-usuario{
+  width: 100%;
+}
+.container-principal-informacion-usuario{
+  margin-top: 35px;
+}
+.editar-perfil{
+  position: absolute;
+  right: 40px;
+}
+/* Estilos de la imagen de perfil al pasar el cursor */
+.imagen-perfil-cambiar:hover {
+  color: #4f406b;
+}
+
+/* Estilos del contenedor de los datos de perfil del usuario */
+.datos-perfil-usuario {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Estilos del botón de cambiar imagen de perfil */
+.btn-change-image {
+  border: 0;
+  border-radius: 10px;
+  background-color: #926dde;
+  color: #ffffff;
+}
+
+/* Estilos del contenedor principal del usuario en el encabezado */
+.container-header-usuario {
+  width: 100%;
+}
+
+/* Estilos del contenedor principal de la información del usuario */
+.container-principal-informacion-usuario {
+  margin-top: 35px;
+}
+
+/* Estilos del botón de editar perfil */
+.editar-perfil {
+  position: absolute;
+  right: 40px;
+}
+
+/* Estilos del contenedor de los mensajes del usuario */
+.container-usuario-contact {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilos del botón de mensaje */
+.btn-message {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #926dde;
+  color: #ffffff;
+  text-decoration: none;
+
+}
+
+/* Estilos del ícono del botón de mensaje */
+.btn-message i {
     margin-right: 5px;
-  }
-  
-  /* Estilos del botón de publicar */
-  .btn-publi {
-    border: none;
-    border-radius: 5px;
-    background-color: #926dde;
-    color: #ffffff;
-    padding: 5px 10px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  /* Estilos del contenedor de mensajes */
-  .container-usuario-contact {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  /* Estilos del botón de mensaje */
-  .btn-message {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #926dde;
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  /* Estilos del ícono del botón de mensaje */
-  .btn-message i {
-    margin-right: 5px;
-  }
+}
+
+/* Estilos de la imagen de portada del perfil */
+.imagen-header-perfil-usuario {
+  width: 100%;
+}
+
+.imagen-portada-perfil {
+  width: 100%;
+}
+
+/* Estilos de la imagen de perfil del usuario */
+.imagen-perfil-usuario {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Estilos de la descripción del usuario */
+.descripcion-usuario {
+  margin-top: 10px;
+}
+
+/* Estilos del nombre del usuario */
+.descripcion-usuario span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilos del contenedor principal de las publicaciones */
+.container-usuario-publicar {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Estilos de la imagen de perfil en las publicaciones */
+.image-border {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Estilos del formulario de publicación */
+.form-publicar {
+  flex: 1;
+  margin: 0;
+}
+
+/* Estilos del campo de texto para las publicaciones */
+.published {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+}
+
+/* Estilos del contenedor de subida de fotos en las publicaciones */
+.image-upload-file {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Estilos del contenedor de la imagen y botón de subir foto */
+.upload-photo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Estilos del ícono de subir foto */
+.image-public {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Estilos del botón de publicar */
+.btn-publi {
+  border: none;
+  border-radius: 5px;
+  background-color: #926dde;
+  color: #ffffff;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Estilos del contenedor de mensajes */
+.container-usuario-contact {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Estilos del botón de mensaje */
+.btn-message {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #926dde;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Estilos del ícono del botón de mensaje */
+.btn-message i {
+  margin-right: 5px;
+}
+/* MIS CAMBIOS */
+
+.container-cover {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2px;
+  margin-top: 20%;
+  margin-right: 10%;
+  margin-left: 0.5%;
+  text-align: center;
+  z-index: 2; /* Establecer un valor de z-index mayor */
+}
+
+.datos-perfil-usuario {
+  width: 200px;
+  height: 150px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 1; /* Establecer un valor de z-index menor */
+}

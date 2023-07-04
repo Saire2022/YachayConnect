@@ -4,39 +4,17 @@ include_once URL_APP . '/view/custom/header.php';
 include_once URL_APP . '/view/custom/navbar.php';
 
 ?>
-
-<div class="perfil-container-usuario">
-    <div class="imagen-header-perfil-usuario">
-        <img src="<?php echo URL_PROJECT ?>/img/imagenesPefil/imagenes-portada-perfil/cover-img.jpg" class="imagen-portada-perfil" alt="">
-    </div>
+<div>
+    <div class="container-cover">
+        <img src="<?php echo URL_PROJECT ?>/img/RegisterBackground.png" class="imagen-portada-perfil" alt="">
+        
+    <div>
+</div>
     <div class="container-header-usuario">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="datos-perfil-usuario">
-                        <img src="<?php echo URL_PROJECT?>/<?php echo $datos['perfil']->fotoPerfil?>" class="imagen-perfil-usuario" alt="">
-                        <?php if ($datos['usuario']->idusuario==$_SESSION['logueado']) : ?>
-                            <div class="imagen-perfil-cambiar">
-                                <form action="<?php echo URL_PROJECT?>/perfil/cambiarImagen" method="POST" enctype="multipart/form-data">
-                                    <i class="fas fa-camera"></i> 
-                                    <div class="input-file">
-                                        <input type="hidden" name="id_user" value="<?php echo $_SESSION['logueado']?>">
-                                        <input type="file" name="imagen" id="imagen">
-                                        
-                                    </div>
-                                    <div class="editar-perfil">
-                                        <button class="btn-change-image">Editar</button>
-                                    </div>
-                                </form>
-                            </div>
-                        <?php endif ?>
-                        <div class="datos-personales-usuario">
-                            <h3><?php echo ucwords ($datos['usuario']->usuario)?></h3>
-                            <div class="descripcion-usuario">
-                                <span><?php echo $datos['perfil']->nombreCompleto?></span>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="col-md-6"></div>
                     <div class="container-principal-informacion-usuario">
@@ -48,13 +26,15 @@ include_once URL_APP . '/view/custom/navbar.php';
                                         <textarea name="" id="" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
                                         <div class="image-upload-file">
                                             <div class="upload-photo">
-                                                <img src="<?php echo URL_PROJECT ?>/img/image.png" alt="" class="image-public">
-                                                <div class="input-file">
-                                                    <input type="file" name="imagen" id="imagen">
-                                                </div>
-                                                <span class="ml-1">Subir foto</span>    
+                                                <button class="btn btn-primary btn-block">
+                                                    <img src="<?php echo URL_PROJECT ?>/img/picture.png" alt="" class="image-public">
+                                                    <div class="input-file">
+                                                        <input type="file" name="imagen" id="imagen">
+                                                    </div>
+                                                    <span class="ml-1">Subir foto</span>    
+                                                </button>
+                                                <button class="btn btn-primary btn-block">Publicar</button>
                                             </div>
-                                            <button class="btn-publi">Publicar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -62,13 +42,14 @@ include_once URL_APP . '/view/custom/navbar.php';
                         </div>
                     </div>
                 </div>
-<div>
+
+    
     <h1>hola estas en mi perfil</h1>
 </div>
 
                 <div class="col-md-2">
                     <div class="container-usuario-contact">
-                        <a href="" class="btn-message"><span class="big"><i class="far fa-envelope"></i></span>Mensaje</a>
+                        <a href="" class="btn btn-primary btn-block"><span class="big"><i class="far fa-envelope"></i></span>Mensaje</a>
                     </div>
                 </div>
             </div>

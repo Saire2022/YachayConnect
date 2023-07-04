@@ -17,23 +17,46 @@ include_once URL_APP . '/view/custom/navbar.php';
               <h4>
                 <a href="<?php echo URL_PROJECT?>/perfil/index/<?php echo $datos['usuario']->usuario?>"><div class="text-center texto"></br><?php echo $datos['perfil']->nombreCompleto ?></div></a>
               </h4>
-                <a href="#" class="text center"><br>Publicaciones <br>0 | Me gustas <br>0</a>
+              <ul class="list-inline">
+                <li class="list-inline-item">Publicaciones <br> 0</li>
+                <li class="list-inline-item">|</li>
+                <li class="list-inline-item">Me gustas<br>0</li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <div class="containerP">
-            <a>Temas que te pueden interesar</a>
+        <!-- Interesting Information -->
+        <div class="containerCards">
+          <h4 class="text-center">Temas que te pueden interesar</h4>
+
+          <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+            <img src="<?php echo URL_PROJECT ?>/img/RegisterBackground.png" class="card-img-top" alt="TY en el Mundo">
+              <div class="card-body">
+                <h5 class="card-title">YT en el mundo!</h5>
+                <p class="card-text">En el siguiente apartado se puede observar a nuestros graduados alrededor de mundo.</p>
+                <a href="#" class="btn btn-primary center">Ver</a>
+              </div>
+          </div>
+
+          <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+            <img src="<?php echo URL_PROJECT ?>/img/RegisterBackground.png" class="card-img-top" alt="TY en el Mundo">
+              <div class="card-body">
+                <h5 class="card-title">YT en el mundo!</h5>
+                <p class="card-text">En el siguiente apartado se puede observar a nuestros graduados alrededor de mundo.</p>
+                <a href="#" class="btn btn-primary center">Ver</a>
+              </div>
+          </div>
+
+          <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+            <img src="<?php echo URL_PROJECT ?>/img/RegisterBackground.png" class="card-img-top" alt="TY en el Mundo">
+              <div class="card-body">
+                <h5 class="card-title">YT en el mundo!</h5>
+                <p class="card-text">En el siguiente apartado se puede observar a nuestros graduados alrededor de mundo.</p>
+                <a href="#" class="btn btn-primary center">Ver</a>
+              </div>
+          </div>
           
-            <div class="card">
-                <h4>TY en el mundo</h4>
-            </div>
-            <div class="card">
-                <a>Carreras mejor pagadas</a>
-            </div>
-            <div class="card">
-                <a>Graduados por carrera</a>
-            </div>
         </div>
       </div>
         

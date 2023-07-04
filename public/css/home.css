@@ -1,16 +1,17 @@
 :root {
-  --primary-color: #b6d5ea;
+  --primary-color: #c3d8f0;
   --font-size: 16px;
 }
 .containerP {
   position: relative;
   width: 325px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 2px;
-  margin-top: 20%;
+  margin-top: 10%;
   margin-right: 10%;
   margin-left: 0.5%;
   text-align: center;
@@ -89,7 +90,23 @@ body {
   color: #2f4d7d;
 }
 
+/* Container Cards */
 
+
+.containerCards {
+  position: relative;
+  width: 325px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2px;
+  margin-top: 5%;
+  margin-right: 10%;
+  margin-left: 0.5%;
+  text-align: cent
+}
 /* COLUMNA PRINCIPAL */
 
 .containerHP {
