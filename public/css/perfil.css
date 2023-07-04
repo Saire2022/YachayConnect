@@ -23,16 +23,26 @@
   margin-top: 35px;
 }
 .editar-perfil{
+<<<<<<< HEAD
   position: absolute;
   right: 40px;
 }
 /* Estilos de la imagen de perfil al pasar el cursor */
 .imagen-perfil-cambiar:hover {
   color: #4f406b;
+=======
+    position: absolute;
+    right: 40px;
+}
+/* Estilos de la imagen de perfil al pasar el cursor */
+.imagen-perfil-cambiar:hover {
+    color: #4f406b;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del contenedor de los datos de perfil del usuario */
 .datos-perfil-usuario {
+<<<<<<< HEAD
   width: 100%;
   background-color: #ffffff;
   display: flex;
@@ -40,40 +50,75 @@
   padding: 20px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
+=======
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del botón de cambiar imagen de perfil */
 .btn-change-image {
+<<<<<<< HEAD
   border: 0;
   border-radius: 10px;
   background-color: #926dde;
   color: #ffffff;
+=======
+    border: 0;
+    border-radius: 10px;
+    background-color: #926dde;
+    color: #ffffff;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del contenedor principal del usuario en el encabezado */
 .container-header-usuario {
+<<<<<<< HEAD
   width: 100%;
+=======
+    width: 100%;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del contenedor principal de la información del usuario */
 .container-principal-informacion-usuario {
+<<<<<<< HEAD
   margin-top: 35px;
+=======
+    margin-top: 35px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del botón de editar perfil */
 .editar-perfil {
+<<<<<<< HEAD
   position: absolute;
   right: 40px;
+=======
+    position: absolute;
+    right: 40px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del contenedor de los mensajes del usuario */
 .container-usuario-contact {
+<<<<<<< HEAD
   text-align: center;
   margin-top: 20px;
+=======
+    text-align: center;
+    margin-top: 20px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del botón de mensaje */
 .btn-message {
+<<<<<<< HEAD
   display: inline-block;
   padding: 10px 20px;
   border: none;
@@ -81,95 +126,178 @@
   background-color: #926dde;
   color: #ffffff;
   text-decoration: none;
+=======
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #926dde;
+    color: #ffffff;
+    text-decoration: none;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del ícono del botón de mensaje */
 .btn-message i {
+<<<<<<< HEAD
   margin-right: 5px;
+=======
+    margin-right: 5px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos de la imagen de portada del perfil */
 .imagen-header-perfil-usuario {
+<<<<<<< HEAD
   width: 100%;
 }
 
 .imagen-portada-perfil {
   width: 100%;
+=======
+    width: 100%;
+}
+
+.imagen-portada-perfil {
+    width: 100%;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos de la imagen de perfil del usuario */
 .imagen-perfil-usuario {
+<<<<<<< HEAD
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+=======
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos de la descripción del usuario */
 .descripcion-usuario {
+<<<<<<< HEAD
   margin-top: 10px;
+=======
+    margin-top: 10px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del nombre del usuario */
 .descripcion-usuario span {
+<<<<<<< HEAD
   font-size: 18px;
   font-weight: bold;
+=======
+    font-size: 18px;
+    font-weight: bold;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del contenedor principal de las publicaciones */
 .container-usuario-publicar {
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   margin-top: 20px;
+=======
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos de la imagen de perfil en las publicaciones */
 .image-border {
+<<<<<<< HEAD
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 10px;
+=======
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del formulario de publicación */
 .form-publicar {
+<<<<<<< HEAD
   flex: 1;
   margin: 0;
+=======
+    flex: 1;
+    margin: 0;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del campo de texto para las publicaciones */
 .published {
+<<<<<<< HEAD
   width: 100%;
   border: none;
   border-radius: 5px;
   padding: 10px;
   resize: none;
+=======
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del contenedor de subida de fotos en las publicaciones */
 .image-upload-file {
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   margin-top: 10px;
+=======
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del contenedor de la imagen y botón de subir foto */
 .upload-photo {
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   cursor: pointer;
+=======
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del ícono de subir foto */
 .image-public {
+<<<<<<< HEAD
   width: 20px;
   height: 20px;
   margin-right: 5px;
+=======
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del botón de publicar */
 .btn-publi {
+<<<<<<< HEAD
   border: none;
   border-radius: 5px;
   background-color: #926dde;
@@ -177,16 +305,31 @@
   padding: 5px 10px;
   margin-left: 10px;
   cursor: pointer;
+=======
+    border: none;
+    border-radius: 5px;
+    background-color: #926dde;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del contenedor de mensajes */
 .container-usuario-contact {
+<<<<<<< HEAD
   margin-top: 20px;
   text-align: center;
+=======
+    margin-top: 20px;
+    text-align: center;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del botón de mensaje */
 .btn-message {
+<<<<<<< HEAD
   display: inline-block;
   padding: 10px 20px;
   border: none;
@@ -194,9 +337,23 @@
   background-color: #926dde;
   color: #ffffff;
   text-decoration: none;
+=======
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #926dde;
+    color: #ffffff;
+    text-decoration: none;
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
 }
 
 /* Estilos del ícono del botón de mensaje */
 .btn-message i {
+<<<<<<< HEAD
   margin-right: 5px;
 }
+=======
+    margin-right: 5px;
+}
+>>>>>>> 1844868651bac3763033b4d8f3893ed174865b50
