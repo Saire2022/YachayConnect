@@ -2,6 +2,10 @@
 
 include_once URL_APP . '/view/custom/header.php';
 include_once URL_APP . '/view/custom/navbar.php';
+<<<<<<< HEAD
+#var_dump($datos['usuario']);
+=======
+>>>>>>> c50d65db0154c0f023a14d3703349b2302b3ad71
 ?>
 
 <div class="perfil-container-usuario">

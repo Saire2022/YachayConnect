@@ -10,13 +10,17 @@ include_once URL_APP . '/view/custom/navbar.php';
         <!-- Columna perfil -->
         <div class="col-md-3">
 
-            <div class="container-style-main">
-                <div class="perfil-usuario-main">
-                    <div class="background-usuario-main"></div>
-                    <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="" width="30px" height="30px">
+            <div class="containerP">
+                <div class="card">
+                    <div class="imgBx"></div>
+                    <a href="#">
+                      <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="" width="30px" height="30px">
+                    </a>
                     <div class="foto-separation"></div>
 
+
                     <a href="<?php echo URL_PROJECT?>/perfil/index/<?php echo $datos['usuario']->usuario?>"><div class="text-center nombre-perfil"><?php echo $datos['perfil']->nombreCompleto ?></div></a>
+
                     <div class="tabla-estadisticas"></div>
                         <a href="#">Publicaciones <br>0</a>
                         <a href="#">Me gustas <br>0</a>
@@ -31,8 +35,9 @@ include_once URL_APP . '/view/custom/navbar.php';
           <a>TY en el mundo</a>
         </div>
       </div>
-
     </div>
+      
+
 
     <!-- Columna principal -->
     <div class="col-md-6">
@@ -40,7 +45,7 @@ include_once URL_APP . '/view/custom/navbar.php';
         <a href="<?php echo URL_PROJECT?>/perfil"><img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt="" width="30px" height="30px"></a>
         <form action="" class="form-publicar ml-2">
           <textarea name="" id="" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
-          <div class="image-upload-file">
+          <div class="imgBx">
             <div class="upload-photo">
               <img src="<?php echo URL_PROJECT ?>/img/image.png" alt="" class="image-public">
               <div class="input-file">
@@ -52,7 +57,6 @@ include_once URL_APP . '/view/custom/navbar.php';
           </div>
         </form>
       </div>
-      <div class="container-usuarios-publicaciones"></div>
     </div>
   </div>
 </div>
