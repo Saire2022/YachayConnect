@@ -9,7 +9,7 @@ class Perfil extends Controller
     public function index($user)
     {
         if (isset($_SESSION['logueado'])){
-            $datosUsuario= $this->usuario->getUsuario("A0204");
+            $datosUsuario= $this->usuario->getUsuario($user);
             $datosPerfil= $this->usuario->getPerfil($datosUsuario->idusuario);
             $datos=[
                 'perfil'=> $datosPerfil,

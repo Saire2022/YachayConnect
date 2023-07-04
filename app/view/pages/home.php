@@ -17,7 +17,6 @@ include_once URL_APP . '/view/custom/navbar.php';
                     <div class="foto-separation"></div>
 
                     <a href="<?php echo URL_PROJECT?>/perfil/index/<?php echo $datos['usuario']->usuario?>"><div class="text-center nombre-perfil"><?php echo $datos['perfil']->nombreCompleto ?></div></a>
-                    <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>"><div class="text-center nombre-perfil"><?php echo $datos['perfil']->nombreCompleto ?></div></a>
                     <div class="tabla-estadisticas"></div>
                         <a href="#">Publicaciones <br>0</a>
                         <a href="#">Me gustas <br>0</a>
