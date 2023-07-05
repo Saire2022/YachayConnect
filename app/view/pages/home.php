@@ -1,7 +1,7 @@
 <?php
 include_once URL_APP . '/view/custom/header.php';
 include_once URL_APP . '/view/custom/navbar.php';
-//var_dump($datos['usuario']);
+
 ?>
 
 <body>
@@ -66,28 +66,47 @@ include_once URL_APP . '/view/custom/navbar.php';
       <div class="col-md-6">
         <div class="ContainerPublic">
           <a href="<?php echo URL_PROJECT?>/perfil"><img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt="" width="30px" height="30px"></a>
-          <form action="" class="form-publicar ml-2">
-            <textarea name="" id="" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
+          <form action="<?php echo URL_PROJECT ?>/publicaciones/publicar/<?php echo $datos['usuario']-> idusuario?>" method="POST" enctype="multipart/form-data" class="form-publicar ml-2">
+            <textarea name="contenido" id="contenido" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
             <div class="imgBx">
               <div class="upload-photo">
                 <button class="btn btn-primary btn-block">
                   <img src="<?php echo URL_PROJECT ?>/img/picture.png" alt="" class="image-public">
                   <div class="input-file">
-                    <input type="file" name="imagen" id="imagen">
+                  <input type="file" name="imagen" id="imagen">
                   </div>
                     Subir foto
                 </button>
-
+                
+                <input type="file" name="imagen" id="imagen">
                 <button class="btn btn-primary btn-block">Publicar</button>
               </div>
             </div>
           </form>
         </div>
+        <!-- Esto es para el cajon de las publicaciones -->
+        <?php foreach ($datos['publicaciones'] as $datosPublicacion) :?>
+          <div class="container-usuarios-publicaciones">
+            <div class="usuarios-publicaciones-top">
+              <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPerfil?>" alt="" class="image-border">
+              <div class="informacion-usuario-publico">
+                <h6 class="mb-0"><a href="<?php echo URL_PROJECT?>/perfil/index/<?php echo $datosPublicacion->usuario?>"><?php echo ucwords
+                ($datosPublicacion->usuario)?></a></h6>
+                <span><?php echo $datosPublicacion->fechaPublicacion?></span>
+              </div>
+            </div>
+            <div class="cotenido-pubicacion-usuario">
+                <p class="mb-1"><?php echo $datosPublicacion-> contenidoPublicacion?></p>
+                <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion?>" alt="" class="imagen-publicacion-usuario">
+            </div>
+          </div>
+          <?php endforeach ?>
       </div>
-
     </div>
   </div>
 </body>
+
 <?php
+#var_dump($datos['publicaciones']);
 include_once URL_APP . '/view/custom/footer.php';
 ?>

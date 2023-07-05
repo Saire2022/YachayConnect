@@ -5,6 +5,7 @@ class Home extends Controller
     public function __construct()
     {
         $this->usuario = $this->model("usuario");
+        $this->publicaciones = $this->model("publicar");
     }
     
     public function index()
@@ -13,10 +14,12 @@ class Home extends Controller
         {
             $datosUsuario= $this->usuario->getUsuario($_SESSION['usuario']);
             $datosPefil= $this->usuario->getPerfil($_SESSION['logueado']);
+            $datosPublicaciones= $this->publicaciones->getPublicaciones();
             if ($datosPefil){
                 $datosRed = [
                     'usuario' => $datosUsuario,
-                    'perfil' => $datosPefil
+                    'perfil' => $datosPefil,
+                    'publicaciones'=>$datosPublicaciones 
                 ];
                 /* var_dump($datosRed['perfil']); */
                 $this->view('pages/home', $datosRed);
