@@ -77,6 +77,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                   </div>
                     Subir foto
                 </button>
+                <input type="file" name="imagen" id="imagen">
 
                 <button class="btn btn-primary btn-block">Publicar</button>
               </div>
