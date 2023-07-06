@@ -29,4 +29,36 @@ class Publicaciones extends Controller
             echo 'Algo ocurrio';
         }
     }
+    public function eliminar($idpublicacion)
+    {
+        $publicacion= $this->publicar->getPublicaion($idpublicacion);
+        var_dump($publicacion);
+        if($this->publicar->eliminarPublicacion($publicacion)){
+            unlink('C:/xampp/htdocs/YachayConnect/public/' . $publicacion->fotoPublicacion);
+            redirection('/home');
+        }else{
+
+        }
+    }
+    public function megusta($idpublicacion, $idusuario)
+    {
+        $datos=[
+            'idpublicacion'=>$idpublicacion,
+            'idusuario'=>$idusuario
+        ];
+
+        $datosPublicacion= $this->publicar->getPublicacion($idpublicacion);
+        #var_dump($datosPublicacion);
+        if ($this->publicar->rowLikes($datos)){
+            if ($this->publicar->eliminarLike($datos)){
+                $this->publicar->deleteLikeCount($datosPublicacion);
+            }
+            redirection('/home');
+        }else {
+            if ($this->publicar->agregarLike($datos)){
+                $this->publicar->addLikeCount($datosPublicacion);
+            }
+            redirection('/home');
+        }
+    }
 }

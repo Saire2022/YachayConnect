@@ -15,11 +15,13 @@ class Home extends Controller
             $datosUsuario= $this->usuario->getUsuario($_SESSION['usuario']);
             $datosPefil= $this->usuario->getPerfil($_SESSION['logueado']);
             $datosPublicaciones= $this->publicaciones->getPublicaciones();
+            $verificarLikes = $this->publicaciones->misLikes($_SESSION['logueado']);
             if ($datosPefil){
                 $datosRed = [
                     'usuario' => $datosUsuario,
                     'perfil' => $datosPefil,
-                    'publicaciones'=>$datosPublicaciones 
+                    'publicaciones'=>$datosPublicaciones,
+                    'misLikes'=> $verificarLikes 
                 ];
                 /* var_dump($datosRed['perfil']); */
                 $this->view('pages/home', $datosRed);

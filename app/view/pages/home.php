@@ -94,10 +94,26 @@ include_once URL_APP . '/view/custom/navbar.php';
                 ($datosPublicacion->usuario)?></a></h6>
                 <span><?php echo $datosPublicacion->fechaPublicacion?></span>
               </div>
+              <div class =" acciones-publicacion-usuario">
+                <a href="<?php echo URL_PROJECT?>/publicaciones/eliminar/<?php echo $datosPublicacion->idpublicacion?>"><i class="far fa-trash-alt"></i></a>
+              </div>
             </div>
             <div class="cotenido-pubicacion-usuario">
                 <p class="mb-1"><?php echo $datosPublicacion-> contenidoPublicacion?></p>
                 <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion?>" alt="" class="imagen-publicacion-usuario">
+            </div>
+            <hr>
+            <div class="acciones-usuario-publicar mt-2">
+              <a href="<?php echo URL_PROJECT ?>/publicaciones/megusta/<?php echo $datosPublicacion->idpublicacion . '/' . $_SESSION['logueado']?>"
+              class="<?php if (isset($datosPublicacion->idpublicacion) && isset($datos['misLikes']) && is_array($datos['misLikes'])) {
+                     foreach ($datos['misLikes'] as $misLikesUser){
+                      if ($misLikesUser->idPublicacion==$datosPublicacion->idpublicacion){
+                        echo 'like-active';
+                      }
+                    }
+                    }?>
+              "><i class="fas fa-heart mr-1"></i>Me gusta <span><?php echo $datosPublicacion->num_likes?></span></a>
+              <a href=""><i class="fas fa-comment-alt mr-1"></i>Comentar</a>
             </div>
           </div>
           <?php endforeach ?>
