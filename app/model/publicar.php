@@ -144,4 +144,36 @@ class publicar
             return false;
         }
     }
+     public function addNotificacionLike($datos)
+     {
+        $this->db->query('INSERT INTO notificaciones (idUsuario,tipoNotificaion,usuarioAccion) VALUES (:idusuario,:tipo,:usuarioAccion)');
+        $this->db->bind(':idusuario',$datos['idusuarioPropietario']);
+        $this->db->bind(':tipo',1);
+        $this->db->bind(':usuarioAccion',$datos['idusuario']);
+        if ($this->db->execute()){
+            return true;
+        }else {
+            return false;
+        }
+     }
+      public function addNotificacionComentario($datos)
+      {
+        $this->db->query('INSERT INTO notificaciones (idUsuario,tipoNotificaion,usuarioAccion) VALUES (:idusuario,:tipo,:usuarioAccion)');
+        $this->db->bind(':idusuario',$datos['iduserPropietario']);
+        $this->db->bind(':tipo',2);
+        $this->db->bind(':usuarioAccion',$datos['iduser']);
+        if ($this->db->execute()){
+            return true;
+        }else {
+            return false;
+        }
+      }
+
+      public function getNotificaciones($id)
+      {
+        $this->db->query('SELECT idnotificacion FROM notificaciones WHERE idUsuario =:id');
+        $this->db->bind(':id',$id);
+        $this->db->execute();
+        return $this->db->rowCount();
+      }
 }

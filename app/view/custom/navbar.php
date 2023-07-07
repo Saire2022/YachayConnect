@@ -20,7 +20,13 @@
                     </form>
                     <div class="navbar-nav ml-auto">
                         <a class="nav-link text-white" href="#"><span class="big"><i class="fa fa-envelope"></i></span><span class="mb-0 ml-1">Mensajes</span></a>
-                        <a class="nav-link text-white" href="#"><span class="big"><i class="fa fa-bell"></i></span><span class="mb-0 ml-1">Notificaciones</span></a>
+                        <a class="nav-link text-white" href="#"><span class="big"><i class="fa fa-bell"></i></span>
+                        <span class="mb-0 ml-1">Notificaciones 
+                            <?php if ($datos['misNotificaciones']>0):?>
+                            <?php echo $datos['misNotificaciones']?>
+                            <?php endif?>
+                        </span>
+                        </a>
                         <div class="dropdown">
                             <a class="btn-radio dropdown-toggle text-white" id="actionPerfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
                                 <img class="profile-image" src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="perfil">

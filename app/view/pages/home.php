@@ -108,7 +108,8 @@ include_once URL_APP . '/view/custom/navbar.php';
             <hr>
             <!-- likes -->
             <div class="acciones-usuario-publicar mt-2">
-              <a href="<?php echo URL_PROJECT ?>/publicaciones/megusta/<?php echo $datosPublicacion->idpublicacion . '/' . $_SESSION['logueado']?>"
+              <a href="<?php echo URL_PROJECT ?>/publicaciones/megusta/<?php echo $datosPublicacion->idpublicacion . '/' . $_SESSION['logueado'] . '/'
+              . $datosPublicacion->idusuario?>"
               class="
                      
                      <? foreach ($datos['misLikes'] as $misLikesUser){
@@ -125,6 +126,7 @@ include_once URL_APP . '/view/custom/navbar.php';
               <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil?>" alt="" class='image-border mr-2'>
               <div class="acciones-formulario-comentario">
                 <form action="<?php echo URL_PROJECT ?>/publicaciones/comentar" method="POST">
+                  <input type="hidden" name="iduserPropietario" value="<?php echo $datosPublicacion->idusuario?>">
                   <input type="hidden" name="iduser" value="<?php echo $datos['usuario']->idusuario?>">
                   <input type="hidden" name="idpublicacion" value="<?php echo $datosPublicacion->idpublicacion?>">
                   <input type="text" name="comentario"class='form-comentario-usuario' placeholder="Agregar un comentario">
@@ -163,5 +165,6 @@ include_once URL_APP . '/view/custom/navbar.php';
 </body>
 
 <?php
+
 include_once URL_APP . '/view/custom/footer.php';
 ?>
