@@ -31,7 +31,7 @@ class Publicaciones extends Controller
     }
     public function eliminar($idpublicacion)
     {
-        $publicacion= $this->publicar->getPublicaion($idpublicacion);
+        $publicacion= $this->publicar->getPublicacion($idpublicacion);
         var_dump($publicacion);
         if($this->publicar->eliminarPublicacion($publicacion)){
             unlink('C:/xampp/htdocs/YachayConnect/public/' . $publicacion->fotoPublicacion);
@@ -58,6 +58,33 @@ class Publicaciones extends Controller
             if ($this->publicar->agregarLike($datos)){
                 $this->publicar->addLikeCount($datosPublicacion);
             }
+            redirection('/home');
+        }
+    }
+
+    public function comentar()
+    {
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $datos=[
+                'iduser'=>trim($_POST['iduser']),
+                'idpublicacion'=>trim($_POST['idpublicacion']),
+                'comentario'=>trim($_POST['comentario'])
+            ];
+            if ( $this->publicar->publicarComentario($datos)){
+                redirection('/home');
+            }else{
+                redirection('/home');
+            }
+        }else{
+            redirection('/home');
+        }
+    }
+
+    public function eliminarComentario($id)
+    {
+        if($this->publicar->eliminarComentarioUsuario($id)){
+            redirection('/home');
+        }else{
             redirection('/home');
         }
     }

@@ -116,6 +116,12 @@ body {
   border-radius: 20px;
   margin-top: 20%;
 }
+.like-active{
+  color: #926dde;
+}
+.like-user:hover{
+  color: #926dde;
+}
 
 .ContainerPublic{
   position: relative; /* Agrega posición relativa al contenedor principal */
@@ -123,6 +129,9 @@ body {
   padding: 10px;
   border-radius: 20px;
   margin-top: 10%;
+}
+.float-right {
+  float: right;
 }
 
 .btn-publi {
