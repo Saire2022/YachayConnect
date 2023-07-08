@@ -23,7 +23,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                                         <input type="file" name="imagen" id="imagen" style="display: none;">
 
                                         <div class="editar-perfil">
-                                                <button class="btn-change-image">Editar</button>
+                                                <button class="btn btn-primary btn-block">Editar</button>
                                             </div>
                                         <div class="input-file">
                                             <input type="hidden" name="id_user" value="<?php echo $_SESSION['logueado']?>">
@@ -47,31 +47,32 @@ include_once URL_APP . '/view/custom/navbar.php';
             <!-- Publicar -->
             <div class="col-md-6">
                 <div class="ContainerPublic">
-                    <a href="<?php echo URL_PROJECT?>/perfil/index/<?php echo $datos['usuario']->usuario?>"><img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt="" width="30px" height="30px"></a>
-                    <form action="<?php echo URL_PROJECT ?>/publicaciones/publicar/<?php echo $datos['usuario']-> idusuario?>" method="POST" enctype="multipart/form-data" class="form-publicar ml-2">
-                        <textarea name="contenido" id="contenido" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
-                        <div class="imgBx">
-                        <div class="upload-photo">
-                            <button class="btn btn-primary btn-block">
-                            <img src="<?php echo URL_PROJECT ?>/img/picture.png" alt="" class="image-public">
-                            <div class="input-file">
-                            <input type="file" name="imagen" id="imagen">
-                            </div>
-                                Subir foto
-                            </button>
-                            
-                            <input type="file" name="imagen" id="imagen">
-                            <button class="btn btn-primary btn-block">Publicar</button>
+                    <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
+                            <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>">
+                            <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt=""></a>
+                            <form action="" class="form-publicar ml-2">
+                                <textarea name="" id="" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
+                                <div class="imgBx">
+                                    <div class="upload-photo">
+                                        <label for="imagen" class="btnSubirFoto">
+                                            <div class="upload-photo">
+                                                <img src="<?php echo URL_PROJECT ?>/img/picture.png" alt="" class="image-public">
+                                                <span class="btn btn-primary btn-block">Subir foto</span>    
+                                            </div>
+                                        </label>
+                                        <button class="btn btn-primary btn-block">Publicar</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        </div>
-                    </form>
-                </div>
-
+                    <?php endif ?>  
+                </div>      
+            </div>
             <!-- Mensajeria -->  
 
             <!-- <div class="col-md-1">
                 <div class="container-usuario-contact">
-                    <a href="" class="btn-message"><span class="big"><i class="far fa-envelope"></i></span>Mensaje</a>
+                    <a href="" class="btn btn-primary btn-block"><span class="big"><i class="far fa-envelope"></i></span>Mensaje</a>
                 </div>
             </div> -->
             <!-- <?php var_dump($datos['publicaciones'][0]->idUserPublico);?>

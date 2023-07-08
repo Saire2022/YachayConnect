@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2023 a las 07:11:22
+-- Tiempo de generación: 07-07-2023 a las 06:09:37
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -31,8 +31,17 @@ CREATE TABLE `comentarios` (
   `idcomentario` int(11) NOT NULL,
   `idPublicacion` int(11) NOT NULL,
   `contenidoComentario` longtext NOT NULL,
-  `fechaComentario` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `fechaComentario` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `idUser` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`idcomentario`, `idPublicacion`, `contenidoComentario`, `fechaComentario`, `idUser`) VALUES
+(7, 10, 'bonitas papas', '2023-07-07 00:51:47', 2),
+(8, 10, 'Papas, me gustan las papas', '2023-07-07 01:01:29', 3);
 
 -- --------------------------------------------------------
 
@@ -42,8 +51,18 @@ CREATE TABLE `comentarios` (
 
 CREATE TABLE `likes` (
   `idlike` int(11) NOT NULL,
-  `idPublicacion` int(11) NOT NULL
+  `idPublicacion` int(11) NOT NULL,
+  `idUser` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `likes`
+--
+
+INSERT INTO `likes` (`idlike`, `idPublicacion`, `idUser`) VALUES
+(19, 10, 2),
+(20, 10, 1),
+(21, 10, 3);
 
 -- --------------------------------------------------------
 
@@ -88,6 +107,15 @@ CREATE TABLE `perfil` (
   `fotoPerfil` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `perfil`
+--
+
+INSERT INTO `perfil` (`idperfil`, `Carrer`, `Salary`, `Major`, `idUsuario`, `PaisActual`, `nombreCompleto`, `fotoPerfil`) VALUES
+(1, 'Ingeniro', 1500.56, 'TICS', 1, 'Ecuador', 'Santiago Alexander Ajala Ramos', 'img/imagenesPefil/zebra_bw.png'),
+(2, 'Ingeniro', 1500.56, 'TICS', 2, 'Dinamarca', 'AJALA RAMOS SANTIAGO ALEXANDER', 'img/imagenesPefil/IMG-20221113-WA0078.jpg'),
+(3, 'Ingeniro', 300.58, 'Biologia', 3, 'Inglaterra', 'Angelita Ramos Chachalo', 'img/imagenesPefil/IMG_20221028_091754.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -119,8 +147,17 @@ CREATE TABLE `publicaciones` (
   `idpublicacion` int(11) NOT NULL,
   `idUserPublico` int(11) NOT NULL,
   `contenidoPublicacion` longtext NOT NULL,
-  `fechaPublicacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `fechaPublicacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `fotoPublicacion` varchar(255) NOT NULL,
+  `num_likes` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `publicaciones`
+--
+
+INSERT INTO `publicaciones` (`idpublicacion`, `idUserPublico`, `contenidoPublicacion`, `fechaPublicacion`, `fotoPublicacion`, `num_likes`) VALUES
+(10, 1, 'hola dale like y comenta', '2023-07-07 01:01:19', 'img/imagenesPublicaciones/potato_2.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -151,6 +188,15 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idusuario`, `idPrivilegio`, `correo`, `BrithDay`, `usuario`, `contrasena`, `fecha_registro`) VALUES
+(1, 2, 'santiagoajala95@gmail.com', '0000-00-00', 'A0204', '$2y$10$cu8YDJhtG24Q6b9e.SAQiOXxamnmQI.kkerO8OmcQb5ar0bFn682y', '2023-07-04 05:13:04'),
+(2, 2, 'santiago.ajala@yachaytech.edu.ec', '0000-00-00', 'santiago123', '$2y$10$XM09.HilkmmRGUfkM2Ps..eXSP3G4YqZv87fDAjLycJF9EyoFbYg2', '2023-07-04 13:41:41'),
+(3, 2, 'ramos1961@gmail.com', '0000-00-00', 'Angelita123', '$2y$10$OAKcHWk42St1NJYO7b7KSeKLVZkcDDmCY.pQvVQOhOtfgueDjNCUi', '2023-07-07 01:00:05');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -159,14 +205,16 @@ CREATE TABLE `usuarios` (
 --
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`idcomentario`),
-  ADD KEY `comentarioPublicacion_idx` (`idPublicacion`);
+  ADD KEY `comentarioPublicacion_idx` (`idPublicacion`),
+  ADD KEY `fkey_iduser` (`idUser`);
 
 --
 -- Indices de la tabla `likes`
 --
 ALTER TABLE `likes`
   ADD PRIMARY KEY (`idlike`),
-  ADD KEY `publiLikes_idx` (`idPublicacion`);
+  ADD KEY `publiLikes_idx` (`idPublicacion`),
+  ADD KEY `fk_iduser` (`idUser`);
 
 --
 -- Indices de la tabla `mensajes`
@@ -224,13 +272,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `idcomentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `idlike` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idlike` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajes`
@@ -248,7 +296,7 @@ ALTER TABLE `notificaciones`
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `idperfil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idperfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `privilegios`
@@ -260,7 +308,7 @@ ALTER TABLE `privilegios`
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `idpublicacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpublicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `tiposnotificaciones`
@@ -272,7 +320,7 @@ ALTER TABLE `tiposnotificaciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -282,13 +330,15 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  ADD CONSTRAINT `comentarioPublicacion` FOREIGN KEY (`idPublicacion`) REFERENCES `publicaciones` (`idpublicacion`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `comentarioPublicacion` FOREIGN KEY (`idPublicacion`) REFERENCES `publicaciones` (`idpublicacion`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fkey_iduser` FOREIGN KEY (`idUser`) REFERENCES `usuarios` (`idusuario`);
 
 --
 -- Filtros para la tabla `likes`
 --
 ALTER TABLE `likes`
-  ADD CONSTRAINT `publiLikes` FOREIGN KEY (`idPublicacion`) REFERENCES `publicaciones` (`idpublicacion`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_iduser` FOREIGN KEY (`idUser`) REFERENCES `usuarios` (`idusuario`),
+  ADD CONSTRAINT `publiLikes` FOREIGN KEY (`idPublicacion`) REFERENCES `publicaciones` (`idpublicacion`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `mensajes`
