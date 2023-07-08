@@ -15,6 +15,7 @@
   margin-right: 10%;
   margin-left: 0.5%;
   text-align: center;
+  
 
 }
 body {
@@ -25,17 +26,24 @@ body {
   min-height: 100vh;
   background-color: #e1e5e9;
 }
+.scrollable-column {
+  overflow-y: hidden;
+}
+
+.scrollable-column:hover {
+  overflow-y: auto;
+}
 
 .containerP .card {
-  width: 400px;
-  position: relative;
+  position:absolute;
+  width: 300px;
   height: 150px;
   background-color: var(--primary-color);
   margin: 30px 10px;
   padding: 20px 15px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0.5px 20px #e6e6e6;
+  box-shadow: 0.5px 2px 20px #192e67;
   transition: 0.3s ease-in-out;
   margin-top: -5%;
   border-radius: 20px;
@@ -48,15 +56,16 @@ body {
   height: 300px;
   top: -20px;
   left: -15px;
-  box-shadow: 0.5px 2px 20px #e0e6f7;
+  box-shadow: 0.5px 2px 20px #192e67;
   border-radius: 20px;
   border: 2px solid #ccc;
 
 }
 
 .containerP .card .imgBx img {
-  width: 50%;
-  height: auto;
+  width: 145px;
+  height: 145px;
+  margin-right: 5px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -89,8 +98,9 @@ body {
   font-family: Arial, sans-serif;
   color: #2f4d7d;
 }
-
-/* Container Cards */
+/* ------------------------------------------------------------------------ */
+/* ----------------------------------CONTAINER CARDS ----------------------*/
+/* -------------------------------------------------------------------------- */
 
 
 .containerCards {
@@ -107,7 +117,9 @@ body {
   margin-left: 0.5%;
   text-align: cent
 }
-/* COLUMNA PRINCIPAL */
+/* ------------------------------------------------------------------------ */
+/* ----------------------------------PRINCIPAL COLUMN ----------------------*/
+/* -------------------------------------------------------------------------- */
 
 .containerHP {
   position: relative; /* Agrega posición relativa al contenedor principal */
@@ -115,12 +127,7 @@ body {
   padding: 10px;
   border-radius: 20px;
   margin-top: 20%;
-}
-.like-active{
-  color: #926dde;
-}
-.like-user:hover{
-  color: #926dde;
+  box-shadow: 0.5px 2px 20px #192e67;
 }
 
 .ContainerPublic{
@@ -129,32 +136,33 @@ body {
   padding: 10px;
   border-radius: 20px;
   margin-top: 10%;
+  
 }
 .float-right {
   float: right;
 }
 
-.btn-publi {
-  background-color: #1877f2;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+.upload-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
   cursor: pointer;
-  float: right;
+  z-index: 2;
 }
-.btn-subir{
-    background-color: #1877f2;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    float: left;
+
+.image-public {
+  vertical-align: middle;
+  margin-right: 5px;
 }
-.btn-subir:hover {
-  background-color: #ffffff; /* Cambia el color de fondo cuando el cursor esté sobre el botón */
-}
+
 
 .image-border {
   border-radius: 50%;
@@ -174,13 +182,7 @@ body {
   margin-bottom: 10px;
 }
 
-.upload-photo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  width: 100%;
-}
+
 
 .image-public {
   width: 20px;
@@ -203,4 +205,209 @@ body {
   height: 100%;
   cursor: pointer;
 }
+/* ---------------------------------------------------- -------*/
+/* --------------CONTENEDOR PUBLICACIONES---------------------- */
+/* ------------------------------------------------------- -------*/
 
+
+.PubContainer {
+  position: relative;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 1%;
+  background:#e0e6f7;
+  
+}
+
+/* Agrega estilos a los contenedores secundarios */
+.PubContainer > * {
+  margin-bottom: 10px; /* Espacio entre los contenedores secundarios */
+}
+
+.container-usuarios-publicaciones{
+  position: relative;
+  height: 730px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #fcfcfc; 
+  /* --------- */
+  padding: 10px;
+  margin-top: 1%;
+  box-shadow: 0.5px 2px 20px #192e67;
+
+  
+}
+.upload-photo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: auto;
+}
+.cotenidoPhoto{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 400px;
+  padding: auto;
+}
+
+/* -------------------------------------------- -------*/
+/* --------------------LIKES-------------------------- */
+/* -------------------------------------------- ----------*/
+.like-button {
+  color: black; /* Color por defecto del corazón */
+  transition: color 0.2s ease-in-out; /* Transición suave al cambiar de color */
+}
+
+.like-button:hover {
+  color: red; /* Color al pasar el cursor sobre el botón */
+}
+
+.like-active {
+  color: red; /* Color cuando el botón está activo (ya se dio like) */
+}
+
+/* -------------------------------------------- -------*/
+/* --------------------COMENTAR-------------------------- */
+/* -------------------------------------------- ----------*/
+
+
+.formulario-comentarios {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.image-borderComent {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: -40px;
+}
+
+.acciones-formulario-comentario {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.form-comentario-usuario {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.btn-comentario-container {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.btn-purple {
+  background-color:#1877f2;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-purple:hover {
+  background-color:#1877f2;
+}
+
+/* -------------------------------------------- ------------------*/
+/* --------------------COMENTARIOS-------------------------- ------*/
+/* -------------------------------------------- ------------------*/
+.comentarios-publicacion {
+  position: relative;
+  margin-top: 10px;
+  max-width: 700px;
+  height: 300px;
+  background-color: #ffd9bc;
+  padding: 1%;
+  text-align: center;
+  overflow: auto;
+}
+
+.comentario-reciente {
+  margin-bottom: 10px;
+}
+
+.comentarios-ocultos {
+  display: none;
+}
+
+.ver-mas-comentarios {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn-purple {
+  background-color:#1877f2;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-purple:hover {
+  background-color:#1877f2;
+}
+
+.image-border {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contianer-contenido-comentario {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  box-shadow: 0.5px 2px 20px #192e67;
+
+}
+.contianer-contenido-comentario:hover {
+  border-color: #667991; /* Cambiar por el color deseado */
+}
+
+.contenido-comentario-usuario {
+  flex-grow: 1;
+}
+
+
+.big {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.float-right {
+  float: right;
+  color: red;
+  font-size: 16px;
+}
+
+.float-right:hover {
+  color: darkred;
+}
+
+
+.comentarios-publicacion .comentario-reciente {
+  display: block;
+}
+
+.comentarios-publicacion .comentarios-ocultos {
+  display: none;
+}

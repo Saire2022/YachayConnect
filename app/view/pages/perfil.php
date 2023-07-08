@@ -23,7 +23,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                                         <input type="file" name="imagen" id="imagen" style="display: none;">
 
                                         <div class="editar-perfil">
-                                                <button class="btn-change-image">Editar</button>
+                                                <button class="btn btn-primary btn-block">Editar</button>
                                             </div>
                                         <div class="input-file">
                                             <input type="hidden" name="id_user" value="<?php echo $_SESSION['logueado']?>">
@@ -46,32 +46,34 @@ include_once URL_APP . '/view/custom/navbar.php';
 
             <!-- Publicar -->
             <div class="col-md-6">
-                <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
-                    <div class="container-usuario-publicar">
-                        <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>">
-                        <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt=""></a>
-                        <form action="" class="form-publicar ml-2">
-                            <textarea name="" id="" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
-                            <div class="image-upload-file">
-                                <div class="upload-photo">
-                                    <img src="<?php echo URL_PROJECT ?>/img/image.png" alt="" class="image-public">
-                                    <div class="input-file">
-                                        <input type="file" name="imagen" id="imagen">
+                <div class="ContainerPublic">
+                    <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
+                            <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>">
+                            <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt=""></a>
+                            <form action="" class="form-publicar ml-2">
+                                <textarea name="" id="" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
+                                <div class="imgBx">
+                                    <div class="upload-photo">
+                                        <label for="imagen" class="btnSubirFoto">
+                                            <div class="upload-photo">
+                                                <img src="<?php echo URL_PROJECT ?>/img/picture.png" alt="" class="image-public">
+                                                <span class="btn btn-primary btn-block">Subir foto</span>    
+                                            </div>
+                                        </label>
+                                        <button class="btn btn-primary btn-block">Publicar</button>
                                     </div>
-                                    <span class="ml-1">Subir foto</span>    
                                 </div>
-                                <button class="btn-publi">Publicar</button>
-                            </div>
-                        </form>
-                    </div>
-                <?php endif ?>        
+                            </form>
+                        </div>
+                    <?php endif ?>  
+                </div>      
             </div>
 
             <!-- Mensajeria -->  
 
             <div class="col-md-1">
                 <div class="container-usuario-contact">
-                    <a href="" class="btn-message"><span class="big"><i class="far fa-envelope"></i></span>Mensaje</a>
+                    <a href="" class="btn btn-primary btn-block"><span class="big"><i class="far fa-envelope"></i></span>Mensaje</a>
                 </div>
             </div>
             
