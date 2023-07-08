@@ -20,7 +20,7 @@ class publicar
     }
     public function getPublicaciones()
     {
-        $this->db->query('SELECT U.idusuario, P.num_likes, P.idpublicacion, P.contenidoPublicacion, P.fotoPublicacion, P.fechaPublicacion, U.usuario, Per.fotoPerfil FROM publicaciones P
+        $this->db->query('SELECT U.idusuario, P.idUserPublico, P.num_likes, P.idpublicacion, P.contenidoPublicacion, P.fotoPublicacion, P.fechaPublicacion, U.usuario, Per.fotoPerfil FROM publicaciones P
         INNER JOIN usuarios U ON U.idusuario = P.idUserPublico
         INNER JOIN perfil Per ON Per.idUsuario=P.idUserPublico');
         return $this->db->registers();
