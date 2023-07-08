@@ -21,6 +21,7 @@
                     <div class="navbar-nav ml-auto">
                         <a class="nav-link text-white" href="#"><span class="big"><i class="fa fa-envelope"></i></span><span class="mb-0 ml-1">Mensajes</span></a>
                         <a class="nav-link text-white" href="#"><span class="big"><i class="fa fa-bell"></i></span>
+                        <a href="<?php echo URL_PROJECT?>/notificaciones" color= '#ffffff'>
                         <span class="mb-0 ml-1">Notificaciones 
                             <?php if ($datos['misNotificaciones']>0):?>
                             <?php echo $datos['misNotificaciones']?>
@@ -31,6 +32,7 @@
                             <a class="btn-radio dropdown-toggle text-white" id="actionPerfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
                                 <img class="profile-image" src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="perfil">
                                 <?php echo ucwords($_SESSION['usuario']); ?>
+                                
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="actionPerfil" style="font-family: Arial, sans-serif;">
                                 <a class="dropdown-item text-dark" href="<?php echo URL_PROJECT?>/home/logout">Salir</a>
