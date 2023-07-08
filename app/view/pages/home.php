@@ -114,6 +114,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <!-- likes -->
 
                 <div class="acciones-usuario-publicaciones mt-2">
+
               <a href="<?php echo URL_PROJECT ?>/publicaciones/megusta/<?php echo $datosPublicacion->idpublicacion . '/' . $_SESSION['logueado'] . '/'
               . $datosPublicacion->idusuario?>"
               class="
@@ -142,6 +143,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                         <button class="btn btn-primary btn-block">Comentar</button>
                       </div>
                     </form>
+
                   </div>
                 </div>
               </div>
@@ -172,5 +174,6 @@ include_once URL_APP . '/view/custom/navbar.php';
 </body>
 
 <?php
+
 include_once URL_APP . '/view/custom/footer.php';
 ?>

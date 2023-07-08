@@ -40,11 +40,12 @@ class Publicaciones extends Controller
 
         }
     }
-    public function megusta($idpublicacion, $idusuario)
+    public function megusta($idpublicacion, $idusuario,$idusuarioPropietario)
     {
         $datos=[
             'idpublicacion'=>$idpublicacion,
-            'idusuario'=>$idusuario
+            'idusuario'=>$idusuario,
+            'idusuarioPropietario'=> $idusuarioPropietario
         ];
 
         $datosPublicacion= $this->publicar->getPublicacion($idpublicacion);
@@ -57,6 +58,8 @@ class Publicaciones extends Controller
         }else {
             if ($this->publicar->agregarLike($datos)){
                 $this->publicar->addLikeCount($datosPublicacion);
+                $this->publicar->addNotificacionLike($datos);
+                
             }
             redirection('/home');
         }
@@ -66,11 +69,13 @@ class Publicaciones extends Controller
     {
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $datos=[
+                'iduserPropietario'=>trim($_POST['iduserPropietario']),
                 'iduser'=>trim($_POST['iduser']),
                 'idpublicacion'=>trim($_POST['idpublicacion']),
                 'comentario'=>trim($_POST['comentario'])
             ];
             if ( $this->publicar->publicarComentario($datos)){
+                $this->publicar->addNotificacionComentario($datos);
                 redirection('/home');
             }else{
                 redirection('/home');

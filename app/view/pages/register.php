@@ -10,15 +10,23 @@ include_once URL_APP . '/view/custom/header.php';
                 <div class="col">
                     <h4 class="mb-4">Registrarme</h4>
                     <form action="<?php echo URL_PROJECT ?>/home/register" method="POST">
+                        <!-- Email -->
                         <div class="form-group">
                             <input type="email" class="form-control" name='email' placeholder="Email" required>
                         </div>
+                        <!-- Usuario -->
                         <div class="form-group">
                             <input type="text" class="form-control" name='usuario' placeholder="Usuario" required>
                         </div>
+                        <!-- Contrasenia -->
                         <div class="form-group">
                             <input type="password" class="form-control" name='contrasena' placeholder="Contraseña" required>
                         </div>
+                        <!-- fecha de nacimiento -->
+                        <div class="form-group">
+                            <input type="date" class="form-control" name="date" placeholder="Fecha de nacimiento" required>
+                        </div>
+
                         <button class="btn btn-primary btn-block" type="submit">Registrarme</button>
                     </form>
                     <?php if(isset($_SESSION['usarioError'])):?>

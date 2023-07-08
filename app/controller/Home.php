@@ -18,13 +18,15 @@ class Home extends Controller
             $verificarLikes = $this->publicaciones->misLikes($_SESSION['logueado']);
             $comentarios=$this->publicaciones->getComentarios();
             $informacionComentarios=$this->publicaciones->getInformacionComentarios($comentarios);
+            $misNotificaciones =$this->publicaciones->getNotificaciones($_SESSION['logueado']);
             if ($datosPefil){
                 $datosRed = [
                     'usuario' => $datosUsuario,
                     'perfil' => $datosPefil,
                     'publicaciones'=>$datosPublicaciones,
                     'misLikes'=> $verificarLikes,
-                    'comentarios'=>$informacionComentarios 
+                    'comentarios'=>$informacionComentarios,
+                    'misNotificaciones'=> $misNotificaciones
                 ];
                 /* var_dump($datosRed['perfil']); */
                 $this->view('pages/home', $datosRed);
@@ -75,6 +77,7 @@ class Home extends Controller
             $datosRegistro = [
                 'privilegio' => '2',
                 'email' => trim($_POST['email']),
+                'brithday'=>trim($_POST['date']),
                 'usuario' => trim($_POST['usuario']),
                 'contrasena' => password_hash(trim($_POST['contrasena']), PASSWORD_DEFAULT)
             ];
