@@ -47,9 +47,10 @@ class usuario
     public function register($datosUsuario)
     {
         //var_dump($datoUsuario);
-        $this->db->query('INSERT INTO usuarios(idPrivilegio, correo, usuario, contrasena) VALUES(:privilegio, :correo, :usuario, :contrasena)');
+        $this->db->query('INSERT INTO usuarios(idPrivilegio, correo,BrithDay, usuario, contrasena) VALUES(:privilegio, :correo, :nacimiento, :usuario, :contrasena)');
         $this->db->bind(':privilegio', $datosUsuario['privilegio']); 
-        $this->db->bind(':correo', $datosUsuario['email']); 
+        $this->db->bind(':correo', $datosUsuario['email']);
+        $this->db->bind(':nacimiento', $datosUsuario['brithday']); 
         $this->db->bind(':usuario', $datosUsuario['usuario']); 
         $this->db->bind(':contrasena', $datosUsuario['contrasena']); 
 

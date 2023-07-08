@@ -77,6 +77,7 @@ class Home extends Controller
             $datosRegistro = [
                 'privilegio' => '2',
                 'email' => trim($_POST['email']),
+                'brithday'=>trim($_POST['date']),
                 'usuario' => trim($_POST['usuario']),
                 'contrasena' => password_hash(trim($_POST['contrasena']), PASSWORD_DEFAULT)
             ];
