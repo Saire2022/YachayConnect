@@ -8,7 +8,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#"><span class="big"><i class="fas fa-home mr-1"></i></span>Inicio</a>
+                            <a class="nav-link text-white" href="<?php echo URL_PROJECT?>/home"><span class="big"><i class="fas fa-home mr-1"></i></span>Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#"><span class="big"><i class="fas fa-users mr-1"></i></span><span class="mb-0 ml-1">Usuarios</span></a>
