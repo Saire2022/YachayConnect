@@ -8,7 +8,7 @@ include_once URL_APP . '/view/custom/navbar.php';
   <div class="container-fluid ">
     <div class="row h-100">
           <!-- Columna perfil -->
-      <div class="col-md-4">
+      <div class="col-md-4 overflow-auto">
 
         <div class="containerP">
           <div class="card">
@@ -199,7 +199,7 @@ include_once URL_APP . '/view/custom/navbar.php';
 </body>
 
 <?php
-var_dump($datos['notificaciones']);
-
+/* var_dump($datos['notificaciones']);
+ */
 include_once URL_APP . '/view/custom/footer.php';
 ?>

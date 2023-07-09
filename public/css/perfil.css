@@ -88,9 +88,7 @@
   width: 100%;
 }
 
-.imagen-portada-perfil {
-  width: 100%;
-}
+
 
 /* Estilos de la imagen de perfil del usuario */
 .imagen-perfil-usuario {
@@ -203,74 +201,106 @@
 
 
 .container-cover {
-  height: 300px;
+  position: relative;
+  height: 500px;
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
   padding: 2px;
-  margin-top: 5%;
   text-align: left;
   z-index: 2; /* Establecer un valor de z-index mayor */
+  background: #926dde;
+}
+.imagen-portada-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  padding: auto;
 }
 
-/* Perfil Information */
 
-.containerPer {
+/* ================================================================================ */
+/* -----------------------Perfil Information------------------------------------- */
+/* ================================================================================ */
+
+.containerPerfil {
   position: relative;
-  height: 200px;
+  width: 325px;
+  height: 250px;
   display: flex;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   flex-wrap: wrap;
   padding: 2px;
-  margin-top: -5%;
+  margin-top: 10%;
   margin-right: 10%;
   margin-left: 0.5%;
   text-align: center;
-  background-color:#c3d8f0;
-  border-radius: 20px;
-  border: 2px solid #ccc;
+  
 
 }
-
-.container-cover .cardP {
-  width: 400px;
-  position: relative;
-  height: 250px;
-  background-color:#c3d8f0;
+.containerPerfil .cardPerfil {
+  position:relative;
+  width: 300px;
+  height: 150px;
+  background-color:rgb(185, 217, 245);
   margin: 30px 10px;
   padding: 20px 15px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0.5px 2px 20px #192e67;
   transition: 0.3s ease-in-out;
-  margin-top: 18%;
+  margin-top: -5%;
   border-radius: 20px;
   text-align: center;
+}
+
+.containerPerfil .cardPerfil .imgBxPerfil {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  top: -20px;
+  left: -15px;
+  box-shadow: 0.5px 2px 20px #192e67;
+  border-radius: 20px;
   border: 2px solid #ccc;
 
 }
-
-.container-cover .card .imgBxP {
-  position: relative;
-  width: 300px;
-  height: 260px;
-  top: -20px;
-  left: -15px;
-  box-shadow: 0.5px 2px 20px #e0e6f7;
-  border-radius: 20px;
-  border: 2px solid #ccc;
+.containerPerfil .cardPerfil .imgBxPerfil img {
+  width: 145px;
+  height: 145px;
+  margin-right: 5px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .datos-perfil-usuario {
   width: 200px;
   height: 150px;
-  background-color: #ffffff;
+  background-color: #765b5b;
   display: flex;
   justify-content: center;
   padding: 20px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   z-index: 1; /* Establecer un valor de z-index menor */
+}
+/* ================================================================================ */
+/* -----------------------Publicar en perfil------------------------------------- */
+/* ================================================================================ */
+
+
+.ContainerPublicPerfil{
+  position: relative; /* Agrega posición relativa al contenedor principal */
+  background-color: #fcfcfc;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 2%;
+  
 }
