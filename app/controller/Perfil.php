@@ -5,15 +5,26 @@ class Perfil extends Controller
     {
         $this-> perfil= $this->model('perfilUsuario');
         $this-> usuario= $this->model('usuario');
+        $this->publicaciones = $this->model("publicar");
     }
     public function index($user)
     {
         if (isset($_SESSION['logueado'])){
             $datosUsuario= $this->usuario->getUsuario($user);
             $datosPerfil= $this->usuario->getPerfil($datosUsuario->idusuario);
+
+            $datosPublicaciones= $this->publicaciones->getPublicaciones();
+            $verificarLikes = $this->publicaciones->misLikes($_SESSION['logueado']);
+            $comentarios=$this->publicaciones->getComentarios();
+            $informacionComentarios=$this->publicaciones->getInformacionComentarios($comentarios);
+            $misNotificaciones =$this->publicaciones->getNotificaciones($_SESSION['logueado']);
             $datos=[
                 'perfil'=> $datosPerfil,
-                'usuario'=> $datosUsuario
+                'usuario'=> $datosUsuario,
+                'publicaciones'=>$datosPublicaciones,
+                'misLikes'=> $verificarLikes,
+                'comentarios'=>$informacionComentarios,
+                'misNotificaciones'=> $misNotificaciones
             ];
 
             $this->view('pages/perfil', $datos);
