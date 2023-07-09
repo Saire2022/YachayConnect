@@ -76,3 +76,17 @@ $(document).ready(function() {
       $('.scrollable-column').not(this).css('overflow-y', 'hidden');
     });
   });
+
+/* -------------------------------------------- ------------------*/
+/* --------------------NOTIFICATIONS-------------------------- ------*/
+/* -------------------------------------------- ------------------*/
+$(document).ready(function() {
+  // Cuando se hace clic en la campana de notificaciones
+  $('.campana-notificaciones').on('click', function() {
+    // Cargar las notificaciones del usuario mediante AJAX o mediante una variable PHP en el archivo
+    // y asignar los datos a la variable `$datos['notificaciones']`
+
+    // Abrir el modal de las notificaciones
+    $('#myModal').modal('show');
+  });
+});
