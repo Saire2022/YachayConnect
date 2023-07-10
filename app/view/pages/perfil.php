@@ -46,7 +46,7 @@ include_once URL_APP . '/view/custom/navbar.php';
         </div>
         <!-- Publicar -->
         <div class="col-md-6">
-          <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
+          <?php if ($datos['usuario']->idusuario==$_SESSION['logueado']) : ?>
             <div class="ContainerPublic">
               <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>">
               <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt=""></a>
@@ -65,7 +65,13 @@ include_once URL_APP . '/view/custom/navbar.php';
                 </div>
               </form>
             </div>
-            <!-- Publicaciones y ademas solo para que salgan las del usuario -->
+          <?php endif ?>  
+          <!-- Publicaciones y ademas solo para que salgan las del usuario -->
+<!--           <?php var_dump($datos['publicacionesUser']);?>
+          <br>
+          <?php var_dump($datos['perfil']);?>
+          <?php var_dump($datos['publicaciones']);?> -->
+          <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
             <?php foreach ($datos['publicaciones'] as $datosPublicacion) :?>
               <?php if ($datosPublicacion->idusuario == $_SESSION['logueado']):?>
                 <div class="container-usuarios-publicaciones">
@@ -84,6 +90,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                       <?php endif?>
                   </div>
                   <div class="cotenido-pubicacion-usuario">
+                  <?php echo 'holaaaa4';?>
                     <p class="mb-1"><?php echo $datosPublicacion-> contenidoPublicacion?></p>
                     <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion?>" alt="" class="imagen-publicacion-usuario">
                   </div>

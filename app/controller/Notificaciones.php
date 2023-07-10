@@ -17,12 +17,14 @@ class Notificaciones extends Controller
             $datosPefil= $this->usuario->getPerfil($_SESSION['logueado']);
             $misNotificaciones =$this->publicaciones->getNotificaciones($_SESSION['logueado']);
             $notificaciones=$this->notificar->obtenerNotificaciones($_SESSION['logueado']);
+            $datosPerfil2=$this->usuario->getPerfil($_SESSION['logueado']);
 
             $datos=[
                 'perfil'=>$datosPefil,
                 'usuario'=>$datosUsuario,
                 'misNotificaciones'=>$misNotificaciones,
-                'notificaciones'=> $notificaciones
+                'notificaciones'=> $notificaciones,
+                'perfil2'=>$datosPerfil2
             ];
 
             $this->view('pages/notificaciones',$datos);
