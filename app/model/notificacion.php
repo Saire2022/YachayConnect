@@ -11,10 +11,9 @@ class notificacion
 
     public function obtenerNotificaciones($idusuario)
     {
-        $this->db->query('SELECT Pu.contenidoPublicacion, N.idnotificacion, T.mensajeNotificacion, U.usuario FROM notificaciones N
+        $this->db->query('SELECT N.idnotificacion, T.mensajeNotificacion, U.usuario FROM notificaciones N
         INNER JOIN usuarios U ON U.idusuario= N.usuarioAccion 
         INNER JOIN tiposnotificaciones T ON T.idtiposNotificaciones=N.tipoNotificaion
-        INNER JOIN publicaciones Pu ON Pu.idUserPublico=N.idUsuario 
         WHERE N.idUsuario= :iduser');
         $this->db->bind(':iduser',$idusuario);
         return $this->db->registers();

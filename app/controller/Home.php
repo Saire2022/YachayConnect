@@ -137,6 +137,14 @@ class Home extends Controller
         session_destroy();
         redirection('/home');
     }
+
+    public function accederCompletarPefil()
+    {
+        $datos= [
+            'idusuario' => trim($_POST['btnGraduado']),
+            'nombre' => trim($_POST['btnEstudiante']),
+        ];
+    }
     
 }
 

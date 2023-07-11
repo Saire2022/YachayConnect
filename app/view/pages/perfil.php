@@ -43,13 +43,8 @@ include_once URL_APP . '/view/custom/navbar.php';
         </div>
         <!-- Publicar -->
         <div class="col-md-6">
-<<<<<<< HEAD
-          <?php if ($datos['usuario']->idusuario==$_SESSION['logueado']) : ?>
-            <div class="ContainerPublic">
-=======
           <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
             <div class="ContainerPublicPerfil">
->>>>>>> ef746b25f7e36e9eb7f3e9c80f8334483c048d39
               <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>">
               <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt=""></a>
               <form action="" class="form-publicar ml-2">
@@ -69,10 +64,6 @@ include_once URL_APP . '/view/custom/navbar.php';
             </div>
           <?php endif ?>  
           <!-- Publicaciones y ademas solo para que salgan las del usuario -->
-<!--           <?php var_dump($datos['publicacionesUser']);?>
-          <br>
-          <?php var_dump($datos['perfil']);?>
-          <?php var_dump($datos['publicaciones']);?> -->
           <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
             <!-- Publicaciones y ademas solo para que salgan las del usuario -->
             <?php foreach ($datos['publicaciones'] as $datosPublicacion) :?>
@@ -130,9 +121,9 @@ include_once URL_APP . '/view/custom/navbar.php';
                   </div>
                 </div>
                       <!-- Comentarios cajones -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-<?php echo $datosPublicacion->idpublicacion ?>">
-                Ver comentarios!
-              </button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-<?php echo $datosPublicacion->idpublicacion ?>">
+                    Ver comentarios!
+                  </button>
 
                   <?php foreach ($datos['publicaciones'] as $datosPublicacion): ?>
                     <!-- Modal de la publicación actual -->
@@ -170,20 +161,12 @@ include_once URL_APP . '/view/custom/navbar.php';
                         </div>
                       </div>
                     </div>
-                  <?php endforeach ?>
+                  <?php endforeach ?> 
                 <!-- Fin modal -->
               <?php endif ?>
             <?php endforeach ?>
           <?php endif ?>
-        </div>        
-        <!-- Mensajeria -->  
-
-        <!-- <div class="col-md-1">
-            <div class="container-usuario-contact">
-                <a href="" class="btn btn-primary btn-block"><span class="big"><i class="far fa-envelope"></i></span>Mensaje</a>
-            </div>
-        </div> -->
-        
+        </div>         
     </div>
   </div>
 </body>

@@ -211,9 +211,8 @@
   flex-wrap: wrap;
   padding: 2px;
   text-align: left;
-  z-index: 2; /* Establecer un valor de z-index mayor */
-  background: #926dde;
 }
+
 .imagen-portada-perfil {
   display: flex;
   align-items: center;
@@ -242,9 +241,9 @@
   margin-right: 10%;
   margin-left: 0.5%;
   text-align: center;
-  
-
+  z-index: 999; /* Valor de z-index más alto */
 }
+
 .containerPerfil .cardPerfil {
   position:relative;
   width: 300px;
