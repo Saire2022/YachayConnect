@@ -15,6 +15,7 @@ class Home extends Controller
             $datosUsuario= $this->usuario->getUsuario($_SESSION['usuario']);
             $datosPefil= $this->usuario->getPerfil($_SESSION['logueado']);
             $datosPublicaciones= $this->publicaciones->getPublicaciones();
+            $datosPerfil2=$this->usuario->getPerfil($_SESSION['logueado']);
             $verificarLikes = $this->publicaciones->misLikes($_SESSION['logueado']);
             $comentarios=$this->publicaciones->getComentarios();
             $informacionComentarios=$this->publicaciones->getInformacionComentarios($comentarios);
@@ -22,6 +23,7 @@ class Home extends Controller
             if ($datosPefil){
                 $datosRed = [
                     'usuario' => $datosUsuario,
+                    'perfil2'=>$datosPerfil2,
                     'perfil' => $datosPefil,
                     'publicaciones'=>$datosPublicaciones,
                     'misLikes'=> $verificarLikes,
@@ -134,6 +136,14 @@ class Home extends Controller
         $_SESSION = [];
         session_destroy();
         redirection('/home');
+    }
+
+    public function accederCompletarPefil()
+    {
+        $datos= [
+            'idusuario' => trim($_POST['btnGraduado']),
+            'nombre' => trim($_POST['btnEstudiante']),
+        ];
     }
     
 }

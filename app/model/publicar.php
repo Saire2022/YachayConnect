@@ -26,6 +26,22 @@ class publicar
         return $this->db->registers();
     }
 
+    public function getPublicacionesMain($id)
+    {
+        $this->db->query('SELECT U.idusuario, P.idUserPublico, P.num_likes, P.idpublicacion, P.contenidoPublicacion, P.fotoPublicacion, P.fechaPublicacion, U.usuario, Per.fotoPerfil FROM publicaciones P
+        INNER JOIN usuarios U ON U.idusuario = P.idUserPublico
+        INNER JOIN perfil Per ON Per.idUsuario=P.idUserPublico WHERE U.idusuario=:id');
+        $this->db->bind(':id', $id);
+        return $this->db->registers();
+    }
+    public function getPublicacionesUser($id)
+    {
+ 
+        $this->db->query('SELECT idUserPublico FROM publicaciones WHERE idUserPublico =:id');
+        $this->db->bind(':id', $id);
+        return $this->db->register();
+    }
+
     public function getPublicacion($id)
     {
         $this->db->query('SELECT *FROM publicaciones WHERE idpublicacion=:id');

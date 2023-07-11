@@ -72,11 +72,9 @@ include_once URL_APP . '/view/custom/navbar.php';
               <div class="upload-photo">
                   <button class="btn btn-primary btn-block" id="btnSubirFoto">
                     <img src="<?php echo URL_PROJECT ?>/img/picture.png" alt="" class="image-public">
-
                     Subir foto
                   </button>
                 <input type="file" name="imagen" class="form-control" id="imagen" aria-describedby="inputGroupFileAddon04" aria-label="Upload" style="display: none"> 
-
                 <button class="btn btn-primary btn-block">Publicar</button>
               </div>
             </div>

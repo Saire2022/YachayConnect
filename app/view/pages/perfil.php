@@ -134,7 +134,9 @@ include_once URL_APP . '/view/custom/navbar.php';
                 </div>
               </form>
             </div>
-
+          <?php endif ?>  
+          <!-- Publicaciones y ademas solo para que salgan las del usuario -->
+          <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
             <!-- Publicaciones y ademas solo para que salgan las del usuario -->
             <?php foreach ($datos['publicaciones'] as $datosPublicacion) :?>
               <?php if ($datosPublicacion->idusuario == $_SESSION['logueado']):?>
@@ -154,6 +156,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                     </div>
                   </div>
                   <div class="cotenido-pubicacion-usuario">
+                  <?php echo 'holaaaa4';?>
                     <p class="mb-1"><?php echo $datosPublicacion-> contenidoPublicacion?></p>
                     <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion?>" alt="" class="cotenidoPhoto">
                   </div>
@@ -190,9 +193,9 @@ include_once URL_APP . '/view/custom/navbar.php';
                   </div>
                 </div>
                       <!-- Comentarios cajones -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-<?php echo $datosPublicacion->idpublicacion ?>">
-                Ver comentarios!
-              </button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-<?php echo $datosPublicacion->idpublicacion ?>">
+                    Ver comentarios!
+                  </button>
 
                   <?php foreach ($datos['publicaciones'] as $datosPublicacion): ?>
                     <!-- Modal de la publicación actual -->
@@ -230,20 +233,12 @@ include_once URL_APP . '/view/custom/navbar.php';
                         </div>
                       </div>
                     </div>
-                  <?php endforeach ?>
+                  <?php endforeach ?> 
                 <!-- Fin modal -->
               <?php endif ?>
             <?php endforeach ?>
           <?php endif ?>
-        </div>        
-        <!-- Mensajeria -->  
-
-        <!-- <div class="col-md-1">
-            <div class="container-usuario-contact">
-                <a href="" class="btn btn-primary btn-block"><span class="big"><i class="far fa-envelope"></i></span>Mensaje</a>
-            </div>
-        </div> -->
-        
+        </div>         
     </div>
   </div>
  </body>
