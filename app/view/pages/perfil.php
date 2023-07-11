@@ -4,45 +4,117 @@ include_once URL_APP . '/view/custom/header.php';
 include_once URL_APP . '/view/custom/navbar.php';
 ?>
 <body>
-  <div class="container-fluid">
-    <div class="container-cover">
-      <img src="<?php echo URL_PROJECT ?>/img/RegisterBackground.png" class="imagen-portada-perfil">
-    </div>
-      <div class="row h-100">
+  <div class="container py-5">
+      <div class="row">
         <!-- Perfil -->
-        <div class="col-md-4 overflow-auto">
-          <div class="containerPerfil">
-            <div class="cardPerfil">
-              <div class="imgBxPerfil">
-                <img src="<?php echo URL_PROJECT?>/<?php echo $datos['perfil']->fotoPerfil?>" class="imagen-perfil-usuario" alt="FotoPerfil">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <div class="card-body text-center">
+                <img src="<?php echo URL_PROJECT?>/<?php echo $datos['perfil']->fotoPerfil?>"  class="imagen-perfil-usuario rounded-circle img-fluid" style="width: 150px;" alt="FotoPerfil">
                 <?php if ($datos['usuario']->idusuario==$_SESSION['logueado']) : ?>
                   <div class="imagen-perfil-cambiar">
                     <form action="<?php echo URL_PROJECT?>/perfil/cambiarImagen" method="POST" enctype="multipart/form-data">
                       <button class="btn btn-primary btn-block">Editar</button>
                       <label for="imagen" class="camera-icon">
-                        <i class="fas fa-camera" id="camera-icon" style="position: absolute; top: -50px; left: 200px;font-size: 2em;"></i>
+                        <i class="fas fa-camera" id="camera-icon"></i>
                       </label>
                       <input type="file" name="imagen" id="imagen" style="display: none;">
                       <div class="input-file">
                         <input type="hidden" name="id_user" value="<?php echo $_SESSION['logueado']?>">
                       </div>
-                                      
                     </form>
-                  </div>
                 <?php endif ?>
-                  <h3><?php echo ucwords ($datos['usuario']->usuario)?></h3>
-                  <div class="descripcion-usuario">
-                    <span><?php echo  $datos['perfil']->nombreCompleto?></span>
-                    <h6><?php echo 'Profesion: ' . $datos['perfil']->Carrer?></h6>
-                    <h6><?php echo 'Salario: ' . $datos['perfil']->Salary?></h6>
-                    <h6><?php echo 'Carrera que estudio: ' . $datos['perfil']->Major; ?></h6>
-                </div> 
-              </div>     
+              
+                </div>
+                  <h5 class="my-3"><?php echo  $datos['perfil']->nombreCompleto?></h3>
+                  <p class="text-muted mb-1"><?php echo 'Profesion: ' . $datos['perfil']->Carrer?></p>
+                  <div class="d-flex justify-content-center mb-2">
+                    <button type="button" class="btn btn-outline-primary ms-1">Message</button> 
+                  </div>
+            </div>
+                <h5 class="my-3"><?php echo ucwords ($datos['usuario']->usuario)?></h3>
+            </div>
+            <div class="card mb-4 mb-lg-0">
+              <div class="card-body p-0">
+                <ul class="list-group list-group-flush rounded-3">
+                  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    <i class="fas fa-globe fa-lg text-warning"></i>
+                    <p class="mb-0">https://mdbootstrap</p>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                    <p class="mb-0">mdbootstrap</p>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                    <p class="mb-0">@mdbootstrap</p>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                    <p class="mb-0">mdbootstrap</p>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                    <p class="mb-0">mdbootstrap</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
         <!-- Publicar -->
-        <div class="col-md-6">
+        <div class="col-lg-6">
+          <!-- Information card -->
+          <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Profesion</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><?php echo  $datos['perfil']->Carrer?></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Salario</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><?php echo $datos['perfil']->Salary?></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">(097) 234-5678</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Carrera que estudio</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><?php echo $datos['perfil']->Major; ?></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- information card -->
           <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
             <div class="ContainerPublicPerfil">
               <a href="<?php echo URL_PROJECT?>/perfil/<?php echo $datos['usuario']->usuario?>">
@@ -174,7 +246,7 @@ include_once URL_APP . '/view/custom/navbar.php';
         
     </div>
   </div>
-</body>
+ </body>
 <?php
 include_once URL_APP . '/view/custom/footer.php';
 ?>

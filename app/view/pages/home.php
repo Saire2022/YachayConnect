@@ -5,7 +5,7 @@ include_once URL_APP . '/view/custom/navbar.php';
 ?>
 
 <body>
-  <div class="container-fluid ">
+  <div class="container-fluid position-relative">
     <div class="row h-100">
           <!-- Columna perfil -->
       <div class="col-md-4 overflow-auto">
@@ -141,7 +141,7 @@ include_once URL_APP . '/view/custom/navbar.php';
 
                 </div>
               </div>
-          </div>
+            </div>
 
           <!-- Comentarios cajones -->
         <!-- ---------------------------------------------------------------- -->
