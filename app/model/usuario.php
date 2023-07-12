@@ -16,7 +16,10 @@ class usuario
     }
      public function getPerfil($idusuario)
      {
-        $this->db->query('SELECT *FROM perfil WHERE idUsuario= :id');
+        $this->db->query(' SELECT  Pi.idPrivilegio, P.idperfil, P.Carrer, P.Salary, P.idUsuario, P.PaisActual, P.nombreCompleto, P.fotoPerfil,
+        P.fi_estudio, P.f_grado, P.ca_estudio, P.profesion, P.cedula FROM perfil P 
+        INNER JOIN usuarios U ON P.idUsuario= U.idusuario
+        INNER JOIN privilegios Pi ON Pi.idPrivilegio= U.idPrivilegio WHERE U.idusuario=:id');
         $this->db->bind(':id',$idusuario);
         return $this->db->register();
      }
@@ -64,15 +67,20 @@ class usuario
 
     public function insertarPerfil($datos)
     {
-        $this->db->query('INSERT INTO perfil (Carrer,Salary,Major,idUsuario,PaisActual,nombreCompleto,fotoPerfil	
-        ) VALUES(:carrer, :salary, :major, :id, :paisactual, :nombre, :rutaFoto)');
+        $this->db->query('INSERT INTO perfil (Carrer,Salary,idUsuario,PaisActual,nombreCompleto,fotoPerfil,fi_estudio,
+        f_grado,ca_estudio,profesion,cedula	
+        ) VALUES(:carrer, :salary, :id, :paisactual, :nombre, :rutaFoto, :estudio, :grado, :caestudio, :profesion, :cedula)');
         $this->db->bind(':carrer', $datos['carrer']); 
-        $this->db->bind(':salary', $datos['salary']); 
-        $this->db->bind(':major', $datos['major']); 
+        $this->db->bind(':salary', $datos['salary']);  
         $this->db->bind(':id', $datos['idusuario']); 
         $this->db->bind(':paisactual', $datos['paisactual']); 
         $this->db->bind(':nombre', $datos['nombre']); 
         $this->db->bind(':rutaFoto', $datos['ruta']);
+        $this->db->bind(':estudio', $datos['festudio']);
+        $this->db->bind(':grado', $datos['fgrado']);
+        $this->db->bind(':caestudio', $datos['caestudio']);
+        $this->db->bind(':profesion', $datos['profesion']);
+        $this->db->bind(':cedula', $datos['cedula']);
 
         if($this->db->execute()){
             return true;

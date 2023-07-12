@@ -12,6 +12,7 @@ include_once URL_APP . '/view/custom/navbar.php';
             <div class="card-body text-center">
               <div class="card-body text-center">
                 <img src="<?php echo URL_PROJECT?>/<?php echo $datos['perfil']->fotoPerfil?>"  class="imagen-perfil-usuario rounded-circle img-fluid" style="width: 150px;" alt="FotoPerfil">
+                <!-- <?php var_dump($datos['perfil']);?> -->
                 <?php if ($datos['usuario']->idusuario==$_SESSION['logueado']) : ?>
                   <div class="imagen-perfil-cambiar">
                     <form action="<?php echo URL_PROJECT?>/perfil/cambiarImagen" method="POST" enctype="multipart/form-data">
@@ -28,7 +29,11 @@ include_once URL_APP . '/view/custom/navbar.php';
               
                 </div>
                   <h5 class="my-3"><?php echo  $datos['perfil']->nombreCompleto?></h3>
-                  <p class="text-muted mb-1"><?php echo 'Profesion: ' . $datos['perfil']->Carrer?></p>
+                  <?php if($datos['perfil']->idPrivilegio ==2):?>
+                    <p class="text-muted mb-1"><?php echo 'Carrera que estudia: ' . $datos['perfil']->Carrer?></p>
+                    <?php else:?>
+                    <p class="text-muted mb-1"><?php echo 'Carrera que estudio ' . $datos['perfil']->ca_estudio?></p>  
+                  <?php endif ?>
                   <div class="d-flex justify-content-center mb-2">
                     <button type="button" class="btn btn-outline-primary ms-1">Message</button> 
                   </div>
@@ -66,54 +71,76 @@ include_once URL_APP . '/view/custom/navbar.php';
         <!-- Publicar -->
         <div class="col-lg-6">
           <!-- Information card -->
-          <div class="card mb-4">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Profesion</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php echo  $datos['perfil']->Carrer?></p>
-              </div>
+          <br>
+          <?php if($datos['perfil']->idPrivilegio !=2):?>
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Profesion</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><?php echo  $datos['perfil']->profesion?></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Salario</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><?php echo $datos['perfil']->Salary?></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Phone</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">(097) 234-5678</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Cedula de ID</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><?php echo $datos['perfil']->cedula; ?></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Pais Actual</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><?php echo $datos['perfil']->PaisActual; ?></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Inicio de estudios</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><?php echo $datos['perfil']->fi_estudio;?></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Fecha graduacion</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><?php echo $datos['perfil']->f_grado;?></p>
+                  </div>
+                </div>
+                <hr>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Salario</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php echo $datos['perfil']->Salary?></p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Phone</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">(097) 234-5678</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Carrera que estudio</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php echo $datos['perfil']->Major; ?></p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <?php endif?>
+          <br>
         <!-- information card -->
           <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']) : ?>
             <div class="ContainerPublicPerfil">

@@ -35,7 +35,11 @@ class Home extends Controller
             }
             #Si no completo su perfil
             else {
-                $this->view('pages/completarPerfil',$_SESSION['logueado']);
+                $datosUsuario= $this->usuario->getUsuario($_SESSION['usuario']);
+                $datosRed = [
+                    'usuario' => $datosUsuario,
+                ];
+                $this->view('pages/completarPerfil',$datosRed);
             }
             
         }else {
@@ -77,7 +81,7 @@ class Home extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $datosRegistro = [
-                'privilegio' => '2',
+                'privilegio' => trim($_POST['privilegio']),
                 'email' => trim($_POST['email']),
                 'brithday'=>trim($_POST['date']),
                 'usuario' => trim($_POST['usuario']),
@@ -120,8 +124,13 @@ class Home extends Controller
             'ruta' => $rutaImagen,
             'carrer'=> trim($_POST['carrer']),
             'salary'=>trim($_POST['salario']),
-            'major'=>trim($_POST['major']),
-            'paisactual'=>trim($_POST['paisactual'])
+            'paisactual'=>trim($_POST['paisactual']),
+            'festudio'=>trim($_POST['fiestudio']),
+            'fgrado'=>trim($_POST['fgrado']),
+            'caestudio'=>trim($_POST['caestudio']),
+            'profesion'=>trim($_POST['profesion']),
+            'cedula'=>trim($_POST['cedula'])
+
         ];
         if ($this->usuario->insertarPerfil($datos))
         {

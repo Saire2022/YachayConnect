@@ -14,7 +14,7 @@
                 >
                 <i class="fas fa-bars"></i>
                 </button>
-            <a class="navbar-brand" href="#"><img src="<?php echo URL_PROJECT ?>/img/YT-logo.png" alt="Logo" width="30px" height="30px" class="d-inline-block align-text-top"></a>
+            <a class="navbar-brand" href="<?php echo URL_PROJECT?>/home"><img src="<?php echo URL_PROJECT ?>/img/YT-logo.png" alt="Logo" width="30px" height="30px" class="d-inline-block align-text-top"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
