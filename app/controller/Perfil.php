@@ -16,7 +16,7 @@ class Perfil extends Controller
             $datosPerfil2=$this->usuario->getPerfil($_SESSION['logueado']);
             $datosPublicaciones= $this->publicaciones->getPublicaciones();
             $datosPublicacionesUser= $this->publicaciones->getPublicacionesUser($datosPerfil->idUsuario);
-            /* $datosPublicacionesMain= $this->publicaciones->getPublicacionesMain($datosPublicacionesUse->idUserPublico); */
+            $datosPublicacionesMain= $this->publicaciones->getPublicacionesMain($datosPerfil->idUsuario);
             $verificarLikes = $this->publicaciones->misLikes($_SESSION['logueado']);
             $comentarios=$this->publicaciones->getComentarios();
             $informacionComentarios=$this->publicaciones->getInformacionComentarios($comentarios);
@@ -27,7 +27,7 @@ class Perfil extends Controller
                 'usuario'=> $datosUsuario,
                 'publicaciones'=>$datosPublicaciones,
                 'publicacionesUser'=>$datosPublicacionesUser,
-                /* 'publicacionesMain'=>$datosPublicacionesMain, */
+                'publicacionesMain'=>$datosPublicacionesMain,
                 'misLikes'=> $verificarLikes,
                 'comentarios'=>$informacionComentarios,
                 'misNotificaciones'=> $misNotificaciones
