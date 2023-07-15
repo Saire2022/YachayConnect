@@ -19,6 +19,11 @@
     
     <!-- Icon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Grafana -->
+ <!--    <meta http-equiv="set-cookie" content="Value=_gid, Site=.grafana.net/; SameSite=None; Secure;"/>
+    <meta http-equiv="set-cookie" content="Value=_gid, Site=.grafana.net/; SameSite=None; Secure;"/>
+ -->
+
 
     <title> <?php echo PROJECT_NAME ?> </title>
 

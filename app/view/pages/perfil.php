@@ -26,7 +26,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                     </form>
                 <?php endif ?>
               
-                </div>
+              </div>
                   <h5 class="my-3"><?php echo  $datos['perfil']->nombreCompleto?></h3>
                   <p class="text-muted mb-1"><?php echo 'Profesion: ' . $datos['perfil']->Carrer?></p>
                   <div class="d-flex justify-content-center mb-2">
