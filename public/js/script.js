@@ -90,3 +90,21 @@ $(document).ready(function() {
     $('#myModal').modal('show');
   });
 });
+
+$(document).ready(function() {
+  $(".dropdown-item").click(function() {
+      var tipoUsuario = $(this).data("tipo");
+      /* Graduados */
+      if (tipoUsuario === 1) {
+          $("#registroFormGraduado").show();
+          $('#registroFormEstudiante').hide();
+      /* No graduados (Estudiante) */
+      } else if (tipoUsuario === 2){
+        $("#registroFormGraduado").hide();
+        $('#registroFormEstudiante').show();
+      }else{
+        $("#registroFormGraduado").hide();
+        $('#registroFormEstudiante').hide();
+      }
+  });
+});

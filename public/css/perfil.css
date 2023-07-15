@@ -270,6 +270,12 @@
 }
 
 /* .containerPerfil .cardPerfil {
+<<<<<<< HEAD
+=======
+=======
+  z-index: 999; /* Valor de z-index más alto */
+
+.containerPerfil .cardPerfil {
   position:relative;
   width: 300px;
   height: 150px;

@@ -22,8 +22,13 @@ include_once URL_APP . '/view/custom/header.php';
                         <div class="form-group">
                             <input type="password" class="form-control" name='contrasena' placeholder="Contraseña" required>
                         </div>
+                        <!-- Privilegio -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" name='privilegio' placeholder="Tipo usuario: (2) Estudiante (3) Graduado" required>
+                        </div>
                         <!-- fecha de nacimiento -->
                         <div class="form-group">
+                            <label for="">Fecha de nacimiento</label>
                             <input type="date" class="form-control" name="date" placeholder="Fecha de nacimiento" required>
                         </div>
 

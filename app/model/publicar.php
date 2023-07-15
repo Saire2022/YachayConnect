@@ -70,6 +70,15 @@ class publicar
         
     }
 
+    public function numPublicaciones($id)
+    {
+        $this->db->query('SELECT *FROM publicaciones WHERE idUserPublico=:iduser');
+        $this->db->bind(':iduser', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+        
+    }
+
     public function agregarLike($datos)
     {
         $this->db->query('INSERT INTO likes (idPublicacion,idUser) VALUES (:publicacion,:iduser)');
