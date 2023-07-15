@@ -20,6 +20,7 @@ class Home extends Controller
             $comentarios=$this->publicaciones->getComentarios();
             $informacionComentarios=$this->publicaciones->getInformacionComentarios($comentarios);
             $misNotificaciones =$this->publicaciones->getNotificaciones($_SESSION['logueado']);
+            $numPublicaciones =$this->publicaciones->numPublicaciones($_SESSION['logueado']);
             if ($datosPefil){
                 $datosRed = [
                     'usuario' => $datosUsuario,
@@ -28,7 +29,8 @@ class Home extends Controller
                     'publicaciones'=>$datosPublicaciones,
                     'misLikes'=> $verificarLikes,
                     'comentarios'=>$informacionComentarios,
-                    'misNotificaciones'=> $misNotificaciones
+                    'misNotificaciones'=> $misNotificaciones,
+                    'numPubli'=> $numPublicaciones
                 ];
                 /* var_dump($datosRed['perfil']); */
                 $this->view('pages/home', $datosRed);

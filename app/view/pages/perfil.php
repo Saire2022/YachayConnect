@@ -50,32 +50,32 @@ include_once URL_APP . '/view/custom/navbar.php';
             </h5>
           </div>
         </div>
-          <div class="card mb-4 mb-lg-0">
-            <div class="card-body p-0">
-              <ul class="list-group list-group-flush rounded-3">
-                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                  <i class="fas fa-globe fa-lg text-warning"></i>
-                  <p class="mb-0">https://mdbootstrap</p>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                  <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                  <p class="mb-0">mdbootstrap</p>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                  <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                  <p class="mb-0">@mdbootstrap</p>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                  <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                  <p class="mb-0">mdbootstrap</p>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                  <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                  <p class="mb-0">mdbootstrap</p>
-                </li>
-              </ul>
-            </div>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush rounded-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fas fa-globe fa-lg text-warning"></i>
+                <p class="mb-0">https://mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                <p class="mb-0">mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                <p class="mb-0">@mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                <p class="mb-0">mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                <p class="mb-0">mdbootstrap</p>
+              </li>
+            </ul>
           </div>
+        </div>
       </div>
       <!-- Publicar -->
       <div class="col-lg-6">
@@ -158,11 +158,10 @@ include_once URL_APP . '/view/custom/navbar.php';
         <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']): ?>
           <div class="ContainerPublicPerfil">
             <a href="<?php echo URL_PROJECT ?>/perfil/index/<?php echo $datos['usuario']->usuario ?>">
-              <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt=""></a>
+            <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" class="image-border" alt=""></a>
             <form action="<?php echo URL_PROJECT ?>/publicaciones/publicar/<?php echo $datos['usuario']->idusuario ?>"
               method="POST" enctype="multipart/form-data" class="form-publicar ml-2">
-              <textarea name="contenido" id="contenido" class="published mb-0" name="post"
-                placeholder="Que estas pensando?" required></textarea>
+              <textarea name="contenido" id="contenido" class="published mb-0" name="post" placeholder="Que estas pensando?" required></textarea>
               <div class="upload-photo">
                 <label for="imagen" class="btnSubirFoto">
                   <div class="upload-photo">
@@ -184,15 +183,15 @@ include_once URL_APP . '/view/custom/navbar.php';
               <?php if ($datosPublicacion->idusuario == $_SESSION['logueado']): ?>
                 <div class=" acciones-publicacion-usuario">
                   <a href="<?php echo URL_PROJECT ?>/publicaciones/eliminar/<?php echo $datosPublicacion->idpublicacion ?>"><i
-                      class="far 
-                    fa-trash-alt float-right"></i></a>
+                  class="far fa-trash-alt float-right"></i></a>
                 </div>
               <?php endif ?>
               <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPerfil ?>" alt="" class="image-border">
               <div class="informacion-usuario-publico">
                 <h6 class="mb-0"><a
-                    href="<?php echo URL_PROJECT ?>/perfil/index/<?php echo $datosPublicacion->usuario ?>"><?php echo ucwords
-                        ($datosPublicacion->usuario) ?></a></h6>
+                  href="<?php echo URL_PROJECT ?>/perfil/index/<?php echo $datosPublicacion->usuario ?>"><?php echo ucwords
+                  ($datosPublicacion->usuario) ?></a>
+                </h6>
                 <span>
                   <?php echo $datosPublicacion->fechaPublicacion ?>
                 </span>
@@ -229,8 +228,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                   <input type="hidden" name="iduserPropietario" value="<?php echo $datosPublicacion->idusuario ?>">
                   <input type="hidden" name="iduser" value="<?php echo $_SESSION['logueado'] ?>">
                   <input type="hidden" name="idpublicacion" value="<?php echo $datosPublicacion->idpublicacion ?>">
-                  <input type="text" name="comentario" class='form-comentario-usuario'
-                    placeholder="Agregar un comentario">
+                  <input type="text" name="comentario" class='form-comentario-usuario' placeholder="Agregar un comentario">
                   <div class="btn-comentario-container">
                     <button class="btn-purple">Comentar</button>
                   </div>
@@ -259,15 +257,14 @@ include_once URL_APP . '/view/custom/navbar.php';
                     <?php foreach ($datos['comentarios'] as $datosComentarios): ?>
                       <?php if ($datosComentarios->idPublicacion == $datosPublicacion->idpublicacion): ?>
                         <div class="contianer-contenido-comentario">
-                          <img src="<?php echo URL_PROJECT . '/' . $datosComentarios->fotoPerfil ?>" alt=""
-                            class="image-border mr-2">
+                          <img src="<?php echo URL_PROJECT . '/' . $datosComentarios->fotoPerfil ?>" alt="" class="image-border mr-2">
                           <div class="contenido-comentario-usuario">
                             <?php if ($datosComentarios->idusuario == $_SESSION['logueado']): ?>
                               <a href="<?php echo URL_PROJECT ?>/publicaciones/eliminarComentario/<?php echo $datosComentarios->idcomentario ?>"
-                                class="float-right"><i class="far fa-trash-alt"></i></a>
+                              class="float-right"><i class="far fa-trash-alt"></i></a>
                             <?php endif ?>
                             <a href="<?php echo URL_PROJECT ?>/perfil/index/<?php echo $datosComentarios->usuario ?>"
-                              class="big mr-2"><?php echo $datosComentarios->usuario ?></a>
+                            class="big mr-2"><?php echo $datosComentarios->usuario ?></a>
                             <span>
                               <?php echo $datosComentarios->fechaComentario ?>
                             </span>

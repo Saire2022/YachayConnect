@@ -21,7 +21,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                 </a>
               </h4>
               <ul class="list-inline">
-                <li class="list-inline-item">Publicaciones <br> 0</li>
+                <li class="list-inline-item">Publicaciones <br> <?php echo $datos['numPubli']?></li>
                 <li class="list-inline-item">|</li>
                 <li class="list-inline-item">Me gustas<br>0</li>
               </ul>
