@@ -31,9 +31,9 @@ include_once URL_APP . '/view/custom/navbar.php';
         <!-- Interesting Information -->
         <div class="containerCards">
           <h4 class="text-center">Temas que te pueden interesar</h4>
-          <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-<!--             <iframe src="https://saireconejo.grafana.net/d-solo/jK7T9F-4z/new-dashboard?orgId=1&from=1689060819073&to=1689082419073&panelId=2" width="450" height="200" frameborder="0"></iframe>
- -->            <img src= "https://saireconejo.grafana.net/d/jK7T9F-4z/new-dashboard?orgId=1&from=1689061657851&to=1689083257851&viewPanel=2"  class="card-img-top" alt="TY en el Mundo">
+          <!-- <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+            <iframe src="https://saireconejo.grafana.net/d-solo/jK7T9F-4z/new-dashboard?orgId=1&from=1689060819073&to=1689082419073&panelId=2" width="450" height="200" frameborder="0"></iframe>
+           <img src= "https://saireconejo.grafana.net/d/jK7T9F-4z/new-dashboard?orgId=1&from=1689061657851&to=1689083257851&viewPanel=2"  class="card-img-top" alt="TY en el Mundo">
              <div class="card-body">
                 <h5 class="card-title">YT en el mundo!</h5>
                 <p class="card-text">En el siguiente apartado se puede observar a nuestros graduados alrededor de mundo.</p>
@@ -58,7 +58,8 @@ include_once URL_APP . '/view/custom/navbar.php';
               </p>
               <a href="#" class="btn btn-primary center">Ver</a>
             </div>
-          </div>
+          </div> -->
+              <iframe width="400" height="600" src="https://lookerstudio.google.com/embed/reporting/54ac9745-603d-4038-aa61-d622cad03d1c/page/1M" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
       <!-- Columna principal -->
