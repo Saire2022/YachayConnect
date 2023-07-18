@@ -16,7 +16,7 @@ include_once URL_APP . '/view/custom/navbar.php';
         <div class="container-notificaciones-usuario-revisar">
             <?php foreach ($datos['notificaciones'] as $datosNotificaciones):?>
                 <a href="<?php echo URL_PROJECT ?>/notificaciones/eliminar/<?php echo $datosNotificaciones->idnotificacion?>" class="link-notification mb-1">
-                <div class="alert alert-success"><?php echo $datosNotificaciones->usuario . ' ' . $datosNotificaciones->mensajeNotificacion?></div>
+                <div class="alert alert-success"><?php echo $datosNotificaciones->usuario . ' ' . $datosNotificaciones->mensajeNotificacion . " en la publicacion: " . $datosNotificaciones->contenidoPublicacion ?></div>
                 </a>
             <?php endforeach?> 
         </div>

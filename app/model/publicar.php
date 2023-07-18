@@ -171,10 +171,11 @@ class publicar
     }
      public function addNotificacionLike($datos)
      {
-        $this->db->query('INSERT INTO notificaciones (idUsuario,tipoNotificaion,usuarioAccion) VALUES (:idusuario,:tipo,:usuarioAccion)');
+        $this->db->query('INSERT INTO notificaciones (idUsuario,tipoNotificaion,usuarioAccion,id_publicacion) VALUES (:idusuario,:tipo,:usuarioAccion,:idpublicacion)');
         $this->db->bind(':idusuario',$datos['idusuarioPropietario']);
         $this->db->bind(':tipo',1);
         $this->db->bind(':usuarioAccion',$datos['idusuario']);
+        $this->db->bind(':idpublicacion',$datos['idpublicacion']);
         if ($this->db->execute()){
             return true;
         }else {
@@ -183,10 +184,11 @@ class publicar
      }
       public function addNotificacionComentario($datos)
       {
-        $this->db->query('INSERT INTO notificaciones (idUsuario,tipoNotificaion,usuarioAccion) VALUES (:idusuario,:tipo,:usuarioAccion)');
+        $this->db->query('INSERT INTO notificaciones (idUsuario,tipoNotificaion,usuarioAccion,id_publicacion) VALUES (:idusuario,:tipo,:usuarioAccion,:idpublicacion)');
         $this->db->bind(':idusuario',$datos['iduserPropietario']);
         $this->db->bind(':tipo',2);
         $this->db->bind(':usuarioAccion',$datos['iduser']);
+        $this->db->bind(':idpublicacion',$datos['idpublicacion']);
         if ($this->db->execute()){
             return true;
         }else {
