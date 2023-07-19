@@ -4,9 +4,9 @@ include_once URL_APP . '/view/custom/header.php';
 <link rel="stylesheet" type="text/css" href="../public/css/style.css">
 <body class="background">
 
-    <div class="container d-flex align-items-center justify-content-center">
+    <div class="container d-flex align-items-center justify-content-center" style= "margin-top:100px">
         <div class="container-content center">
-            <div class="container-action center">
+            <div class="container-action center" style= "margin-top:100px">
                 <div class="col">
                     <h4 class="text-center">Completa tu perfil </h4>
                     <h6 class="text-center">Llenar los campos correspondientes</h6>
@@ -26,6 +26,7 @@ include_once URL_APP . '/view/custom/header.php';
                             <input type="date" name="fgrado" class="form-control" placeholder="Fecha de grado" required>
 
                             <input type="text" name="paisactual" class="form-control" placeholder="Pais Actual" required>
+                            <br>
                             <!-- Carrera Estudio -->
                             <div class="form-group">
                             <select class="form-control" name="caestudio" required>
@@ -43,9 +44,10 @@ include_once URL_APP . '/view/custom/header.php';
                                 <option value="Agroindustria">Agroindustria</option>
                             </select>
                         </div>
+                        <br>
                         <!-- /// -->
-<!--                             <input type="text" name="caestudio" class="form-control" placeholder="Carrera que estudio" required>
- -->                            <input type="text" name="profesion" class="form-control" placeholder="Profesión" required>
+
+                            <input type="text" name="profesion" class="form-control" placeholder="Profesión" required>
                             <input type="text" name="salario" class="form-control" placeholder="Salario" required>
                             <input type="text" name="cedula" class="form-control" placeholder="Cedula" required>
                         </div> 
@@ -56,7 +58,6 @@ include_once URL_APP . '/view/custom/header.php';
                             </div>
                         </div>
                         <button class="btn btn-primary btn-block">Registrar datos</button>
-                        <a class="dropdown-item text-dark bg-transparent" href="<?php echo URL_PROJECT?>/home/logout" onmouseover="this.style.backgroundColor='#f8f9fa'" onmouseout="this.style.backgroundColor='transparent'">Salir</a>
                     </form>
                     <!-- Form para los estudiantes -->
                     <?php else:?>
@@ -64,16 +65,29 @@ include_once URL_APP . '/view/custom/header.php';
                         <input type="hidden" name="id_user" value="<?php echo $datos['usuario']->idusuario?>">
                         <div class="form-group">
                             <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo" required>
-                            <input type="text" name="carrer" class="form-control" placeholder="Carrera que estudia" required>
+                            <select class="form-control" name="carrer" required>
+                                <option value="" disabled selected>Selecciona la carrera que estudia</option>
+                                <option value="Computacion">Computación</option>
+                                <option value="Matematicas">Matemáticas</option>
+                                <option value="Tecnologias de la informacion">Tecnologías de la información</option>
+                                <option value="Fisica">Física</option>
+                                <option value="Nanotecnologia">Nanotecnología</option>
+                                <option value="Biomedicina">Biomedicina</option>
+                                <option value="Biologia">Biologia</option>
+                                <option value="Quimica">Química</option>
+                                <option value="Materiales">Materiales</option>
+                                <option value="Geologia">Geología</option>
+                                <option value="Agroindustria">Agroindustria</option>
+                            </select>
                         </div> 
+                        <br>
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control" name="imagen" id="image" required>
-                                <label class="input-group-text" for="image">Seleccionar una foto</label>
+                                <label class="input-group-text" for="image">Seleccionar foto</label>
                             </div>
                         </div>
                         <button class="btn btn-primary btn-block">Registrar datos</button>
-                        <a class="dropdown-item text-dark bg-transparent" href="<?php echo URL_PROJECT?>/home/logout" onmouseover="this.style.backgroundColor='#f8f9fa'" onmouseout="this.style.backgroundColor='transparent'">Salir</a>
                     </form>
                     <?php endif?>
                     </div>
