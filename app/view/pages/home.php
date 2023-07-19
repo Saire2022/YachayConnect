@@ -31,35 +31,7 @@ include_once URL_APP . '/view/custom/navbar.php';
         <!-- Interesting Information -->
         <div class="containerCards">
           <h4 class="text-center">Temas que te pueden interesar</h4>
-          <!-- <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-            <iframe src="https://saireconejo.grafana.net/d-solo/jK7T9F-4z/new-dashboard?orgId=1&from=1689060819073&to=1689082419073&panelId=2" width="450" height="200" frameborder="0"></iframe>
-           <img src= "https://saireconejo.grafana.net/d/jK7T9F-4z/new-dashboard?orgId=1&from=1689061657851&to=1689083257851&viewPanel=2"  class="card-img-top" alt="TY en el Mundo">
-             <div class="card-body">
-                <h5 class="card-title">YT en el mundo!</h5>
-                <p class="card-text">En el siguiente apartado se puede observar a nuestros graduados alrededor de mundo.</p>
-                <a href="#" class="btn btn-primary center">Ver</a>
-              </div>
-
-          </div>
-          <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-            <img src="<?php echo URL_PROJECT ?>/img/RegisterBackground.png" class="card-img-top" alt="TY en el Mundo">
-            <div class="card-body">
-              <h5 class="card-title">YT en el mundo!</h5>
-              <p class="card-text">En el siguiente apartado se puede observar a nuestros graduados alrededor de mundo.
-              </p>
-              <a href="#" class="btn btn-primary center">Ver</a>
-            </div>
-          </div>
-          <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-            <img src="<?php echo URL_PROJECT ?>/img/RegisterBackground.png" class="card-img-top" alt="TY en el Mundo">
-            <div class="card-body">
-              <h5 class="card-title">YT en el mundo!</h5>
-              <p class="card-text">En el siguiente apartado se puede observar a nuestros graduados alrededor de mundo.
-              </p>
-              <a href="#" class="btn btn-primary center">Ver</a>
-            </div>
-          </div> -->
-              <iframe width="400" height="600" src="https://lookerstudio.google.com/embed/reporting/54ac9745-603d-4038-aa61-d622cad03d1c/page/1M" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe width="400" height="600" src="https://lookerstudio.google.com/embed/reporting/54ac9745-603d-4038-aa61-d622cad03d1c/page/1M" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
       <!-- Columna principal -->
@@ -90,10 +62,9 @@ include_once URL_APP . '/view/custom/navbar.php';
             <div class="container-usuarios-publicaciones">
               <div class="usuarios-publicaciones-top">
                 <?php if ($datosPublicacion->idusuario == $_SESSION['logueado']): ?>
-                  <div class=" acciones-publicacion-usuario">
+                  <div class="acciones-publicacion-usuario">
                     <a href="<?php echo URL_PROJECT ?>/publicaciones/eliminar/<?php echo $datosPublicacion->idpublicacion ?>"><i
-                        class="far 
-                    fa-trash-alt float-right"></i></a>
+                        class="far fa-trash-alt float-right"></i></a>
                   </div>
                 <?php endif ?>
                 <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPerfil ?>" alt="" class="image-border">
@@ -106,13 +77,14 @@ include_once URL_APP . '/view/custom/navbar.php';
                   </span>
                 </div>
               </div>
-              <div class="cotenido-pubicacion-usuario">
+              
                 <p class="mb-1">
-                  <?php echo $datosPublicacion->contenidoPublicacion ?>
+                  <?php echo $datosPublicacion->contenidoPublicacion; ?>
                 </p>
-                <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion ?>" alt=""
-                  class="cotenidoPhoto">
-              </div>
+                <div class="image-container">
+                  <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion; ?>" alt="IMG-publication" class="card-img-top">
+                </div>
+
               <hr>
               <!-- likes -->
               <div class="acciones-usuario-publicaciones mt-2">

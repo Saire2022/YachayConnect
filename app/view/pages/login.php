@@ -4,7 +4,7 @@ include_once URL_APP . '/view/custom/header.php';
 <link rel="stylesheet" type="text/css" href="../public/css/style.css">
 
 <body class="background">
-    <div class="container py-5 h-100">
+    <div class="container py-5 h-100" style="display: flex; justify-content: center; align-items: center;">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-10">
                 <div class="card rounded-3 text-black">

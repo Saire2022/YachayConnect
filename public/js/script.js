@@ -108,3 +108,22 @@ $(document).ready(function() {
       }
   });
 });
+
+/* -------------------------------------------- ------------------*/
+/* --------------------PRIVILEGIOS-------------------------- ------*/
+/* -------------------------------------------- ------------------*/
+
+$(document).ready(function() {
+  $("#obtenerIdBtn").click(function() {
+    // Obtener el valor seleccionado del dropdown
+    var valorSeleccionado = $("#tipoUsuario").val();
+
+    // Mostrar el valor seleccionado en la consola
+    console.log("Valor seleccionado: " + valorSeleccionado);
+
+    // Aquí puedes hacer lo que necesites con el valor seleccionado
+    // Por ejemplo, almacenar en una variable global:
+    // window.valorSeleccionado = valorSeleccionado;
+  });
+});
+

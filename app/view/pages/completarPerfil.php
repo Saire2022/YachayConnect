@@ -9,7 +9,7 @@ include_once URL_APP . '/view/custom/header.php';
             <div class="container-action center">
                 <div class="col">
                     <h4 class="text-center">Completa tu perfil </h4>
-                    <h6 class="text-center">Antes de continuar debes seleccionar el tipo de usuario y llenar los campos correspondientes</h6>
+                    <h6 class="text-center">Llenar los campos correspondientes</h6>
                     <hr>
                     <div class="conten-comletar-perfil-center">
                     <!-- Form para los graduados -->
@@ -18,20 +18,41 @@ include_once URL_APP . '/view/custom/header.php';
                         <input type="hidden" name="id_user" value="<?php echo $datos['usuario']->idusuario?>">
                         <div class="form-group">
                             <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo" required>
+                            <!-- Fecha inicio -->
                             <label for="date">Fecha de inicio de estudios</label>
-                            <input type="date" name="fiestudio" class="form-control" placeholder="Fecha inicio estudios" required>
+                            <input type="date" name="fiestudio" class="form-control" required>
+                            <!-- Fecha grado -->
                             <label for="date">Fecha de grado</label>
                             <input type="date" name="fgrado" class="form-control" placeholder="Fecha de grado" required>
+
                             <input type="text" name="paisactual" class="form-control" placeholder="Pais Actual" required>
-                            <input type="text" name="caestudio" class="form-control" placeholder="Carrera que estudio" required>
-                            <input type="text" name="profesion" class="form-control" placeholder="Profesión" required>
+                            <!-- Carrera Estudio -->
+                            <div class="form-group">
+                            <select class="form-control" name="caestudio" required>
+                                <option value="" disabled selected>Selecciona la carrera que estudio</option>
+                                <option value="Computacion">Computación</option>
+                                <option value="Matematicas">Matemáticas</option>
+                                <option value="Tecnologias de la informacion">Tecnologías de la información</option>
+                                <option value="Fisica">Física</option>
+                                <option value="Nanotecnologia">Nanotecnología</option>
+                                <option value="Biomedicina">Biomedicina</option>
+                                <option value="Biologia">Biologia</option>
+                                <option value="Quimica">Química</option>
+                                <option value="Materiales">Materiales</option>
+                                <option value="Geologia">Geología</option>
+                                <option value="Agroindustria">Agroindustria</option>
+                            </select>
+                        </div>
+                        <!-- /// -->
+<!--                             <input type="text" name="caestudio" class="form-control" placeholder="Carrera que estudio" required>
+ -->                            <input type="text" name="profesion" class="form-control" placeholder="Profesión" required>
                             <input type="text" name="salario" class="form-control" placeholder="Salario" required>
                             <input type="text" name="cedula" class="form-control" placeholder="Cedula" required>
                         </div> 
                         <div class="form-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" name="imagen" id="image" required>
-                                <label class="custom-file-label" for="image">Seleccionar una foto</label>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" name="imagen" id="image" required>
+                                <label class="input-group-text" for="image">Seleccionar una perfil</label>
                             </div>
                         </div>
                         <button class="btn btn-primary btn-block">Registrar datos</button>
@@ -46,9 +67,9 @@ include_once URL_APP . '/view/custom/header.php';
                             <input type="text" name="carrer" class="form-control" placeholder="Carrera que estudia" required>
                         </div> 
                         <div class="form-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" name="imagen" id="image" required>
-                                <label class="custom-file-label" for="image">Seleccionar una foto</label>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" name="imagen" id="image" required>
+                                <label class="input-group-text" for="image">Seleccionar una foto</label>
                             </div>
                         </div>
                         <button class="btn btn-primary btn-block">Registrar datos</button>
