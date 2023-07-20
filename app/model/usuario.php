@@ -93,7 +93,21 @@ class usuario
         }else{
             return false;
         }
+    }
+    public function actlizaredes($datos)
+    {
+        $this->db->query('UPDATE perfil SET facebook = :facebook, instagram = :instagram, github= :github, linkedin=:linkedin WHERE idUsuario = :iduser');
+        $this->db-> bind(':facebook', $datos['facebook']);
+        $this->db-> bind(':instagram', $datos['instagram']);
+        $this->db-> bind(':github', $datos['github']);
+        $this->db-> bind(':linkedin', $datos['linkedin']);
+        $this->db-> bind(':iduser',$datos['idusuario']);
 
+        if ($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
 

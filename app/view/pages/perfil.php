@@ -74,14 +74,14 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <?php } ?>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                  <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                  <?php if ($datos['perfil']->facebook != "") { ?>
-                    <a href="<?php echo $datos['perfil']->facebook ?>" target="_blank" style="color: black; text-decoration: none;">
-                      <p class="mb-0">Perfil de Facebook</p>
-                    </a>
-                  <?php } else { ?>
+                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                <?php if ($datos['perfil']->facebook != "") { ?>
+                  <a href="<?php echo $datos['perfil']->facebook ?>" target="_blank" style="color: black; text-decoration: none;">
+                    <p class="mb-0">Perfil de Facebook</p>
+                  </a>
+                <?php } else { ?>
                   <p class="mb-0">Perfil no disponible</p>
-                  <?php } ?>
+                <?php } ?>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-linkedin-in fa-lg" style="color: #0077B5;"></i>
@@ -96,6 +96,58 @@ include_once URL_APP . '/view/custom/navbar.php';
             </ul>
           </div>
         </div>
+        <!-- Desde aqui es la seccion para actualizar las redes sociales -->
+        <!-- Condicion solo para que pueda actulizar sus redes el dueño del perfil -->
+        <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']): ?>
+          <!-- Modal para editar los enlaces de las redes sociales -->
+          <div class="container mt-5">
+            <!-- Botón que abrirá el modal -->
+            <div class="text-center">
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                Editar redes sociales
+              </button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Información del Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Aquí colocamos los campos para solicitar la información -->
+                    <form action="<?php echo URL_PROJECT ?>/home/actualizaredes" method="POST">
+                      <div class="form-group">
+                        <label for="github">Link de GitHub</label>
+                        <input type="hidden" name="id_user" value="<?php echo $_SESSION['logueado'] ?>">
+                        <input type="text" class="form-control"  name="github" placeholder="" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="instagram">Link de Instagram</label>
+                        <input type="text" class="form-control"  name="instagram" placeholder="" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="facebook">Link de Facebook</label>
+                        <input type="text" class="form-control"  name="facebook" placeholder="" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="linkedin">Link de LinkedIn</label>
+                        <input type="text" class="form-control"  name="linkedin" placeholder="" required>
+                      </div>
+                      <!-- Agrega más campos aquí si necesitas más información -->
+                      <br>
+                      <button class="btn btn-primary btn-block" type="submit">Actulizar</button>
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php endif ?>
       </div>
       <!-- Publicar -->
       <div class="col-lg-6">

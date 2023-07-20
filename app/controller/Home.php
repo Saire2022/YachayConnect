@@ -145,6 +145,24 @@ class Home extends Controller
             echo 'El perfil no se ha guardado';
         }
     }
+
+    public function actualizaredes()
+    {
+        $datos= [
+            'idusuario' => trim($_POST['id_user']),
+            'github' => trim($_POST['github']),
+            'instagram' => trim($_POST['instagram']),
+            'facebook' => trim($_POST['facebook']),
+            'linkedin'=> trim($_POST['linkedin'])
+
+        ];
+        if ($this->usuario->actlizaredes($datos))
+        {
+            redirection('/home');
+        }else{
+            echo 'Las redes no se actualizaron';
+        }
+    }
     public function logout()
     {
         session_start();
