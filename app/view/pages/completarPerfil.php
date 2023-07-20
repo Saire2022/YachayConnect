@@ -43,13 +43,14 @@ include_once URL_APP . '/view/custom/header.php';
                                 <option value="Geologia">Geología</option>
                                 <option value="Agroindustria">Agroindustria</option>
                             </select>
-                        </div>
-                        <br>
-                        <!-- /// -->
-
+                            <br>
                             <input type="text" name="profesion" class="form-control" placeholder="Profesión" required>
                             <input type="text" name="salario" class="form-control" placeholder="Salario" required>
                             <input type="text" name="cedula" class="form-control" placeholder="Cedula" required>
+                            <input type="text" name="facebook" class="form-control" placeholder="Link Facebook" required>
+                            <input type="text" name="instagram" class="form-control" placeholder="Link Instagram" required>
+                            <input type="text" name="LinkedIn" class="form-control" placeholder="Link LinkedIn" required>
+                            <input type="text" name="GitHub" class="form-control" placeholder="Link GitHub" required>
                         </div> 
                         <div class="form-group">
                             <div class="input-group mb-3">
@@ -79,6 +80,11 @@ include_once URL_APP . '/view/custom/header.php';
                                 <option value="Geologia">Geología</option>
                                 <option value="Agroindustria">Agroindustria</option>
                             </select>
+                            <br>
+                            <input type="text" name="facebook" class="form-control" placeholder="Link Facebook" required>
+                            <input type="text" name="instagram" class="form-control" placeholder="Link Instagram" required>
+                            <input type="text" name="LinkedIn" class="form-control" placeholder="Link LinkedIn" >
+                            <input type="text" name="GitHub" class="form-control" placeholder="Link GitHub" >
                         </div> 
                         <br>
                         <div class="form-group">

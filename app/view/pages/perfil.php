@@ -54,24 +54,44 @@ include_once URL_APP . '/view/custom/navbar.php';
           <div class="card-body p-0">
             <ul class="list-group list-group-flush rounded-3">
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fas fa-globe fa-lg text-warning"></i>
-                <p class="mb-0">https://mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                <p class="mb-0">@mdbootstrap</p>
+                <?php if ($datos['perfil']->github != "") { ?>
+                  <a href="<?php echo $datos['perfil']->github ?>" target="_blank" style="color: black; text-decoration: none;">
+                    <p class="mb-0">Perfil de GitHub</p>
+                  </a>
+                <?php } else { ?>
+                  <p class="mb-0">Perfil no disponible</p>
+                <?php } ?>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                <p class="mb-0">mdbootstrap</p>
+                <?php if ($datos['perfil']->instagram != "") { ?>
+                  <a href="<?php echo $datos['perfil']->instagram ?>" target="_blank" style="color: black; text-decoration: none;">
+                    <p class="mb-0">Perfil de Instagram</p>
+                  </a>
+                <?php } else { ?>
+                  <p class="mb-0">Perfil no disponible</p>
+                <?php } ?>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                <p class="mb-0">mdbootstrap</p>
+                  <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                  <?php if ($datos['perfil']->facebook != "") { ?>
+                    <a href="<?php echo $datos['perfil']->facebook ?>" target="_blank" style="color: black; text-decoration: none;">
+                      <p class="mb-0">Perfil de Facebook</p>
+                    </a>
+                  <?php } else { ?>
+                  <p class="mb-0">Perfil no disponible</p>
+                  <?php } ?>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-linkedin-in fa-lg" style="color: #0077B5;"></i>
+                <?php if ($datos['perfil']->linkedin != "") { ?>
+                  <a href="<?php echo $datos['perfil']->linkedin ?>" target="_blank" style="color: black; text-decoration: none;">
+                    <p class="mb-0">Perfil de LinkedIn</p>
+                  </a>
+                <?php } else { ?>
+                  <p class="mb-0">Perfil no disponible</p>
+                <?php } ?>
               </li>
             </ul>
           </div>

@@ -131,7 +131,11 @@ class Home extends Controller
             'fgrado'=>trim($_POST['fgrado']),
             'caestudio'=>trim($_POST['caestudio']),
             'profesion'=>trim($_POST['profesion']),
-            'cedula'=>trim($_POST['cedula'])
+            'cedula'=>trim($_POST['cedula']),
+            'facebook'=>trim($_POST['facebook']),
+            'instagram'=>trim($_POST['instagram']),
+            'linkedin'=>trim($_POST['LinkedIn']),
+            'github'=>trim($_POST['GitHub'])
 
         ];
         if ($this->usuario->insertarPerfil($datos))
