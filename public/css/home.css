@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #c3d8f0;
+  --primary-color: #ffffff;
   --font-size: 16px;
 }
 .containerP {
@@ -43,10 +43,10 @@ body {
   padding: 20px 15px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0.5px 2px 20px #192e67;
-  transition: 0.3s ease-in-out;
+/*   box-shadow: 0.5px 2px 20px #192e67;
+ */  transition: 0.3s ease-in-out;
   margin-top: -5%;
-  border-radius: 20px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -56,8 +56,8 @@ body {
   height: 300px;
   top: -20px;
   left: -15px;
-  box-shadow: 0.5px 2px 20px #192e67;
-  border-radius: 20px;
+  box-shadow: 0.5px 1px 20px #192e67;
+  border-radius: 10px;
   border: 2px solid #ccc;
 
 }

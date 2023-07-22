@@ -41,18 +41,16 @@
                             </span>
                         <?php endif?>
                     </a>
-                        <div class="dropdown">
-                            <a class="btn-radio dropdown-toggle text-white" id="actionPerfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                                <img class="profile-image" src="<?php echo URL_PROJECT . '/' . $datos['perfil2']->fotoPerfil ?>" alt="perfil">
-                                <?php echo ucwords($_SESSION['usuario']); ?>
-                                
-                                
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="actionPerfil" style="font-family: Arial, sans-serif;">
-                                <a class="dropdown-item text-dark" href="<?php echo URL_PROJECT?>/home/logout">Salir</a>
-                            </div>
+                    <div class="dropdown">
+                        <a class="btn btn-primary dropdown-toggle" id="actionPerfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            <img class="profile-image" src="<?php echo URL_PROJECT . '/' . $datos['perfil2']->fotoPerfil ?>" alt="perfil">
+                            <?php echo ucwords($_SESSION['usuario']); ?>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="actionPerfil" style="font-family: Arial, sans-serif;">
+                            <a class="dropdown-item" href="<?php echo URL_PROJECT?>/home/logout">Salir</a>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

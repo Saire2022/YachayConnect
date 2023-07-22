@@ -57,7 +57,8 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <i class="fab fa-github fa-lg" style="color: #333333;"></i>
                 <?php if ($datos['perfil']->github != "") { ?>
                   <a href="<?php echo $datos['perfil']->github ?>" target="_blank" style="color: black; text-decoration: none;">
-                    <p class="mb-0">Perfil de GitHub</p>
+                    <button type="button" class="btn btn-outline-secondary ms-1">Acceder a GitHub</button>
+                    <!--<p class="mb-0">Acceder a GitHub</p>-->               
                   </a>
                 <?php } else { ?>
                   <p class="mb-0">Perfil no disponible</p>
@@ -67,7 +68,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
                 <?php if ($datos['perfil']->instagram != "") { ?>
                   <a href="<?php echo $datos['perfil']->instagram ?>" target="_blank" style="color: black; text-decoration: none;">
-                    <p class="mb-0">Perfil de Instagram</p>
+                    <button type="button" class="btn btn-outline-secondary ms-1">Acceder a Instagram</button>
                   </a>
                 <?php } else { ?>
                   <p class="mb-0">Perfil no disponible</p>
@@ -77,7 +78,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
                 <?php if ($datos['perfil']->facebook != "") { ?>
                   <a href="<?php echo $datos['perfil']->facebook ?>" target="_blank" style="color: black; text-decoration: none;">
-                    <p class="mb-0">Perfil de Facebook</p>
+                    <button type="button" class="btn btn-outline-secondary ms-1">Acceder a Facebook</button>
                   </a>
                 <?php } else { ?>
                   <p class="mb-0">Perfil no disponible</p>
@@ -87,13 +88,18 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <i class="fab fa-linkedin-in fa-lg" style="color: #0077B5;"></i>
                 <?php if ($datos['perfil']->linkedin != "") { ?>
                   <a href="<?php echo $datos['perfil']->linkedin ?>" target="_blank" style="color: black; text-decoration: none;">
-                    <p class="mb-0">Perfil de LinkedIn</p>
+                    <button type="button" class="btn btn-outline-secondary ms-1">Acceder a LinkedIn</button>
                   </a>
                 <?php } else { ?>
                   <p class="mb-0">Perfil no disponible</p>
                 <?php } ?>
               </li>
             </ul>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal" data-target="#exampleModal">
+              Editar
+            </button>
           </div>
         </div>
         <!-- Desde aqui es la seccion para actualizar las redes sociales -->
@@ -102,11 +108,7 @@ include_once URL_APP . '/view/custom/navbar.php';
           <!-- Modal para editar los enlaces de las redes sociales -->
           <div class="container mt-5">
             <!-- Botón que abrirá el modal -->
-            <div class="text-center">
-              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
-                Editar redes sociales
-              </button>
-            </div>
+          
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
@@ -139,7 +141,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                       </div>
                       <!-- Agrega más campos aquí si necesitas más información -->
                       <br>
-                      <button class="btn btn-primary btn-block" type="submit">Actulizar</button>
+                      <button class="btn btn-primary btn-block" type="submit">Actualizar</button>
                     </form>
                   </div>
                   
@@ -156,12 +158,8 @@ include_once URL_APP . '/view/custom/navbar.php';
         <?php if ($datos['perfil']->idPrivilegio != 2): ?>
           <div class="card mb-4">
             <!-- Esto es para editar la infooooo -->
-            <div class="text-right">
-              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal2">
-                Editar
-              </button>
-            </div>
-            <!-- Modal -->
+           
+            <!-- Modal Change Social Media-->
             <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -201,12 +199,14 @@ include_once URL_APP . '/view/custom/navbar.php';
                       </div>
                       <!-- Agrega más campos aquí si necesitas más información -->
                       <br>
-                      <button class="btn btn-primary btn-block" type="submit">Actulizar</button>
+                      <button class="btn btn-primary btn-block" type="submit">Actualizar</button>
                     </form>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- Informacion del usuario graduado -->
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">
@@ -274,6 +274,11 @@ include_once URL_APP . '/view/custom/navbar.php';
                 </div>
               </div>
               <hr>
+            </div>
+            <div class="text-center" style="margin-bottom: 10px">
+              <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal" data-target="#exampleModal2">
+                Editar
+              </button>
             </div>
           </div>
         <?php endif ?>

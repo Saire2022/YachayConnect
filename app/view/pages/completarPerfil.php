@@ -27,7 +27,6 @@ include_once URL_APP . '/view/custom/header.php';
                             <input type="text" name="paisactual" class="form-control" placeholder="Pais Actual" required>
                             <br>
                             <!-- Carrera Estudio -->
-                            <div class="form-group">
                             <select class="form-control" name="caestudio" required>
                                 <option value="" disabled selected>Selecciona la carrera que estudio</option>
                                 <option value="Computacion">Computación</option>
@@ -51,11 +50,9 @@ include_once URL_APP . '/view/custom/header.php';
                             <input type="text" name="LinkedIn" class="form-control" placeholder="Link LinkedIn" required>
                             <input type="text" name="GitHub" class="form-control" placeholder="Link GitHub" required>
                         </div> 
-                        <div class="form-group">
-                            <div class="input-group mb-3">
-                                <input type="file" class="form-control" name="imagen" id="image" required>
-                                <label class="input-group-text" for="image">Seleccionar una perfil</label>
-                            </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="image" data-browse="File">Foto de perfil</label>
+                            <input type="file" class="form-control" name="imagen" id="image" lan="es" required>
                         </div>
                         <button class="btn btn-primary btn-block">Registrar datos</button>
                     </form>
@@ -86,11 +83,9 @@ include_once URL_APP . '/view/custom/header.php';
                             <input type="text" name="GitHub" class="form-control" placeholder="Link GitHub" >
                         </div> 
                         <br>
-                        <div class="form-group">
-                            <div class="input-group mb-3">
-                                <input type="file" class="form-control" name="imagen" id="image" required>
-                                <label class="input-group-text" for="image">Seleccionar foto</label>
-                            </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="image" data-browse="File">Foto de perfil</label>
+                            <input type="file" class="form-control" name="imagen" id="image" lan="es" required>
                         </div>
                         <button class="btn btn-primary btn-block">Registrar datos</button>
                     </form>

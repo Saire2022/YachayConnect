@@ -11,30 +11,31 @@ include_once URL_APP . '/view/custom/header.php';
                     <h4 class="mb-4">Registrarme</h4>
                     <form action="<?php echo URL_PROJECT ?>/home/register" method="POST">
                         <!-- Email -->
-                        <div class="form-group">
-                            <input type="email" class="form-control" name='email' placeholder="Email" required>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingEmail" name='email' placeholder="Email" required>
+                            <label for="floatingInput">Email</label>
                         </div>
                         <!-- Usuario -->
-                        <div class="form-group">
-                            <input type="text" class="form-control" name='usuario' placeholder="Usuario" required>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingUser" name='usuario' placeholder="Usuario" required>
+                            <label for="floatingUser">Usuario</label>
                         </div>
                         <!-- Contrasenia -->
-                        <div class="form-group">
-                            <input type="password" class="form-control" name='contrasena' placeholder="Contraseña" required>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" name='contrasena' placeholder="Contraseña" required>
+                            <label for="floatingPassword">Contraseña</label>
                         </div>
                         <!-- Privilegio -->
 
-                        <div class="form-group">
-                        <select class="form-control" name="privilegio" required>
+                        <select class="form-select" name="privilegio" required>
                             <option value="" disabled selected>Selecciona un tipo de usuario</option>
                             <option value="2">Estudiante</option>
                             <option value="3">Graduado</option>
                         </select>
-                        </div>
+                        <br>
                         <!-- fecha de nacimiento -->
                         <div class="form-group">
-                            <label for="">Fecha de nacimiento</label>
-                            <input type="date" class="form-control" name="date" placeholder="Fecha de nacimiento" required>
+                            <a>Fecha de nacimiento<input type="date" name="date" placeholder="Fecha de nacimiento" required></label>
                         </div>
 
                         <button class="btn btn-primary btn-block" type="submit">Registrarme</button>
