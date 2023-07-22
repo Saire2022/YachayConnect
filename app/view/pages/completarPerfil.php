@@ -24,7 +24,6 @@ include_once URL_APP . '/view/custom/header.php';
                             <!-- Fecha grado -->
                             <label for="date">Fecha de grado</label>
                             <input type="date" name="fgrado" class="form-control" placeholder="Fecha de grado" required>
-
                             <input type="text" name="paisactual" class="form-control" placeholder="Pais Actual" required>
                             <br>
                             <!-- Carrera Estudio -->

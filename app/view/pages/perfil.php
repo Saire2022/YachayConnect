@@ -155,6 +155,58 @@ include_once URL_APP . '/view/custom/navbar.php';
         <br>
         <?php if ($datos['perfil']->idPrivilegio != 2): ?>
           <div class="card mb-4">
+            <!-- Esto es para editar la infooooo -->
+            <div class="text-right">
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal2">
+                Editar
+              </button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Información del Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Aquí colocamos los campos para solicitar la información -->
+                    <form action="<?php echo URL_PROJECT ?>/home/actualizarinfo" method="POST">
+                      <div class="form-group">
+                        <label for="profesion">Profesión</label>
+                        <input type="hidden" name="id_user" value="<?php echo $_SESSION['logueado'] ?>">
+                        <input type="text" name="profesion" class="form-control" placeholder="Profesión" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="salario">Salario</label>
+                        <input type="text" name="salario" class="form-control" placeholder="Salario" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="cedula">Cedula</label>
+                        <input type="text" name="cedula" class="form-control" placeholder="Cedula" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="PaisActual">Pais Actual</label>
+                        <input type="text" name="paisactual" class="form-control" placeholder="Pais Actual" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Inicio de estudios</label>
+                        <input type="date" name="fiestudio" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Fecha de grado</label>
+                        <input type="date" name="fgrado" class="form-control" placeholder="Fecha de grado" required>
+                      </div>
+                      <!-- Agrega más campos aquí si necesitas más información -->
+                      <br>
+                      <button class="btn btn-primary btn-block" type="submit">Actulizar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">

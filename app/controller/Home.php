@@ -163,6 +163,26 @@ class Home extends Controller
             echo 'Las redes no se actualizaron';
         }
     }
+
+    public function actualizarinfo()
+    {
+        $datos= [
+            'idusuario' => trim($_POST['id_user']),
+            'profesion' => trim($_POST['profesion']),
+            'salario' => trim($_POST['salario']),
+            'cedula' => trim($_POST['cedula']),
+            'paisactual'=> trim($_POST['paisactual']),
+            'fiestudio'=> trim($_POST['fiestudio']),
+            'fgrado'=> trim($_POST['fgrado'])
+
+        ];
+        if ($this->usuario->actinfor($datos))
+        {
+            redirection('/home');
+        }else{
+            echo 'Las informacion no se actualizaron';
+        }
+    }
     public function logout()
     {
         session_start();

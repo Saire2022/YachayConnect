@@ -14,8 +14,8 @@ class usuario
         $this->db->bind(':user',$usuario);
         return $this->db->register();
     }
-     public function getPerfil($idusuario)
-     {
+    public function getPerfil($idusuario)
+    {
         $this->db->query(' SELECT  Pi.idPrivilegio, P.idperfil, P.Carrer, P.Salary, P.idUsuario, P.PaisActual, P.nombreCompleto, P.fotoPerfil,
         P.fi_estudio, P.f_grado, P.ca_estudio, P.profesion, P.cedula, P.facebook, P.instagram, P.github,
         P.linkedin FROM perfil P 
@@ -23,7 +23,7 @@ class usuario
         INNER JOIN privilegios Pi ON Pi.idPrivilegio= U.idPrivilegio WHERE U.idusuario=:id');
         $this->db->bind(':id',$idusuario);
         return $this->db->register();
-     }
+    }
 
     public function verificarContrasena($datosUsuario,$contrasena)
     {
@@ -32,9 +32,7 @@ class usuario
         } else{
             return false;
         }
-         
     }
-   
     public function verificarUsuario($datosUsuario)
     {
         $this->db->query('SELECT usuario FROM usuarios WHERE  usuario = :user');
@@ -85,8 +83,8 @@ class usuario
         $this->db->bind(':cedula', $datos['cedula']);
         $this->db->bind(':facebook', $datos['facebook']);
         $this->db->bind(':instagram', $datos['instagram']);
-        $this->db->bind(':github', $datos['linkedin']);
-        $this->db->bind(':linkedin', $datos['github']);
+        $this->db->bind(':github', $datos['github']);
+        $this->db->bind(':linkedin', $datos['linkedin']);
 
         if($this->db->execute()){
             return true;
@@ -101,6 +99,24 @@ class usuario
         $this->db-> bind(':instagram', $datos['instagram']);
         $this->db-> bind(':github', $datos['github']);
         $this->db-> bind(':linkedin', $datos['linkedin']);
+        $this->db-> bind(':iduser',$datos['idusuario']);
+
+        if ($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function actinfor($datos)
+    {
+        $this->db->query('UPDATE perfil SET profesion = :profesion, Salary = :salario, cedula= :cedula, 
+        PaisActual=:pais,fi_estudio=:fi_estudio,f_grado=:f_grado WHERE idUsuario = :iduser');
+        $this->db-> bind(':profesion', $datos['profesion']);
+        $this->db-> bind(':salario', $datos['salario']);
+        $this->db-> bind(':cedula', $datos['cedula']);
+        $this->db-> bind(':pais', $datos['paisactual']);
+        $this->db-> bind(':fi_estudio',$datos['fiestudio']);
+        $this->db-> bind(':f_grado',$datos['fgrado']);
         $this->db-> bind(':iduser',$datos['idusuario']);
 
         if ($this->db->execute()){
