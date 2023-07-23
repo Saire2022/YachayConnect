@@ -35,9 +35,7 @@ include_once URL_APP . '/view/custom/navbar.php';
             <div class="col-xs-12 text-center">
               <h2>Donut Chart</h2>
             </div>
-        
             <div id="donut-chart"></div>
-           
           </div>
         </div>
       </div>
@@ -58,7 +56,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                 </div>
               </label>
               <input type="file" name="imagen" class="form-control" id="imagen" aria-describedby="inputGroupFileAddon04"
-                aria-label="Upload" style="display: none">
+                aria-label="Upload" style="display: none" >
               <button class="btn btn-primary btn-block">Publicar</button>
             </div>
           </form>
@@ -86,12 +84,13 @@ include_once URL_APP . '/view/custom/navbar.php';
               </div>
               
                 <p class="mb-1">
-                  <?php echo $datosPublicacion->contenidoPublicacion; ?>
+                <?php echo $datosPublicacion->contenidoPublicacion; ?>
                 </p>
-                <div class="image-container">
-                  <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion; ?>" alt="IMG-publication" class="card-img-top">
-                </div>
-
+                <?php if ($datosPublicacion->fotoPublicacion != "Sin imagen"): ?>
+                  <div class="image-container">
+                    <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion; ?>" alt="IMG-publication" class="card-img-top">
+                  </div>
+                <?php endif ?>
               <hr>
               <!-- likes -->
               <div class="acciones-usuario-publicaciones mt-2">

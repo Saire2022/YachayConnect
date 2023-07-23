@@ -36,7 +36,6 @@ class publicar
     }
     public function getPublicacionesUser($id)
     {
- 
         $this->db->query('SELECT idUserPublico FROM publicaciones WHERE idUserPublico =:id');
         $this->db->bind(':id', $id);
         return $this->db->register();
@@ -169,8 +168,8 @@ class publicar
             return false;
         }
     }
-     public function addNotificacionLike($datos)
-     {
+    public function addNotificacionLike($datos)
+    {
         $this->db->query('INSERT INTO notificaciones (idUsuario,tipoNotificaion,usuarioAccion,id_publicacion) VALUES (:idusuario,:tipo,:usuarioAccion,:idpublicacion)');
         $this->db->bind(':idusuario',$datos['idusuarioPropietario']);
         $this->db->bind(':tipo',1);
@@ -181,9 +180,9 @@ class publicar
         }else {
             return false;
         }
-     }
-      public function addNotificacionComentario($datos)
-      {
+    }
+    public function addNotificacionComentario($datos)
+    {
         $this->db->query('INSERT INTO notificaciones (idUsuario,tipoNotificaion,usuarioAccion,id_publicacion) VALUES (:idusuario,:tipo,:usuarioAccion,:idpublicacion)');
         $this->db->bind(':idusuario',$datos['iduserPropietario']);
         $this->db->bind(':tipo',2);
@@ -194,13 +193,13 @@ class publicar
         }else {
             return false;
         }
-      }
+    }
 
-      public function getNotificaciones($id)
-      {
+    public function getNotificaciones($id)
+    {
         $this->db->query('SELECT idnotificacion FROM notificaciones WHERE idUsuario =:id');
         $this->db->bind(':id',$id);
         $this->db->execute();
         return $this->db->rowCount();
-      }
+    }
 }

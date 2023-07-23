@@ -330,7 +330,11 @@ include_once URL_APP . '/view/custom/navbar.php';
               <p class="mb-1">
                 <?php echo $datosPublicacion->contenidoPublicacion ?>
               </p>
-              <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion ?>" alt="" class="cotenidoPhoto">
+              <?php if ($datosPublicacion->fotoPublicacion != "Sin imagen"): ?>
+                  <div class="image-container">
+                    <img src="<?php echo URL_PROJECT . '/' . $datosPublicacion->fotoPublicacion; ?>" alt="IMG-publication" class="card-img-top">
+                  </div>
+                <?php endif ?>
             </div>
             <hr>
             <!-- likes -->

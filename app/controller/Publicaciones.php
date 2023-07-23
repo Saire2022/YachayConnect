@@ -7,7 +7,7 @@ class Publicaciones extends Controller
     }
     public function publicar($idUsuario)
     {
-        if (isset($_FILES['imagen'])){
+        if (isset($_FILES['imagen']) && $_FILES['imagen']['size'] > 0){
             $carpeta="C:/xampp/htdocs/YachayConnect/public/img/imagenesPublicaciones/";
             opendir($carpeta);
             $rutaImagen= 'img/imagenesPublicaciones/' .  $_FILES['imagen']['name'];
