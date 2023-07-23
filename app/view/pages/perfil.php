@@ -210,7 +210,10 @@ include_once URL_APP . '/view/custom/navbar.php';
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Profesion</p>
+                  <p class="mb-0">
+                    <span>  <i class="fas fa-graduation-cap fa-lg" style="color: #0077B5;"></i></span>
+                    Profesion
+                  </p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">
@@ -221,7 +224,10 @@ include_once URL_APP . '/view/custom/navbar.php';
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Salario</p>
+                  <p class="mb-0">
+                    <span>  <i class="fas fa-dollar-sign fa-lg" style="color: green;"></i></span>
+                    Salario
+                  </p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">
@@ -232,7 +238,10 @@ include_once URL_APP . '/view/custom/navbar.php';
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Cedula de ID</p>
+                  <p class="mb-0">
+                    <span>  <i class="fas fa-id-card fa-lg" style="color: #0077B5;"></i></span>
+                    Cedula de ID
+                  </p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">
@@ -243,7 +252,10 @@ include_once URL_APP . '/view/custom/navbar.php';
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Pais Actual</p>
+                  <p class="mb-0">
+                    <span>  <i class="fas fa-globe fa-lg" style="color: #0077B5;"></i></span>
+                    Pais Actual
+                  </p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">
@@ -254,7 +266,10 @@ include_once URL_APP . '/view/custom/navbar.php';
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Inicio de estudios</p>
+                  <p class="mb-0">
+                    <span>  <i class="fas fa-calendar-alt fa-lg" style="color: #ac2bac;"></i></span>
+                    Inicio de estudios
+                  </p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">
@@ -265,7 +280,10 @@ include_once URL_APP . '/view/custom/navbar.php';
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Fecha graduacion</p>
+                  <p class="mb-0">
+                    <span>  <i class="fas fa-calendar-times fa-lg" style="color: #ac2bac;"></i></span>
+                    Fecha graduacion
+                  </p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">
@@ -283,6 +301,7 @@ include_once URL_APP . '/view/custom/navbar.php';
           </div>
         <?php endif ?>
         <!-- information card -->
+
         <!-- Seccion para comentar -->
         <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']): ?>
           <div class="ContainerPublicPerfil">
@@ -327,7 +346,7 @@ include_once URL_APP . '/view/custom/navbar.php';
               </div>
             </div>
             <div class="cotenido-pubicacion-usuario">
-              <p class="mb-1">
+              <p class="mb-1 texto">
                 <?php echo $datosPublicacion->contenidoPublicacion ?>
               </p>
               <?php if ($datosPublicacion->fotoPublicacion != "Sin imagen"): ?>

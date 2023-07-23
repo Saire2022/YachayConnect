@@ -83,7 +83,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                 </div>
               </div>
               
-                <p class="mb-1">
+                <p class="mb-1 texto">
                 <?php echo $datosPublicacion->contenidoPublicacion; ?>
                 </p>
                 <?php if ($datosPublicacion->fotoPublicacion != "Sin imagen"): ?>

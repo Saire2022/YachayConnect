@@ -227,7 +227,7 @@ body {
 
 .container-usuarios-publicaciones {
   position: relative;
-  min-height: 400px; /* Establecer una altura mínima para evitar que el contenedor sea demasiado pequeño */
+  min-height: 300px; /* Establecer una altura mínima para evitar que el contenedor sea demasiado pequeño */
   border-radius: 10px;
   background: #ffffff; 
   /* --------- */

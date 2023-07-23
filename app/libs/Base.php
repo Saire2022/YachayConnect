@@ -88,4 +88,5 @@ class Base
         $this->query($sql);
         return $this->registers();
     }
+    
 }
