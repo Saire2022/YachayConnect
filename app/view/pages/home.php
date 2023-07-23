@@ -18,6 +18,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <a href="<?php echo URL_PROJECT ?>/perfil/index/<?php echo $datos['usuario']->usuario ?>">
                   <div class="text-center texto"></br>
                     <?php echo $datos['perfil']->nombreCompleto ?>
+                    <!-- <?php var_dump($datos['carreras']) ?> -->
                   </div>
                 </a>
               </h4>

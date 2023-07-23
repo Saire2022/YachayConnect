@@ -202,4 +202,10 @@ class publicar
         $this->db->execute();
         return $this->db->rowCount();
     }
+    /* Carreraaaaaaaas */
+    public function numcarreras()
+    {
+        $this->db->query("SELECT ca_estudio, COUNT(ca_estudio) AS total_carreras FROM perfil WHERE ca_estudio IS NOT NULL AND ca_estudio <> '' GROUP BY ca_estudio");
+        return $this->db->registers();
+    }
 }

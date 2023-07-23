@@ -21,6 +21,7 @@ class Home extends Controller
             $informacionComentarios=$this->publicaciones->getInformacionComentarios($comentarios);
             $misNotificaciones =$this->publicaciones->getNotificaciones($_SESSION['logueado']);
             $numPublicaciones =$this->publicaciones->numPublicaciones($_SESSION['logueado']);
+            $carreras=$this->publicaciones->numcarreras();
             if ($datosPefil){
                 $datosRed = [
                     'usuario' => $datosUsuario,
@@ -30,7 +31,8 @@ class Home extends Controller
                     'misLikes'=> $verificarLikes,
                     'comentarios'=>$informacionComentarios,
                     'misNotificaciones'=> $misNotificaciones,
-                    'numPubli'=> $numPublicaciones
+                    'numPubli'=> $numPublicaciones,
+                    'carreras'=>$carreras
                 ];
                 /* var_dump($datosRed['perfil']); */
                 $this->view('pages/home', $datosRed);
@@ -101,7 +103,7 @@ class Home extends Controller
             }else{
                 $_SESSION['usarioError'] = 'El ususario no esta disponible, intenta con otro usuario';
                 $this->view('pages/register');
-             }
+            }
         } else {
             if (isset($_SESSION['logueado'])){
                 redirection('/home');
