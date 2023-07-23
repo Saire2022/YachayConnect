@@ -19,12 +19,13 @@
     
     <!-- Icon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Grafana -->
- <!--    <meta http-equiv="set-cookie" content="Value=_gid, Site=.grafana.net/; SameSite=None; Secure;"/>
-    <meta http-equiv="set-cookie" content="Value=_gid, Site=.grafana.net/; SameSite=None; Secure;"/>
- -->
-
-
+    <!-- Graficos -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
     <title> <?php echo PROJECT_NAME ?> </title>
 
 </head>

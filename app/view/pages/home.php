@@ -5,31 +5,40 @@ include_once URL_APP . '/view/custom/navbar.php';
 ?>
 
 <body>
-  <div class="container-fluid position-relative">
-    <div class="row h-100">
+  <div class="container py-5">
+    <div class="row ">
       <!-- Columna perfil -->
-      <div class="col-md-4 overflow-auto">
-        <div class="containerP">
-          <div class="card">
-            <div class="imgBx">
-              <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="FotoPerfil">
-              <h4>
+      <div class="col-lg-4">
+        <br>
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <div class="card-body text-center">
+              <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>"class="imagen-perfil-usuario rounded-circle img-fluid" style="width: 150px;" alt="FotoPerfil">
+              <h4 class="my-3">
                 <a href="<?php echo URL_PROJECT ?>/perfil/index/<?php echo $datos['usuario']->usuario ?>">
                   <div class="text-center texto"></br>
                     <?php echo $datos['perfil']->nombreCompleto ?>
                   </div>
                 </a>
               </h4>
-              <ul class="list-inline">
+              <ul class="list-inline texto">
                 <li class="list-inline-item">Publicaciones <br> <?php echo $datos['numPubli']?></li>
               </ul>
             </div>
           </div>
         </div>
         <!-- Interesting Information -->
-        <div class="containerCards">
-          <h4 class="text-center">Temas que te pueden interesar</h4>
-            <iframe width="400" height="600" src="https://lookerstudio.google.com/embed/reporting/54ac9745-603d-4038-aa61-d622cad03d1c/page/1M" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body text-center">
+            <h4 class="text-center texto">Temas que te pueden interesar</h4>
+            <iframe width="300px" height="400" src="https://lookerstudio.google.com/embed/reporting/54ac9745-603d-4038-aa61-d622cad03d1c/page/1M" frameborder="0" style="border:0" allowfullscreen></iframe>            
+            <div class="col-xs-12 text-center">
+              <h2>Donut Chart</h2>
+            </div>
+        
+            <div id="donut-chart"></div>
+           
+          </div>
         </div>
       </div>
       <!-- Columna principal -->

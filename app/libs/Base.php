@@ -80,4 +80,12 @@ class Base
         /* $this->execute(); */
         return $this->stmt->rowCount();
     }
+
+    /*----------------New Queries---------------- */
+    public function getChartData()
+    {
+        $sql = "SELECT ca_estudio, COUNT(ca_estudio) AS total_carreras FROM perfil GROUP BY ca_estudio";
+        $this->query($sql);
+        return $this->registers();
+    }
 }
