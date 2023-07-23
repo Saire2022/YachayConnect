@@ -33,7 +33,7 @@
                 </form>
                 <div class="navbar-nav ml-auto">
                     <a class="nav-link text-white" href="#"><span class="big"><i class="fa fa-envelope"></i></span><span class="mb-0 ml-1">Mensajes</span></a>
-                    <a  class="nav-link text-white" href="<?php echo URL_PROJECT?>/notificaciones">
+                    <a  class="nav-link text-white btn btn-primary" href="<?php echo URL_PROJECT?>/notificaciones">
                         <span class="big"><i class="fa fa-bell"></i></span>
                         <?php if ($datos['misNotificaciones']>0):?>
                             <span class="mb-0 ml-1 badge rounded-pill badge-notification bg-danger">

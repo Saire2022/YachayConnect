@@ -215,7 +215,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                     Profesion
                   </p>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 text-center">
                   <p class="text-muted mb-0">
                     <?php echo $datos['perfil']->profesion ?>
                   </p>
@@ -229,7 +229,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                     Salario
                   </p>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 text-center">
                   <p class="text-muted mb-0">
                     <?php echo $datos['perfil']->Salary ?>
                   </p>
@@ -243,7 +243,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                     Cedula de ID
                   </p>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 text-center">
                   <p class="text-muted mb-0">
                     <?php echo $datos['perfil']->cedula; ?>
                   </p>
@@ -257,7 +257,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                     Pais Actual
                   </p>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 text-center">
                   <p class="text-muted mb-0">
                     <?php echo $datos['perfil']->PaisActual; ?>
                   </p>
@@ -271,7 +271,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                     Inicio de estudios
                   </p>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 text-center">
                   <p class="text-muted mb-0">
                     <?php echo $datos['perfil']->fi_estudio; ?>
                   </p>
@@ -285,8 +285,8 @@ include_once URL_APP . '/view/custom/navbar.php';
                     Fecha graduacion
                   </p>
                 </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">
+                <div class="col-sm-9 text-center">
+                  <p class="text-muted mb-0 ">
                     <?php echo $datos['perfil']->f_grado; ?>
                   </p>
                 </div>
