@@ -205,7 +205,15 @@ class publicar
     /* Carreraaaaaaaas */
     public function numcarreras()
     {
-        $this->db->query("SELECT ca_estudio, COUNT(ca_estudio) AS total_carreras FROM perfil WHERE ca_estudio IS NOT NULL AND ca_estudio <> '' GROUP BY ca_estudio");
+        $this->db->query("SELECT ca_estudio, COUNT(ca_estudio) AS total_carreras FROM perfil 
+        WHERE ca_estudio IS NOT NULL AND ca_estudio <> '' GROUP BY ca_estudio");
+        return $this->db->registers();
+    }
+    /* Estuadiantes por paises */
+    public function grdpais()
+    {
+        $this->db->query("SELECT PaisActual, COUNT(PaisActual) AS graduados_pais
+        FROM perfil WHERE PaisActual IS NOT NULL AND PaisActual <> ''  GROUP BY PaisActual");
         return $this->db->registers();
     }
 }

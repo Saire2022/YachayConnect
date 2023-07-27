@@ -22,6 +22,7 @@ class Home extends Controller
             $misNotificaciones =$this->publicaciones->getNotificaciones($_SESSION['logueado']);
             $numPublicaciones =$this->publicaciones->numPublicaciones($_SESSION['logueado']);
             $carreras=$this->publicaciones->numcarreras();
+            $grdpais=$this->publicaciones->grdpais();
             if ($datosPefil){
                 $datosRed = [
                     'usuario' => $datosUsuario,
@@ -32,7 +33,8 @@ class Home extends Controller
                     'comentarios'=>$informacionComentarios,
                     'misNotificaciones'=> $misNotificaciones,
                     'numPubli'=> $numPublicaciones,
-                    'carreras'=>$carreras
+                    'carreras'=>$carreras,
+                    'graduados_pais'=>$grdpais
                 ];
                 /* var_dump($datosRed['perfil']); */
                 $this->view('pages/home', $datosRed);
