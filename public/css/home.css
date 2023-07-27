@@ -275,7 +275,7 @@ body {
 /* -------------------------------------------- -------*/
 /* --------------------LIKES-------------------------- */
 /* -------------------------------------------- ----------*/
-.like-button {
+ .like-button {
   color: black; /* Color por defecto del corazón */
   transition: color 0.2s ease-in-out; /* Transición suave al cambiar de color */
 }
@@ -286,6 +286,38 @@ body {
 
 .like-active {
   color: red; /* Color cuando el botón está activo (ya se dio like) */
+} 
+/* ---------------------- */
+/* Estilos generales para el botón */
+.btn-like {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.btn-like:hover {
+  background-color: #f9f9f9;
+}
+
+/* Estilos para cuando el botón está activo o cuando se le ha dado "Me gusta" */
+.btn-like.liked {
+  color: red;
+}
+
+.btn-like.liked .bi-heart {
+  color: red;
+}
+
+/* Estilos para el icono de corazón */
+.bi-heart {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 /* -------------------------------------------- -------*/
