@@ -32,11 +32,124 @@ include_once URL_APP . '/view/custom/navbar.php';
         <div class="card mb-4 mb-lg-0">
           <div class="card-body text-center">
             <h4 class="text-center texto">Temas que te pueden interesar</h4>
-            <iframe width="300px" height="400" src="https://lookerstudio.google.com/embed/reporting/54ac9745-603d-4038-aa61-d622cad03d1c/page/1M" frameborder="0" style="border:0" allowfullscreen></iframe>            
-            <div class="col-xs-12 text-center">
-              <h2>Donut Chart</h2>
+            <!-- Graduados por carrera -->
+            <div style="width: 280px; height: 300px; margin: 0 auto;">
+                <canvas id="donut-chart"></canvas>
             </div>
-            <div id="donut-chart"></div>
+            <!-- Yachay en el mundo -->
+            <div style="width: 280px; height: 300px; margin: 0 auto;">
+                <canvas id="bar-chart"></canvas>
+            </div>
+            <!--------------------------------------GRADUADOS POR CARRERA--------------------------------------------------------------- -->
+            <?php
+              $labels = [];
+              $data = [];
+
+              foreach ($datos['carreras'] as $objeto) {
+                  $labels[] = $objeto->ca_estudio;
+                  $data[] = (int)$objeto->total_carreras;
+              }
+            ?>
+            <script>
+                // Arreglo de colores para las secciones del donut
+                const colors = [
+                    '#36A2EB',
+                    '#FF6384',
+                    '#FFCE56',
+                    '#4BC0C0',
+                    '#FF9F40',
+                    '#9966FF',
+                    '#33CCCC',
+                    '#FF4444',
+                    '#66CC33',
+                    '#FFD700',
+                    '#20B2AA'
+                ];
+
+                // Configuración del gráfico
+                const config = {
+                    type: 'doughnut', // Tipo de gráfico de donut
+                    data: {
+                        labels: <?php echo json_encode($labels); ?>, 
+                        datasets: [{
+                            data: <?php echo json_encode($data); ?>, // Datos para cada sección del donut
+                            backgroundColor: colors, // Usamos el arreglo de colores definido anteriormente
+                            borderWidth: 1 // Ancho del borde del donut
+                        }]
+                    },
+                    options: {
+                        cutoutPercentage: 70, // Porcentaje de corte para el donut
+                        responsive: true, // 
+                        legend: {
+                            display: true, // Muestra la leyenda del gráfico
+                            position: 'bottom'
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Graduados por carrera',
+                            }
+                        },
+                    }
+                };
+                // Crea el gráfico de donut
+                let chart = new Chart(document.getElementById('donut-chart'), config);
+            </script>
+
+             <!-- ----------------------------------------------------------------------------------------------->
+             <!--------------------------------------GRADUADOS POR CARRERA--------------------------------------------------------------- --> 
+             <?php
+              $labelsPais = [];
+              $dataGrado = [];
+
+              foreach ($datos['graduados_pais'] as $objeto) {
+                  $labelsPais[] = $objeto->PaisActual;
+                  $dataGrado[] = (int)$objeto->graduados_pais;
+              };
+            ?>
+            <script>
+              const labelsChart = <?php echo json_encode($labelsPais); ?>;
+              const dataGraduados = {
+                labels: labelsChart,
+                datasets: [{
+                  label: 'Yachay tech en el mundo',
+                  data: <?php echo json_encode($dataGrado); ?>,
+                  backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                  ],
+                  borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                  ],
+                  borderWidth: 1
+                }]
+              };
+              const configBar = {
+                type: 'bar',
+                data: dataGraduados,
+                options: {
+                  scales: {
+                    y: {
+                      beginAtZero: true
+                    }
+                  }
+                },
+              };
+
+              let chart2 = new Chart(document.getElementById('bar-chart'), configBar);
+            </script>
+            <!-- ----------------------------------------------------------------------------------------------->
           </div>
         </div>
       </div>
