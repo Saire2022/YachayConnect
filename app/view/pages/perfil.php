@@ -96,11 +96,13 @@ include_once URL_APP . '/view/custom/navbar.php';
               </li>
             </ul>
           </div>
-          <div class="text-center">
-            <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal" data-target="#exampleModal">
-              Editar
-            </button>
-          </div>
+          <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']): ?>
+            <div class="text-center">
+              <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal" data-target="#exampleModal">
+                Editar
+              </button>
+            </div>
+          <?php endif ?>
         </div>
         <!-- Desde aqui es la seccion para actualizar las redes sociales -->
         <!-- Condicion solo para que pueda actulizar sus redes el dueño del perfil -->
@@ -158,7 +160,6 @@ include_once URL_APP . '/view/custom/navbar.php';
         <?php if ($datos['perfil']->idPrivilegio != 2): ?>
           <div class="card mb-4">
             <!-- Esto es para editar la infooooo -->
-           
             <!-- Modal Change Social Media-->
             <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
@@ -205,7 +206,6 @@ include_once URL_APP . '/view/custom/navbar.php';
                 </div>
               </div>
             </div>
-
             <!-- Informacion del usuario graduado -->
             <div class="card-body">
               <div class="row">
@@ -293,11 +293,13 @@ include_once URL_APP . '/view/custom/navbar.php';
               </div>
               <hr>
             </div>
-            <div class="text-center" style="margin-bottom: 10px">
-              <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal" data-target="#exampleModal2">
-                Editar
-              </button>
-            </div>
+            <?php if ($datos['usuario']->idusuario == $_SESSION['logueado']): ?>
+              <div class="text-center" style="margin-bottom: 10px">
+                <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal" data-target="#exampleModal2">
+                  Editar
+                </button>
+              </div>
+            <?php endif ?>
           </div>
         <?php endif ?>
         <!-- information card -->

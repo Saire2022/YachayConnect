@@ -15,15 +15,14 @@ include_once URL_APP . '/view/custom/navbar.php';
             <div class="card-body text-center">
               <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>"class="imagen-perfil-usuario rounded-circle img-fluid" style="width: 150px;" alt="FotoPerfil">
               <h4 class="my-3">
-                <a href="<?php echo URL_PROJECT ?>/perfil/index/<?php echo $datos['usuario']->usuario ?>">
+                <a href="<?php echo URL_PROJECT ?>/perfil/index/<?php echo $datos['usuario']->usuario ?>" style="text-decoration: none;">
                   <div class="text-center texto"></br>
                     <?php echo $datos['perfil']->nombreCompleto ?>
-                    <!-- <?php var_dump($datos['carreras']) ?> -->
                   </div>
                 </a>
               </h4>
               <ul class="list-inline texto">
-                <li class="list-inline-item">Publicaciones <br> <?php echo $datos['numPubli']?></li>
+                <li class="list-inline-item" style="font-size: 20px;" >Publicaciones <br> <?php echo $datos['numPubli']?></li>
               </ul>
             </div>
           </div>
@@ -37,14 +36,13 @@ include_once URL_APP . '/view/custom/navbar.php';
                 <canvas id="donut-chart"></canvas>
             </div>
             <!-- Yachay en el mundo -->
-            <div style="width: 280px; height: 300px; margin: 0 auto;">
+            <div style="width: 280px; height: 150px; margin: 0 auto;">
                 <canvas id="bar-chart"></canvas>
             </div>
             <!--------------------------------------GRADUADOS POR CARRERA--------------------------------------------------------------- -->
             <?php
               $labels = [];
               $data = [];
-
               foreach ($datos['carreras'] as $objeto) {
                   $labels[] = $objeto->ca_estudio;
                   $data[] = (int)$objeto->total_carreras;
@@ -65,7 +63,6 @@ include_once URL_APP . '/view/custom/navbar.php';
                     '#FFD700',
                     '#20B2AA'
                 ];
-
                 // Configuración del gráfico
                 const config = {
                     type: 'doughnut', // Tipo de gráfico de donut
@@ -95,13 +92,11 @@ include_once URL_APP . '/view/custom/navbar.php';
                 // Crea el gráfico de donut
                 let chart = new Chart(document.getElementById('donut-chart'), config);
             </script>
-
-             <!-- ----------------------------------------------------------------------------------------------->
-             <!--------------------------------------GRADUADOS POR CARRERA--------------------------------------------------------------- --> 
-             <?php
+            <!-- ----------------------------------------------------------------------------------------------->
+            <!--------------------------------------YT EN EL MUNDO--------------------------------------------------------------- --> 
+            <?php
               $labelsPais = [];
               $dataGrado = [];
-
               foreach ($datos['graduados_pais'] as $objeto) {
                   $labelsPais[] = $objeto->PaisActual;
                   $dataGrado[] = (int)$objeto->graduados_pais;
@@ -135,6 +130,7 @@ include_once URL_APP . '/view/custom/navbar.php';
                   borderWidth: 1
                 }]
               };
+              
               const configBar = {
                 type: 'bar',
                 data: dataGraduados,
@@ -142,11 +138,14 @@ include_once URL_APP . '/view/custom/navbar.php';
                   scales: {
                     y: {
                       beginAtZero: true
+                    },
+                    x: {
+                      maxRotation: 90, // Ajusta el valor según la cantidad de barras y el espacio disponible
+                      minRotation: 90 // Ajusta el valor igual que maxRotation para mantener la rotación vertical
                     }
                   }
-                },
+                }
               };
-
               let chart2 = new Chart(document.getElementById('bar-chart'), configBar);
             </script>
             <!-- ----------------------------------------------------------------------------------------------->
