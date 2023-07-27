@@ -216,4 +216,11 @@ class publicar
         FROM perfil WHERE PaisActual IS NOT NULL AND PaisActual <> ''  GROUP BY PaisActual");
         return $this->db->registers();
     }
+    /* carreras mejores pagadas */
+    public function mejorespagadas()
+    {
+        $this->db->query("SELECT profesion, COUNT(profesion) AS mejor_carreras
+        FROM perfil WHERE profesion IS NOT NULL AND profesion <> '' AND Salary> 1000 GROUP BY profesion");
+        return $this->db->registers();
+    }
 }
